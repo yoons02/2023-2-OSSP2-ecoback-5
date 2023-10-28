@@ -5,12 +5,12 @@
 <h1 align="center">👋 Members</h1>
 
 <div align="center">
-| 역할 및 개발분야 | 이름 | 전공 | 이메일 |
-| --- | --- | --- | --- |
-| Leader, BE | 김윤성 | 컴퓨터공학전공 | kys5037k@naver.com |
-| Member, FE | 남민주 | 컴퓨터공학전공 | nampink2300@gmail.com |
-| Member, FE | 박기태 | 컴퓨터공학전공 | gitae9999@naver.com |
-| Member, FE | 백슬기 | 컴퓨터공학전공 | seulgi.baek@dgu.ac.kr |
+    | 역할 및 개발분야 | 이름 | 전공 | 이메일 |
+    | --- | --- | --- | --- |
+    | Leader, BE | 김윤성 | 컴퓨터공학전공 | kys5037k@naver.com |
+    | Member, FE | 남민주 | 컴퓨터공학전공 | nampink2300@gmail.com |
+    | Member, FE | 박기태 | 컴퓨터공학전공 | gitae9999@naver.com |
+    | Member, FE | 백슬기 | 컴퓨터공학전공 | seulgi.baek@dgu.ac.kr |
 </div>
 
 <h1 align="center">🧑🏻‍💻 Skills</h1>
