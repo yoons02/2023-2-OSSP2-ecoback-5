@@ -6,6 +6,8 @@ class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         fields = '__all__'
+    
+    image = serializers.ImageField(use_url=True)
 
 class EventSerializer(serializers.ModelSerializer):
 
