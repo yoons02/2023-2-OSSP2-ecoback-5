@@ -5,7 +5,7 @@ from .models import *
 from .serializers import *
 
 # Create your views here.
-@api_view(['GET', 'POST'])
+@api_view(['GET', 'POST', 'PATCH'])
 def user_create(request):
     if request.method == 'GET':
         users = User.objects.all()
