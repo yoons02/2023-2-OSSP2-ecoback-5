@@ -4,5 +4,6 @@ from . import views
 
 app_name = "main"
 urlpatterns = [
-    path('', views.event_get),
+    path('users', views.user_create),
+    path('events', views.event_create),
 ]
