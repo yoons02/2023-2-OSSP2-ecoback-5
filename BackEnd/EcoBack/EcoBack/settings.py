@@ -60,6 +60,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'allauth.account.middleware.AccountMiddleware',  # 이 부분을 추가
 ]
 
 ROOT_URLCONF = 'EcoBack.urls'
@@ -154,8 +155,9 @@ SIMPLE_JWT = {
 
 SITE_ID = 1
 REST_USE_JWT = True
-ACCOUNT_USER_MODEL_USERNAME_FIELD = 'username' #username field
-ACCOUNT_EMAIL_REQUIRED = True #emil field
-ACCOUNT_USERNAME_REQUIRED = True #username field
+ACCOUNT_USER_MODEL_USERNAME_FIELD = 'username'
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_USERNAME_REQUIRED = True
 ACCOUNT_AUTHENTICATION_METHOD = 'username'
-ACCOUNT_EMAIL_VERIFICATION = 'none' # email verification none
+
+ACCOUNT_EMAIL_VERIFICATION = 'none'
