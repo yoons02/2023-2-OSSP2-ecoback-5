@@ -5,29 +5,41 @@ from .models import *
 from .serializers import *
 
 # Create your views here.
-@api_view(['GET', 'POST', 'PATCH'])
-def user_create(request):
+# 내 프로필
+@api_view(['GET'])
+def my_profile(request):
+    user = request.user
     if request.method == 'GET':
-        users = User.objects.all()
-        serializer = UserSerializer(users, many=True)
+        profile = Profile.objects.get(user = user)
+        serializer = ProfileSerializer(profile)
         return Response(data=serializer.data)
-    elif request.method == 'POST':
-        new_user = UserSerializer(data=request.data)
-        if new_user.is_valid(raise_exception=True):
-            new_user.save()
-            return Response(data=new_user.data)
         
-@api_view(['GET', 'POST'])
-def event_create(request):
+
+# 프로필 수정
+@api_view(['GET','PATCH'])
+def profile_update(request):
+    user = request.user
+    if request.method == 'GET':
+        profile = Profile.objects.get(user=user)
+        serializer = ProfileSerializer(profile)
+        return Response(data=serializer.data)
+    elif request.method == 'PATCH':
+        profile = Profile.objects.get(user=user)
+        serializer = ProfileSerializer(data=request.data, instance=profile)
+        if serializer.is_valid(raise_exception=True):
+            serializer.save()
+        return Response(data=serializer.data)
+
+
+# 전체 이밴트 불러오기
+@api_view(['GET'])
+def event_all(request):
     if request.method == 'GET':
         events = Event.objects.all()
         serializer = EventSerializer(events, many=True)
         return Response(data=serializer.data)
-    elif request.method == 'POST':
-        new_event = EventSerializer(data=request.data)
-        if new_event.is_valid(raise_exception = True):
-            new_event.save()
-            return Response(data=new_event.data)
+
+
         
 @api_view(['GET', 'POST'])
 def barcode_create(request):
