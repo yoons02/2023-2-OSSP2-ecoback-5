@@ -40,7 +40,17 @@ def event_all(request):
         return Response(data=serializer.data)
 
 
+# 상세 이밴트 불러오기
+@api_view(['GET'])
+def event_all(request, id):
+    if request.method == 'GET':
+        events = Event.objects.get(pk=id)
+        serializer = EventSerializer(events, many=True)
+        return Response(data=serializer.data)
         
+
+
+
 @api_view(['GET', 'POST'])
 def barcode_create(request):
     if request.method == 'GET':
