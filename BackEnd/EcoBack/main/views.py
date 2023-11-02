@@ -42,13 +42,11 @@ def event_all(request):
 
 # 상세 이밴트 불러오기
 @api_view(['GET'])
-def event_all(request, id):
+def event_detail(request, id):
     if request.method == 'GET':
         events = Event.objects.get(pk=id)
         serializer = EventSerializer(events, many=True)
         return Response(data=serializer.data)
-        
-
 
 
 @api_view(['GET', 'POST'])
