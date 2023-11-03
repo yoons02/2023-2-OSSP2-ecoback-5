@@ -1,14 +1,14 @@
 [
-    {"id":1, "name":"실천의 시작", "img":"img_src1"},
-    {"id":2, "name":"티끌모아 태산", "img":"img_src2"},
-    {"id":3, "name": "단골 손님", "img":"img_src"},
-    {"id":4, "name": "커피중독", "img":"img_src"},
-    {"id":5, "name": "텀블러 홀릭", "img":"img_src"},
-    {"id":6, "name": "환경 지킴이", "img":"img_src"},
-    {"id":7, "name": "당신은 천사", "img":"img_src"},
-    {"id":8, "name": "포인트 재벌", "img":"img_src"},
-    {"id":9, "name": "10회 달성", "img":"img_src"},
-    {"id":10, "name": "50회 달성", "img":"img_src"},
-    {"id":11, "name": "100회 달성", "img":"img_src"},
-    {"id":12, "name": "500회 달성", "img":"img_src"}
+    {"id":1, "name":"실천의 시작", "img":"badge_earth.png"},
+    {"id":2, "name":"티끌모아 태산", "img":"badge_unlock.png"},
+    {"id":3, "name": "단골 손님", "img":"badge_calender.png"},
+    {"id":4, "name": "커피중독", "img":"badge_unlock.png"},
+    {"id":5, "name": "텀블러 홀릭", "img":"badge_tumbler.png"},
+    {"id":6, "name": "환경 지킴이", "img":"badge_unlock.png"},
+    {"id":7, "name": "당신은 천사", "img":"badge_angel.png"},
+    {"id":8, "name": "포인트 재벌", "img":"badge_unlock.png"},
+    {"id":9, "name": "10회 달성", "img":"badge_10.png"},
+    {"id":10, "name": "50회 달성", "img":"badge_50.png"},
+    {"id":11, "name": "100회 달성", "img":"badge_unlock.png"},
+    {"id":12, "name": "500회 달성", "img":"badge_unlock.png"}
 ]
