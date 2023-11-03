@@ -1,23 +1,61 @@
-
-
+input{
+    width: 282px;
+    height: 34px;
+    border:none;
+    background-image: url("../image/Frame.png");
+}
+.ip{
+    text-indent: 55px;
+    font-family: "NotoSansKR";
+    font-size: 14px;
+    font-weight: 600;
+}
+.ask_register{
+    text-align: right;
+    font-family: "NotoSansKR";
+    font-size: 12px;
+    font-weight: 500;
+    color: #8fd36f;
+    
+}
 #logo{
     font-family: "NotoSansKR";
-    font-size: 15px;
-    font-weight: 700;
+    font-size: 12px;
+    font-weight: 500;
 }
 #logo img{
-    width:60%
+    width:80%
 }
+
 #id_input{
     font-family: "NotoSansKR";
-    font-size: 15px;
-    font-weight: 700;
+    font-size: 13px;
+    font-weight: 500;
+    
 }
 #password_input{
     font-family: "NotoSansKR";
-    font-size: 15px;
-    font-weight: 700;
+    font-size: 13px;
+    font-weight: 500; 
 }
+.hr-sect {
+        display: flex;
+        flex-basis: 100%;
+        align-items: center;
+        color: rgba(0, 0, 0, 0.35);
+        font-size: 12px;
+        margin: 8px 0px;
+      }
+.hr-sect::before,
+.hr-sect::after {
+    content: "";
+    flex-grow: 1;
+    background: rgba(0, 0, 0, 0.35);
+    height: 1px;
+    font-size: 0px;
+    line-height: 0px;
+    margin: 0px 16px;
+    }
 @font-face{
     font-family: "NotoSansKR";
     src: url("../font/NotoSansKR.ttf") format("truetype");
