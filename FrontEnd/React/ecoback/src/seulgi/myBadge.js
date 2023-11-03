@@ -1,28 +1,20 @@
 import badges from './badges.json';
+import './mypage.css'
+
 //뱃지 아이콘 생성
 function Badge({badge}){
-    const textStyle = {
-        textAlign: 'center', 
-        margin: '0', 
-        padding: '0',
-    };
-    const badgeStyle={
-        boxSizing: 'border-box',//padding, margin이 너비에 포함되도록
-        maxWidth:'50px',
-        maxHeight:'50px',
-        display:'block',
-        margin:'0 auto'
-
-    }
     const containerStyle = {
-        width: '22%', // 부모 요소의 1/3을 차지하도록 설정
-        padding: '10px' // 여백을 주어 뱃지가 서로 닿지 않도록
+        width: '22%', // 배지 하나당 부모 요소 1/4정도 차지
+        padding: '10px'
     };
 
     return(
         <div style={containerStyle}>
-            <img id="badgeImg" src={require(`../image/${badge.img}`)} alt={badge.name} style={badgeStyle}/>
-            <p style={textStyle}>{badge.name}</p>
+            <div id="hexagon">
+            <img id="badgeImg" src={require(`../image/${badge.img}`)} alt={badge.name} />
+            </div>
+            
+            <p id="badgeName">{badge.name}</p>
         </div>
     );
 }

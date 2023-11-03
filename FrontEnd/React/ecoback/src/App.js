@@ -6,9 +6,6 @@ import MyPage from './seulgi/mypage.js';
 
 import Login from './pages/Login.js';
 
-
-
-
 const App = () => {
   return(
     

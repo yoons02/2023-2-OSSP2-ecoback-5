@@ -120,6 +120,7 @@
     flex-direction: column;
   }  
   line{
+    text-align:right;
     background: rgba(51, 51, 51, 1);
     border: rgba(51, 51, 51, 1);
     width: 28px;
