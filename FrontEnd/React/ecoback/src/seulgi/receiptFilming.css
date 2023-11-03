@@ -1,0 +1,27 @@
+.top_line{
+    display: grid; /* 그리드 컨테이너로 설정 */
+    grid-template-columns: 0.7fr 1fr;
+    justify-items:left;
+    justify-content:center;
+    gap: auto;
+    margin:30px;
+
+  }
+
+
+.captureBtn{
+    margin:100px 0px 0px 50px;
+    display:flex;
+    align-items:flex-start;
+ 
+}
+
+#album{
+    margin-right:auto;
+}
+
+#turtleBtn{
+    margin-left:auto;
+    margin-right:auto;
+
+}
