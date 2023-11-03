@@ -9,19 +9,19 @@ import Login from './pages/Login.js';
 
 const App = () => {
   return(
-    <ReceiptFilming />
-    /*
+    
+    
     <Routes>
 
-      <Route path="/" element={<ReceiptFilming />} />
-        { <Route path="/" element={<Home />} /> }
+
+       <Route path="/" element={<Home />} /> 
 
         <Route path="/" element={<Login/>}/>
         <Route path="/Home" element={<Home />} />
-
         <Route path="/Store" element={<Store />} />
+        <Route path="/ReceiptFilming" element={<ReceiptFilming />} />
     </Routes> 
-    */
+    
   );
 };
 

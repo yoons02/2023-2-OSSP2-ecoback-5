@@ -1,10 +1,15 @@
+@font-face{
+    font-family: "NotoSansKR";
+    src: url("../font/NotoSansKR.ttf") format("truetype");
+  }
+
 .top_line{
     display: grid; /* 그리드 컨테이너로 설정 */
     grid-template-columns: 0.7fr 1fr;
     justify-items:left;
     justify-content:center;
     gap: auto;
-    margin:30px;
+    margin:50px;
 
   }
 
@@ -16,12 +21,44 @@
  
 }
 
+.container{
+    display:flex;
+    justify-content: space-between;
+    align-items:center;
+    padding:30px;
+}
+
 #album{
-    margin-right:auto;
+    flex:1;
+    text-align:left;
+    max-width:100px;
 }
 
 #turtleBtn{
-    margin-left:auto;
-    margin-right:auto;
+    border-style:none;
+    width:130px;
+    background:none;
+    margin:100px;
+    flex:1;
+    text-align: center;
+
 
 }
+
+#refresh{
+    max-width:100px;
+    padding:10px;
+    border-radius:20px;
+    font-family:"NotoSansKR";
+    font-size:20px;
+    border-style:none;
+    flex:1;
+    text-align: right;
+    background-color: #F9F9F9;
+    
+}
+
+#refreshBtn{
+    max-width:50px;
+}
+
