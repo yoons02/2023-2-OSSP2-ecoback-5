@@ -113,6 +113,9 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+REST_AUTH = {
+    'SESSION_LOGIN': False
+}
 
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
@@ -144,13 +147,11 @@ REST_FRAMEWORK = {
     )
     # 다른 설정 추가 가능
 }
-REST_USE_JWT = True
 
 SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME': timedelta(hours=1),
     'REFRESH_TOKEN_LIFETIME': timedelta(days=14),
     'ROTATE_REFRESH_TOKENS': False,
-    'TOKEN_USER_CLASS': 'django.contrib.auth.models.User',
 }
 
 SITE_ID = 1

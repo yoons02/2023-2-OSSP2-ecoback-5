@@ -1,10 +1,12 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 # Create your models here.
 def image_upload_path(instance, filename):
     return f'{instance.pk}/{filename}'
 
-class User(models.Model):
+class Profile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=50)
     point = models.IntegerField(default=0)
@@ -18,6 +20,7 @@ class Event(models.Model):
     content = models.TextField(max_length=1000)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+    image = models.ImageField(upload_to=image_upload_path, default='')
 
 class Barcode(models.Model):
     id = models.AutoField(primary_key=True)
