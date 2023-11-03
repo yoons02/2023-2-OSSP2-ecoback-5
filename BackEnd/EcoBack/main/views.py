@@ -45,7 +45,7 @@ def event_all(request):
 def event_detail(request, id):
     if request.method == 'GET':
         events = Event.objects.get(pk=id)
-        serializer = EventSerializer(events, many=True)
+        serializer = EventSerializer(events)
         return Response(data=serializer.data)
 
 
