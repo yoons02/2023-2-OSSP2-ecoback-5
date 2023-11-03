@@ -49,13 +49,9 @@ def event_detail(request, id):
         return Response(data=serializer.data)
 
 
-@api_view(['GET', 'POST'])
+@api_view(['POST'])
 def barcode_create(request):
-    if request.method == 'GET':
-        barcodes = Barcode.objects.all()
-        serializer = BarcodeSerializer(barcodes, many=True)
-        return Response(data=serializer.data)
-    elif request.method == 'POST':
+    if request.method == 'POST':
         new_barcodes = BarcodeSerializer(data=request.data)
         if new_barcodes.is_valid(raise_exception = True):
             new_barcodes.save()
