@@ -5,7 +5,12 @@ import './mypage.css'
 function Badge({badge}){
     const containerStyle = {
         width: '22%', // 배지 하나당 부모 요소 1/4정도 차지
-        padding: '10px'
+        padding: '10px',
+        display:'flex',
+        flexDirection:'column',
+        alignItems:'center',
+        justifyContent:'center',
+
     };
 
     return(

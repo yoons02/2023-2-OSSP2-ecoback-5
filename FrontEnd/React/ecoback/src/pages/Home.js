@@ -1,14 +1,20 @@
 import React from 'react';
 import ImageSlider from "../slider/slider"; 
 import '../css/Home.css';
+import {Link} from 'react-router-dom';
 const Home = () => {
   return (
     <div>
     <div className="normal" id="normalline" style={{ padding: '5px 7px' }}>
+      {/* 아직 마이페이지 이동버튼이 없는것같아서 Eco$Back 텍스트 누르면 
+      마이페이지 들어가도록 임시적으로 링크 걸어두었습니다. */}
+    <Link to="/mypage">
       <div className="title">Eco$Back</div>
+    </Link>
       <div id="menubar_array"> 
         <line/><line/><line/>
       </div>
+      
     </div>
 
     <ImageSlider/>
@@ -19,11 +25,13 @@ const Home = () => {
 
     <div id="boxline" className="normal">
       <div className="box">
+      <Link to="/receiptfilming">
         <img
           src={require('../image/receipticon.png')} // Modify image path
           alt="receipt"
           style={{ width: '45px', height: '36px' }}
         />
+      </Link>
         <div>영수증 촬영</div>
       </div>
       <a href="./store" className="box">
