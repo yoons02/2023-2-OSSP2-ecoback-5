@@ -4,7 +4,7 @@ from .models import *
 class ProfileSerializer(serializers.ModelSerializer):
 
     class Meta:
-        model = User
+        model = Profile
         fields = '__all__'
     
     image = serializers.ImageField(use_url=True)

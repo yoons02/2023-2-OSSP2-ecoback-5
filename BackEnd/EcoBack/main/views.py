@@ -25,7 +25,7 @@ def profile_update(request):
         return Response(data=serializer.data)
     elif request.method == 'PATCH':
         profile = Profile.objects.get(user=user)
-        serializer = ProfileSerializer(data=request.data, instance=profile)
+        serializer = ProfileSerializer(data=request.data, instance=profile, partial=True)
         if serializer.is_valid(raise_exception=True):
             serializer.save()
         return Response(data=serializer.data)
