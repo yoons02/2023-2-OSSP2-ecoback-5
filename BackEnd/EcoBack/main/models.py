@@ -12,7 +12,7 @@ class Profile(models.Model):
     point = models.IntegerField(default=0)
     created_at = models.DateTimeField(auto_now_add=True)
     content = models.TextField(blank=True, null=True)
-    image = models.ImageField(upload_to=image_upload_path, default='')
+    image = models.ImageField(upload_to=image_upload_path, null=True, default='')
 
 class Event(models.Model):
     id = models.AutoField(primary_key=True)
@@ -24,6 +24,6 @@ class Event(models.Model):
 
 class Barcode(models.Model):
     id = models.AutoField(primary_key=True)
-    writers = models.ForeignKey(User, null=True, blank=False, on_delete=models.SET_NULL) # User 모델 사라져도 바코드는 남음, User와 1:N 관계
+    writer = models.ForeignKey(User, null=True, blank=False, on_delete=models.SET_NULL) # User 모델 사라져도 바코드는 남음, User와 1:N 관계
     create_at = models.DateTimeField(auto_now_add=True)
     image = models.ImageField(upload_to=image_upload_path, default='')
