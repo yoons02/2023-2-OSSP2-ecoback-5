@@ -1,4 +1,4 @@
-import badges from './badges.json';
+import badges from './jsonFile/badges.json';
 import './mypage.css'
 
 //뱃지 아이콘 생성

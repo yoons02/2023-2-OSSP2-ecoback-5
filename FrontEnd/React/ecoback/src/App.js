@@ -6,6 +6,7 @@ import MyPage from './seulgi/mypage.js';
 import AllCameras from './seulgi/AllCameras.js'
 import Camera from './seulgi/Camera.js'
 import Login from './pages/Login.js';
+import BeautyHealthCategory from './seulgi/BeautyHealthCategory.js';
 
 const App = () => {
   return(
@@ -20,6 +21,7 @@ const App = () => {
         <Route path="/Store" element={<Store />} />
         <Route path="/receiptfilming" element={<ReceiptFilming />} />
         <Route path="/mypage" element={<MyPage />}/>
+        <Route path="/beautyhealthcategory/" element={<BeautyHealthCategory />} />
     </Routes> 
     
   );

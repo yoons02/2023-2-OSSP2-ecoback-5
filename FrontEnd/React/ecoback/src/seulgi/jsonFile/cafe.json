@@ -1,0 +1,11 @@
+[
+    {"id":1, "name":"스타벅스", "img":"starbucks.png"},
+       {"id":2, "name":"투썸플레이스", "img":"twosome.png"},
+       {"id":3, "name": "커피빈", "img":"coffeebean.png"},
+       {"id":4, "name": "공차", "img":"gongcha.png"},
+       {"id":5, "name": "할리스커피", "img":"hollys.png"},
+       {"id":6, "name": "폴바셋", "img":"pualbassett.png"},
+       {"id":7, "name": "컴포즈커피", "img":"compose.png"},
+       {"id":8, "name": "더벤티", "img":"theVenti.png"},
+       {"id":9, "name": "메가커피", "img":"megacoffee.png"}
+   ]

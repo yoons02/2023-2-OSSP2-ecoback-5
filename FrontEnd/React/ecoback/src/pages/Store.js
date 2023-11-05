@@ -1,5 +1,5 @@
 import '../css/Store.css';
-
+import {Link} from "react-router-dom";
 const Store = () => {
     return(
       <div>
@@ -88,13 +88,17 @@ const Store = () => {
               style={{ width: '105px', height: '50px' }}
             />
           </div>
+          
           <div className="box_categories">
+            <Link to="/beautyhealthcategory">
             <img
               src={require('../image/beauty.png')} // Modify image path
               alt="receipt"
               style={{ width: '90px', height: '60px' }}
             />
+            </Link>
           </div>
+          
           <div className="box_categories">
             <img
               src={require('../image/movie.png')} // Modify image path
