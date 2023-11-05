@@ -1,12 +1,11 @@
-
-import products from './jsonFile/beautyHealth.json';
+import products from './jsonFile/cafe.json';
 import './productCategories.css'
 //상품 카테고리 누르면 상세 페이지로 이동
 const handleProductClick=()=>{
   window.location.href='url';
 }
 
-function BeautyHealth({ product }) {
+function Cafe({ product }) {
   const containerStyle = {
     maxWidth:'185px',
     padding: '5px',
@@ -21,7 +20,7 @@ function BeautyHealth({ product }) {
 };
   
   return (
-    <div style={containerStyle} className="beautyHealth" onClick={handleProductClick}>
+    <div style={containerStyle} className="cafe" onClick={handleProductClick}>
       <div className="product_categories">
       <img src={require(`../image/categories/cafe/${product.image}`)} alt={product.name}
       style={{ width: '100px', height: '90px' }} />
@@ -32,13 +31,13 @@ function BeautyHealth({ product }) {
 }
 
 
-function cafeGrid() {
+function CafeGrid() {
   return (
     <div className="product-grid">
     
       {products.map(product => (
         
-          <BeautyHealth key={product.id} product={product} />
+          <Cafe key={product.id} product={product} />
 
       ))}
     
@@ -46,4 +45,4 @@ function cafeGrid() {
   );
 }
 
-export default cafeGrid;
+export default CafeGrid;

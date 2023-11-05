@@ -7,7 +7,7 @@ import AllCameras from './seulgi/AllCameras.js'
 import Camera from './seulgi/Camera.js'
 import Login from './pages/Login.js';
 import BeautyHealthCategory from './seulgi/BeautyHealthCategory.js';
-
+import CafeCategory from './seulgi/CafeCategory.js';
 const App = () => {
   return(
     
@@ -22,6 +22,7 @@ const App = () => {
         <Route path="/receiptfilming" element={<ReceiptFilming />} />
         <Route path="/mypage" element={<MyPage />}/>
         <Route path="/beautyhealthcategory/" element={<BeautyHealthCategory />} />
+        <Route path="/cafecategory/" element={<CafeCategory />} />
     </Routes> 
     
   );

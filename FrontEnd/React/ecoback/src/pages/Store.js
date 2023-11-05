@@ -28,6 +28,7 @@ const Store = () => {
           </div>
           <div className="box_categories">
             <div id="muglie">
+              <Link to="/cafecategory">
             <img
               src={require('../image/ice_mug.png')} // Modify image path
               alt="receipt"
@@ -37,7 +38,7 @@ const Store = () => {
               src={require('../image/hot_mug.png')} // Modify image path
               alt="receipt"
               style={{ width: '43px', height: '40px' ,margin:'0'}}
-            /></div>
+            /></Link></div>
           </div>
           <div className="box_categories">
             <img

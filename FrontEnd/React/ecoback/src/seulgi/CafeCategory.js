@@ -1,7 +1,7 @@
 import React from "react";
-import cafeGrid from "./cafeGrid.js";
+import CafeGrid from "./CafeGrid.js";
 
-const BeautyHealthCategory=()=>{
+const CafeCategory=()=>{
     return (
         <div>
         <div className="normal" id="normalline" style={{ padding: '5px 7px' }}>
@@ -17,14 +17,14 @@ const BeautyHealthCategory=()=>{
           alt="receipt"
           style={{ width: '30px', height: '30px' }}
         />
-        <div class="normal" style={{fontSize: '20px',margin:'auto 0'}}>뷰티/패션/건강</div>
+        <div class="normal" style={{fontSize: '20px',margin:'auto 0'}}>카페</div>
       </div>
       <div>
-        <BeautyHealthGrid />
+        <CafeGrid />
       </div>
 
         </div>
     )
 }
 
-export default cafeCategory;
+export default CafeCategory;
