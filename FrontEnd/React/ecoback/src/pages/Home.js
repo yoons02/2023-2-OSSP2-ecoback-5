@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ImageSlider from "../slider/slider"; 
+import Sidebar from '../kitae/sidebar';
 import '../css/Home.css';
 import {Link} from 'react-router-dom';
 const Home = () => {
+  const [isSidebarVisible, setSidebarVisible] = useState(false);
   return (
     <div>
     <div className="normal" id="normalline" style={{ padding: '5px 7px' }}>
@@ -11,10 +13,11 @@ const Home = () => {
     <Link to="/mypage">
       <div className="title">Eco$Back</div>
     </Link>
-      <div id="menubar_array"> 
+      <div id="menubar_array" onClick={() => setSidebarVisible(true)}> 
         <line/><line/><line/>
+        {/* 사이드바를 구현해보고 있는데 아직 미완성입니다! 외부영역 클릭시 사라지게만들어야함 */}
       </div>
-      
+      {isSidebarVisible && <Sidebar />}
     </div>
 
     <ImageSlider/>
