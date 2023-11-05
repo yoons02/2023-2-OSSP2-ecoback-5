@@ -6,6 +6,7 @@ import MyPage from './seulgi/mypage.js';
 import AllCameras from './seulgi/AllCameras.js'
 import Camera from './seulgi/Camera.js'
 import Login from './pages/Login.js';
+import Start from './pages/Start.js';
 import BeautyHealthCategory from './seulgi/BeautyHealthCategory.js';
 import CafeCategory from './seulgi/CafeCategory.js';
 const App = () => {
@@ -13,10 +14,10 @@ const App = () => {
     
     
     <Routes>
-
-
-       <Route path="/" element={<Home />} /> 
-        <Route path="/" element={<Login/>}/>
+        <Route path="/"  element={<Start/>} />
+        <Route path="/Login" element={<Login/>}/>
+        <Route path="/" element={<Home />} /> 
+        
         <Route path="/Home" element={<Home />} />
         <Route path="/Store" element={<Store />} />
         <Route path="/receiptfilming" element={<ReceiptFilming />} />

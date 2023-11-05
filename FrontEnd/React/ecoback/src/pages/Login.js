@@ -16,7 +16,6 @@ function Login() {
 
   return (
     <html>
-        <br></br><br></br><br></br><br></br><br></br>
         <center>
             <div id="logo">
                 <img src={logo} alt="logo" />
@@ -26,32 +25,36 @@ function Login() {
                 <br/>
             </div>
         </center>
-        <p class="ip">아이디</p>
+ 
         <center>
-            <div id="id_input">
-                <input type="text" value={id} onChange={(e) => setId(e.target.value)}  placeholder="아이디를 입력하세요" />
+            <div class="input-container">
+                <label for="username">아이디</label>
+                <br></br>
+                <input type="text" value={id} onChange={(e) => setId(e.target.value)}  placeholder="아이디를 입력하세요" class="ip" />
             </div>
             <br></br>
+            <br></br>
+
         </center>
-        <p class="ip">비밀번호</p>
         <center>
-            <div id="password_input">  
-                <input type="password"  value={password} onChange={(e) => setPassword(e.target.value) }  placeholder="비밀번호를 입력하세요" />           
+            <div class="input-container">  
+                <label for="password">비밀번호</label>
+                <br></br>
+                <input type="password"  value={password} onChange={(e) => setPassword(e.target.value) }  placeholder="비밀번호를 입력하세요"class="ip" />           
             </div>
         </center>
         <br></br>
         <br></br>
-
-        <center>
-            <a href="./Home">
-                <img src={loginbutton} alt="loginbutton"/>
-            </a>
-        </center>
-        <p class="ask_register">계정이 없으신가요? 가입하기 &nbsp;&nbsp;</p> 
+        <p class="ask_register" >계정이 없으신가요? 가입하기 &nbsp;&nbsp;</p> 
         {/* 가입하기 누르면 가입창 나오게 제작예정 */}
         <center>
+            <a href="./Home">
+                <img class="imagebutton" id="loginbutton" src={loginbutton} alt="loginbutton"/>
+            </a>
+        </center>
+        <center>
             <div class="hr-sect">또는</div>
-            <img src={googleloginbutton} alt="googleloginbutton"/>
+            <img class="imagebutton" id="googleloginbutton" src={googleloginbutton} alt="googleloginbutton"/>
         </center>
     </html>
   );
