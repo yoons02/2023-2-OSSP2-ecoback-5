@@ -9,10 +9,25 @@ function Login() {
   const [id, setId] = useState('');
   const [password, setPassword] = useState('');
 
-  const handleLogin = () => {
-    // 로그인 로직
-    console.log(`ID: ${id}, Password: ${password}`);
-  };
+  const handleLogin = async () => {
+  const response = await fetch('https://your-api-url.com/login', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      id: id,
+      password: password
+    })
+  });
+
+  if (response.ok) {
+    const data = await response.json();
+    console.log('로그인 성공:', data);
+  } else {
+    console.log('로그인 실패:', response.status);
+  }
+};
 
   return (
     <html>
@@ -49,7 +64,7 @@ function Login() {
         {/* 가입하기 누르면 가입창 나오게 제작예정 */}
         <center>
             <a href="./Home">
-                <img class="imagebutton" id="loginbutton" src={loginbutton} alt="loginbutton"/>
+                <img class="imagebutton" onClick={handleLogin} id="loginbutton" src={loginbutton} alt="loginbutton"/>
             </a>
         </center>
         <center>
