@@ -97,6 +97,12 @@ def category_read(request):
 def product_read(request, id):
     if request.method == 'GET':
         products = Product.objects.filter(category=id)
-        serializer = ProductSerializer(products, many=True)
-        return Response(serializer.data)
+        serializers = ProductSerializer(products, many=True)
+        return Response(serializers.data)
         
+@api_view(['GET'])
+def product_detail(request, id):
+    if request.method == 'GET':
+        product = get_object_or_404(Product, id=id)
+        serializers = ProductSerializer(product)
+        return Response(serializers.data)
