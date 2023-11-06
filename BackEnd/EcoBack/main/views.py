@@ -90,7 +90,7 @@ def barcode_create(request):
 def category_read(request):
     if request.method == 'GET':
         catecories = ProductCategory.objects.all()
-        serializers = ProductCategorySerializer(catecories)
+        serializers = ProductCategorySerializer(catecories, many=True)
         return Response(data = serializers.data)
     
 @api_view(['GET'])
