@@ -36,7 +36,7 @@ class BadgeSerializer(serializers.ModelSerializer):
 class ProductCategorySerializer(serializers.ModelSerializer):
 
     class Meta:
-        model = Badge
+        model = ProductCategory
         fields = '__all__'
 
     image = serializers.ImageField(use_url=True, required=True)
