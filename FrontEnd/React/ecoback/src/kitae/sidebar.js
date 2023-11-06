@@ -1,11 +1,26 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useHistory, useLocation } from "react-router-dom";
 import {Navigation} from 'react-minimal-side-navigation';
 import 'react-minimal-side-navigation/lib/ReactMinimalSideNavigation.css';
 import Icon from "awesome-react-icons";
 const Sidebar=() => {
-    const location = useLocation();
     const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+  const sidebarRef = useRef(); // 사이드바 요소에 대한 ref를 생성
+
+  // 클릭 이벤트 리스너
+  const handleClickOutside = (event) => {
+    if (sidebarRef.current && !sidebarRef.current.contains(event.target)) {
+      setIsSidebarOpen(false); // 사이드바 외부를 클릭하면 사이드바를 닫음
+    }
+  };
+
+  // 컴포넌트가 마운트되었을 때 클릭 이벤트 리스너를 등록하고, 언마운트되었을 때 리스너를 제거
+  useEffect(() => {
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
     return (
       <>
       <div
@@ -14,7 +29,7 @@ const Sidebar=() => {
           isSidebarOpen ? "block" : "hidden"
         }`}
       />
-      <div>
+      <div ref={sidebarRef}></div>
         <button
           className="btn-menu"
           onClick={() => setIsSidebarOpen(true)}
@@ -22,7 +37,7 @@ const Sidebar=() => {
         >
           <Icon name="burger" className="w-6 h-6" />
         </button>
-      </div>
+        {isSidebarOpen &&(
         <Navigation
             // you can use your own router's api to get pathname
            
@@ -62,6 +77,7 @@ const Sidebar=() => {
               },
             ]}
           />
+          )}
       </>
     );
 };
