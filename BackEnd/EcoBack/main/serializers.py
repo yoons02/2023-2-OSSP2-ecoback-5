@@ -40,3 +40,12 @@ class ProductCategorySerializer(serializers.ModelSerializer):
         fields = '__all__'
 
     image = serializers.ImageField(use_url=True, required=True)
+
+
+class ProductSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Product
+        fields = '__all__'
+
+    image = serializers.ImageField(use_url=True, required=True)
