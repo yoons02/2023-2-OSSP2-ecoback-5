@@ -4,9 +4,9 @@ import './mypage.css'
 //뱃지 아이콘 생성
 function Badge({badge}){
     const containerStyle = {
-        width: '20%', // 배지 하나당 부모 요소 1/4정도 차지
+        width: '20%', 
         padding: '10px',
-        margin:'40px',
+        margin:'20px',
         display:'flex',
         flexDirection:'column',
         alignItems:'center',

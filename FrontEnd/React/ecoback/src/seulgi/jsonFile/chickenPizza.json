@@ -1,0 +1,11 @@
+[
+    {"id":1, "name":"BBQ", "image":"bbq.png"},
+       {"id":2, "name":"BHC", "image":"bhc.png"},
+       {"id":3, "name": "도미노피자", "image":"domino.png"},
+       {"id":4, "name": "호식이두마리치킨", "image":"hosic.png"},
+       {"id":5, "name": "KFC", "image":"kfc.png"},
+       {"id":6, "name": "교촌치킨", "image":"kyochon.png"},
+       {"id":7, "name": "네네치킨", "image":"nene.png"},
+       {"id":8, "name": "피자헛", "image":"pizzahut.png"},
+       {"id":9, "name": "피자나라치킨공주", "image":"pizzanara.png"}
+   ]

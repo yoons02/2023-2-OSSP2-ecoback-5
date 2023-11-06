@@ -1,6 +1,6 @@
 import '../css/Store.css';
-import Sidebar from '../kitae/sidebar';
-import Backbutton from '../kitae/backbutton';
+import Sidebar from '../kitae/sidebar.js';
+import Backbutton from '../kitae/backbutton.js';
 import {Link} from "react-router-dom";
 
 const Store = () => {
@@ -38,11 +38,13 @@ const Store = () => {
             /></Link></div>
           </div>
           <div className="box_categories">
+            <Link to="/conveniencestorecategory">
             <img
               src={require('../image/convenience_store.png')} // Modify image path
               alt="receipt"
               style={{ width: '100px', height: '90px' }}
             />
+            </Link>
           </div>
         </div>
         <div id="title_line">
@@ -52,11 +54,13 @@ const Store = () => {
         </div>
         <div id="boxline">
           <div className="box_categories">
+            <Link to="/chickenpizzacategory">
             <img
               src={require('../image/chicken.png')} // Modify image path
               alt="receipt"
               style={{ width: '100px', height: '60px' }}
             />
+            </Link>
           </div>
           <div className="box_categories">
             <img
