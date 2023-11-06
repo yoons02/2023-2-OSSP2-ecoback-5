@@ -8,8 +8,7 @@ import { Link } from 'react-router-dom';
 const Sidebar=() => {
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
     const sidebarRef = useRef(); // 사이드바 요소에 대한 ref를 생성
-    const navigate = useNavigate();
-
+    const  navigate  = useNavigate();
   // 클릭 이벤트 리스너
   const handleClickOutside = (event) => {
     if (sidebarRef.current && !sidebarRef.current.contains(event.target)) {
@@ -56,7 +55,7 @@ const Sidebar=() => {
               {
                 title: '마이 페이지',
                 itemId: '/mypage',
-                elemBefore: () =><Icon name="user" />
+                elemBefore: () =><Icon name="user"/>
                 // subNav: [
                 //   {
                 //     title: 'Projects',
@@ -77,17 +76,17 @@ const Sidebar=() => {
               },
               {
                 title: 'Another Item',
-                itemId: '/another',
+                itemId: '/another1',
                 
               },
               {
                 title: 'Another Item',
-                itemId: '/another',
+                itemId: '/another2',
                 
               },
               {
                 title: 'Another Item',
-                itemId: '/another',
+                itemId: '/another3',
                 subNav: [
                   {
                     title: 'Teams',
@@ -97,7 +96,7 @@ const Sidebar=() => {
               },
               {
                 title: 'Another Item',
-                itemId: '/another',
+                itemId: '/another4',
                 subNav: [
                   {
                     title: 'Teams',
