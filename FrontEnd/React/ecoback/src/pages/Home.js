@@ -10,9 +10,9 @@ const Home = () => {
     <div className="normal" id="normalline" style={{ padding: '5px 7px' }}>
       {/* 아직 마이페이지 이동버튼이 없는것같아서 Eco$Back 텍스트 누르면 
       마이페이지 들어가도록 임시적으로 링크 걸어두었습니다. */}
-    <Link to="/mypage">
+    {/* <Link to="/mypage"> */}
       <div className="title">Eco$Back</div>
-    </Link>
+    {/* </Link> */}
       
       {/* {isSidebarVisible && <Sidebar />} */}
       
