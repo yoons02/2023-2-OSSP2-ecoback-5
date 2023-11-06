@@ -56,7 +56,7 @@ const Sidebar=() => {
               {
                 title: '마이 페이지',
                 itemId: '/mypage',
-                elemBefore: () =><Link to="/mypage"><Icon name="user" /></Link>
+                elemBefore: () =><Icon name="user" />
                 // subNav: [
                 //   {
                 //     title: 'Projects',

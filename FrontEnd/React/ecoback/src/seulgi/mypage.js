@@ -1,18 +1,22 @@
 import BadgeGrid from './myBadge.js';
 import './mypage.css'
+import Sidebar from '../kitae/sidebar';
+import { Link } from 'react-router-dom';
+
 const MyPage=()=>{
     return (
         <div style={{backgroundColor:"#F9F9F9"}}>
-            <div className="normal" style={{ padding: '15px' }}>
+            {/* <div className="normal" style={{ padding: '15px' }}>
                 <div className="menuContainer">
                 <span className="title">Eco$Back</span>
-                <span id="menubar_array"> 
-                    <div className="line"></div>
-                    <div className="line"></div>
-                    <div className="line"></div>
-                </span>
+    
                 </div>
-            </div>
+                <Sidebar/> home이랑 상단바 디자인 통일해놓았습니다. 로고클릭시 home으로 이동기능도 넣어놨어요
+            </div> */}
+            <div className="normal" id="normalline" style={{ padding: '5px 7px' }}>
+            <div className="title"><Link to="/home">Eco$Back</Link></div>
+            <Sidebar/>
+        </div>
             <hr />
             <div className="profileContainer">
                 <div id="username">홍길동님의 프로필</div>
