@@ -15,10 +15,10 @@ const Home = () => {
     </Link>
       
       {/* {isSidebarVisible && <Sidebar />} */}
-      <div id="menubar_array"> 
+      
         {/* 사이드바를 구현해보고 있는데 아직 미완성입니다! 외부영역 클릭시 사라지게만들어야함 */}
         <Sidebar/>
-      </div> 
+      
     </div>
   
 

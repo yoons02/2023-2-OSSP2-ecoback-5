@@ -29,10 +29,9 @@ const Sidebar=() => {
           isSidebarOpen ? "block" : "hidden"
         }`}
       />
-      <div ref={sidebarRef} style={{position:"fixed",right:1,zIndex:1000, backgroundColor: 'white'}}>
-        {!isSidebarOpen && (
+       {!isSidebarOpen && (
           <button
-            style={{position:"absolute",right:1 }}
+            style={{position:"absolute",right:1, width: 50, height: 50, borderRadius:10, backgroundColor:"white" }}
             className="btn-menu"
             onClick={() => setIsSidebarOpen(true)}
             type="button"
@@ -40,19 +39,15 @@ const Sidebar=() => {
             <Icon name="burger" className="w-6 h-6" />
           </button>
         )}
+      <div ref={sidebarRef} style={{position:"fixed",right:1,zIndex:1000, backgroundColor: 'white'}}>
+    
 
         {isSidebarOpen &&(
         <Navigation 
             
             // you can use your own router's api to get pathname
             items={[
-              {
-                title: '이벤트',
-                itemId: '/event',
-                // you can use your own custom Icon component as well
-                // icon is optional
-                elemBefore: () => <Icon name="inbox" />
-              },
+              
               {
                 title: '마이 페이지',
                 itemId: '/mypage',
@@ -67,6 +62,13 @@ const Sidebar=() => {
                 //     itemId: '/management/members',
                 //   },
                 // ],
+              },
+              {
+                title: '이벤트',
+                itemId: '/event',
+                // you can use your own custom Icon component as well
+                // icon is optional
+                elemBefore: () => <Icon name="inbox"/>
               },
               {
                 title: 'Another Item',
