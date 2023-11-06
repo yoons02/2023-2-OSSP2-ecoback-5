@@ -12,5 +12,6 @@ urlpatterns = [
     path('events/<int:id>/', views.event_detail),
     path('barcodes/', views.barcode_create),
     path('market/categories/', views.category_read),
-    path('market/categories/<int:id>', views.product_read),
+    path('market/categories/<int:id>/', views.product_read),
+    path('market/product/<int:id>/', views.product_detail),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
