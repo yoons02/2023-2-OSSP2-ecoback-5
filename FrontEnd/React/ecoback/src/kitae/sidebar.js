@@ -4,7 +4,7 @@ import {Navigation} from 'react-minimal-side-navigation';
 import 'react-minimal-side-navigation/lib/ReactMinimalSideNavigation.css';
 import Icon from "awesome-react-icons";
 const Sidebar=() => {
-    const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+    const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const sidebarRef = useRef(); // 사이드바 요소에 대한 ref를 생성
 
   // 클릭 이벤트 리스너
@@ -29,19 +29,22 @@ const Sidebar=() => {
           isSidebarOpen ? "block" : "hidden"
         }`}
       />
-      <div ref={sidebarRef}></div>
-        <button
-          className="btn-menu"
-          onClick={() => setIsSidebarOpen(true)}
-          type="button"
-        >
-          <Icon name="burger" className="w-6 h-6" />
-        </button>
+      <div ref={sidebarRef} style={{position:"fixed",right:1,zIndex:1000, backgroundColor: 'white'}}>
+        {!isSidebarOpen && (
+          <button
+            style={{position:"absolute",right:1 }}
+            className="btn-menu"
+            onClick={() => setIsSidebarOpen(true)}
+            type="button"
+          >
+            <Icon name="burger" className="w-6 h-6" />
+          </button>
+        )}
+
         {isSidebarOpen &&(
-        <Navigation
-            // you can use your own router's api to get pathname
-           
+        <Navigation 
             
+            // you can use your own router's api to get pathname
             items={[
               {
                 title: '이벤트',
@@ -68,6 +71,16 @@ const Sidebar=() => {
               {
                 title: 'Another Item',
                 itemId: '/another',
+                
+              },
+              {
+                title: 'Another Item',
+                itemId: '/another',
+                
+              },
+              {
+                title: 'Another Item',
+                itemId: '/another',
                 subNav: [
                   {
                     title: 'Teams',
@@ -75,9 +88,22 @@ const Sidebar=() => {
                   },
                 ],
               },
+              {
+                title: 'Another Item',
+                itemId: '/another',
+                subNav: [
+                  {
+                    title: 'Teams',
+                    itemId: '/management/teams',
+                  },
+                ],
+              },
+              
             ]}
+            
           />
           )}
+        </div>
       </>
     );
 };

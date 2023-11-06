@@ -6,19 +6,21 @@ import {Link} from 'react-router-dom';
 const Home = () => {
   const [isSidebarVisible, setSidebarVisible] = useState(false);
   return (
-    <div>
+    <div> 
     <div className="normal" id="normalline" style={{ padding: '5px 7px' }}>
       {/* 아직 마이페이지 이동버튼이 없는것같아서 Eco$Back 텍스트 누르면 
       마이페이지 들어가도록 임시적으로 링크 걸어두었습니다. */}
     <Link to="/mypage">
       <div className="title">Eco$Back</div>
     </Link>
-      <div id="menubar_array" onClick={() => setSidebarVisible(true)}> 
-        {/* 사이드바를 구현해보고 있는데 아직 미완성입니다! 외부영역 클릭시 사라지게만들어야함 */}
-        <Sidebar />
-      </div>
+      
       {/* {isSidebarVisible && <Sidebar />} */}
+      <div id="menubar_array"> 
+        {/* 사이드바를 구현해보고 있는데 아직 미완성입니다! 외부영역 클릭시 사라지게만들어야함 */}
+        <Sidebar/>
+      </div> 
     </div>
+  
 
     <ImageSlider/>
     <div className="normal" id="normalline">
