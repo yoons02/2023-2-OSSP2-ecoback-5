@@ -1,11 +1,14 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { useHistory, useLocation } from "react-router-dom";
 import {Navigation} from 'react-minimal-side-navigation';
 import 'react-minimal-side-navigation/lib/ReactMinimalSideNavigation.css';
 import Icon from "awesome-react-icons";
+import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+
 const Sidebar=() => {
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-  const sidebarRef = useRef(); // 사이드바 요소에 대한 ref를 생성
+    const sidebarRef = useRef(); // 사이드바 요소에 대한 ref를 생성
+    const navigate = useNavigate();
 
   // 클릭 이벤트 리스너
   const handleClickOutside = (event) => {
@@ -44,14 +47,16 @@ const Sidebar=() => {
 
         {isSidebarOpen &&(
         <Navigation 
-            
+            onSelect={({ itemId }) => {
+                navigate(itemId);
+            }}
             // you can use your own router's api to get pathname
             items={[
               
               {
                 title: '마이 페이지',
                 itemId: '/mypage',
-                elemBefore: () => <Icon name="user" />
+                elemBefore: () =><Link to="/mypage"><Icon name="user" /></Link>
                 // subNav: [
                 //   {
                 //     title: 'Projects',
