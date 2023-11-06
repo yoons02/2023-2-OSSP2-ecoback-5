@@ -27,3 +27,21 @@ class Barcode(models.Model):
     writer = models.ForeignKey(User, null=True, blank=False, on_delete=models.SET_NULL) # User 모델 사라져도 바코드는 남음, User와 1:N 관계
     create_at = models.DateTimeField(auto_now_add=True)
     image = models.ImageField(upload_to=image_upload_path, default='')
+
+class Badge(models.Model):
+    id = models.AutoField(primary_key=True)
+    user = models.ForeignKey(User, null=False, blank=False, on_delete=models.CASCADE) # User 모델 사라지면, Badge도 사라짐
+    name = models.CharField(max_length=10)
+    image = models.ImageField(upload_to=image_upload_path, default='')
+
+class ProductCategory(models.Model):
+    id = models.AutoField(primary_key=True)
+    name = models.CharField(max_length=30)
+    image = models.ImageField(upload_to=image_upload_path, default='')
+
+class Product(models.Model):
+    id = models.AutoField(primary_key=True)
+    name = models.CharField(max_length=30)
+    price = models.IntegerField(default=0)
+    product_code = models.ImageField(upload_to=image_upload_path, default='')
+    product_image = models.ImageField(upload_to=image_upload_path, default='')
