@@ -14,10 +14,10 @@ const Home = () => {
       <div className="title">Eco$Back</div>
     </Link>
       <div id="menubar_array" onClick={() => setSidebarVisible(true)}> 
-        <line/><line/><line/>
         {/* 사이드바를 구현해보고 있는데 아직 미완성입니다! 외부영역 클릭시 사라지게만들어야함 */}
+        <Sidebar />
       </div>
-      {isSidebarVisible && <Sidebar />}
+      {/* {isSidebarVisible && <Sidebar />} */}
     </div>
 
     <ImageSlider/>
