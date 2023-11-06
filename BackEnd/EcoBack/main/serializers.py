@@ -48,4 +48,6 @@ class ProductSerializer(serializers.ModelSerializer):
         model = Product
         fields = '__all__'
 
-    image = serializers.ImageField(use_url=True, required=True)
+    product_code = serializers.ImageField(use_url=True, required=True)
+    product_image = serializers.ImageField(use_url=True, required=True)
+ 
