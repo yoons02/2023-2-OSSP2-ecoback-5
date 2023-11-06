@@ -85,3 +85,10 @@ def barcode_create(request):
                 return Response(data="잘못된 바코드입니다.")
             else:
                 return Response(data="바코드를 인식할 수 없습니다.")
+
+@api_view(['GET'])
+def category_read(request):
+    if request.method == 'GET':
+        catecories = ProductCategory.objects.all()
+        serializers = ProductCategorySerializer(catecories)
+        return Response(data = serializers.data)
