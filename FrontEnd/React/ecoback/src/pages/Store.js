@@ -1,21 +1,18 @@
 import '../css/Store.css';
+import Sidebar from '../kitae/sidebar';
+import Backbutton from '../kitae/backbutton';
 import {Link} from "react-router-dom";
+
 const Store = () => {
     return(
       <div>
-      <div className="normal" id="normalline" style={{ padding: '5px 7px' }}>
-        <div className="title">Eco$Back</div>
-        <div id="menubar_array"> 
-          <line/><line/><line/>
-        </div>
-      </div>
+          <div className="normal" id="normalline" style={{ padding: '5px 7px' }}>
+                <div className="title"><Link to="/home">Eco$Back</Link></div>
+                <Sidebar/>
+          </div>
       <hr/>
       <div class="top_line">
-        <img
-          src={require('../image/arrow-right.png')} // Modify image path
-          alt="receipt"
-          style={{ width: '30px', height: '30px' }}
-        />
+        <Backbutton/>
         <div class="normal" style={{fontSize: '20px',margin:'auto 0'}}>포인트 상점</div>
       </div>
         <div id="boxline">
