@@ -1,0 +1,11 @@
+[
+  {
+    "id": "int: id",
+    "image": "이미지 경로",
+    "name": "이름",
+    "point": "int: 포인트",
+    "created_at": "생성 날짜",
+    "content": "내용",
+    "user": "int: 유저 번호"
+  }
+ ]

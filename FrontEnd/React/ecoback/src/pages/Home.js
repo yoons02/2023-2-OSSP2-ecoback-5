@@ -5,6 +5,7 @@ import Sidebar from '../kitae/sidebar';
 import '../css/Home.css';
 import { Link } from 'react-router-dom';
 
+
 const Home = () => {
   const [isSidebarVisible, setSidebarVisible] = useState(false);
   const saving_cup = 123456;
