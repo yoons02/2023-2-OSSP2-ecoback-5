@@ -1,0 +1,12 @@
+[
+    { "id": 1, "name": "텀블러", "image": "tumbler.png"},
+    { "id": 2, "name": "카페", "image": "coffee.png" },
+    { "id": 3, "name": "편의점", "image": "convenience_store.png" },
+    { "id": 4, "name": "치킨/피자", "image": "chicken.png" },
+    { "id": 5, "name": "아이스크림/빙수", "image": "ice_cream.png"},
+    { "id": 6, "name": "베이커리/도넛", "image": "bakery.png"},
+    { "id": 7, "name": "상품권/마트", "image": "gift_card.png"},
+    { "id": 8, "name": "뷰티/패션.건강", "image": "beauty.png"},
+    { "id": 9, "name": "영화/OTT/체험", "image": "movie.png"}
+  ]
+  

@@ -1,11 +1,11 @@
-.box_categories{
+.box_categories_m{
     display:flex;
     flex-direction: column;
     justify-content: center;
     align-content: center;
     align-items: center;
-    width: 30vw;
-    height: 28vw;
+    width: 28vw;
+    height: 26vw;
     top: 435px;
     left: 206px;
     border-radius: 10px;
@@ -13,11 +13,13 @@
     margin: 10px;
   }
 
-  #title_line {
-    display: grid; /* 그리드 컨테이너로 설정 */
+  .title_line {
+    display:grid;
     grid-template-columns: 1fr 1fr 1fr;
-    justify-items:center;
+    grid-template-rows: 1fr 1fr 1fr;
+    justify-content:center;
     gap: auto;
+    margin:2vw 10vw;
   }
 
   .mug_align{
@@ -36,3 +38,4 @@
     justify-content:center;
     gap: auto;
   }
+
