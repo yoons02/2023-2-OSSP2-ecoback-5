@@ -8,13 +8,15 @@ const Store_box = () => {
     <div className='title_line'>
       {category.map((categoryData, index) => (
         <div key={index}>
+          {console.log(categoryData.urlpath)}
           {/* <Link to={"/"+categoryData.data}></Link>*/}
          <Link to="/cafecategory">
           <div className="box_categories_m">
             <img style={{width: '18vw'}} src={require('../image/'+categoryData.image)} alt={categoryData.name} />
           </div>
+          </Link>
           <div className='normal' style={{textAlign:'center'}}>{categoryData.name}</div>
-        </Link>
+        
         </div>
       ))}
     </div>
