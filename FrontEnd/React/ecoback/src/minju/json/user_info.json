@@ -1,11 +1,10 @@
-[
   {
-    "id": "int: id",
+    "id": "mmmmjjjj1234",
     "image": "이미지 경로",
-    "name": "이름",
-    "point": "int: 포인트",
-    "created_at": "생성 날짜",
-    "content": "내용",
-    "user": "int: 유저 번호"
+    "name": "홍길동",
+    "point": 1000,
+    "created_at": "2021.12.03",
+    "content": "야휴",
+    "user": "1"
   }
- ]
+ 

@@ -1,15 +1,16 @@
 import React, { useState } from 'react';
 import ImageSlider from "../slider/slider"; 
-import GaugeBar from "../components/GaugeBar"; // GaugeBar 컴포넌트를 import
+import GaugeBar from "../components/GaugeBar"; //오늘 절약한 컵 개수에 따라 거북이 위치 변화
 import Sidebar from '../kitae/sidebar';
 import '../css/Home.css';
 import { Link } from 'react-router-dom';
-
+import user_info from '../minju/json/user_info.json';/*개인 포인트 불러오기 */
 
 const Home = () => {
   const [isSidebarVisible, setSidebarVisible] = useState(false);
   const saving_cup = 123456;
-  const point=1234; 
+  /*위는 이후 barcode api 확정시 id(개수)를 이용하여 불러올 예정*/
+  const point = user_info.point;
   return (
     <div>
       <div className="normal" id="normalline" style={{ padding: '5px 7px' }}>
@@ -64,7 +65,7 @@ const Home = () => {
             />
             <div className="image-text">&nbsp;조금만 더...!</div>
           </div>
-        </div>*/} 
+        </div>*//*말풍선과 거북이 통합하여 하나의 사진으로 변경 */} 
         <div id="turtlebar">
           <img
             src={require('../image/free-icon-juice.png')}
