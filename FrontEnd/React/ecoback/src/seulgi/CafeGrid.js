@@ -3,6 +3,7 @@ import './productCategories.css'
 //상품 카테고리 누르면 상세 페이지로 이동
 const handleProductClick=()=>{
   window.location.href='url';
+
 }
 
 function Cafe({ product }) {
@@ -23,7 +24,7 @@ function Cafe({ product }) {
     <div style={containerStyle} className="cafe" onClick={handleProductClick}>
       <div className="product_categories">
       <img src={require(`../image/categories/cafe/${product.image}`)} alt={product.name}
-      style={{ width: '100px', height: '90px' }} />
+      style={{ width: '18vw'}} />
       </div>
       <p style={{fontFamily:"NotoSansKR"}}>{product.name}</p>
     </div>

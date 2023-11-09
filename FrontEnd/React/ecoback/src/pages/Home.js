@@ -14,8 +14,6 @@ const Home = () => {
   return (
     <div>
       <div className="normal" id="normalline" style={{ padding: '5px 7px' }}>
-        {/* 아직 마이페이지 이동버튼이 없는 것 같아서 Eco$Back 텍스트 누르면
-        마이페이지 들어가도록 임시적으로 링크 걸어두었습니다. */}
         <div className="title">Eco$Back</div>
         <Sidebar />
       </div>
