@@ -17,12 +17,11 @@ const CafeCategory=()=>{
           alt="receipt"
           style={{ width: '30px', height: '30px' }}
         />
-        <div class="normal" style={{fontSize: '20px',margin:'auto 0'}}>카페</div>
+        <div class="normal" style={{fontSize: '6vw',margin:'auto 0'}}>카페</div>
       </div>
       <div>
         <CafeGrid />
       </div>
-
         </div>
     )
 }
