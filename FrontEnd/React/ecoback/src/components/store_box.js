@@ -10,7 +10,8 @@ const Store_box = () => {
         <div key={index}>
           {console.log(categoryData.urlpath)}
           {/* <Link to={"/"+categoryData.data}></Link>*/}
-         <Link to="/cafecategory">
+          {/* 왜 urlpath 항목이 undefined로 출력되지? image 항목은 로드되는데? */}
+         <Link to={`${categoryData.urlpath}`}>
           <div className="box_categories_m">
             <img style={{width: '18vw'}} src={require('../image/'+categoryData.image)} alt={categoryData.name} />
           </div>
