@@ -60,6 +60,7 @@ def event_detail(request, id):
 
 @api_view(['POST'])
 def barcode_create(request):
+    valid_string = '29'
     if request.method == 'POST':
         new_barcodes = BarcodeSerializer(data=request.data)
         if new_barcodes.is_valid(raise_exception=True):
@@ -72,6 +73,10 @@ def barcode_create(request):
             # Process each barcode found in the frame
             for code in decode(frame):
                 barcode_data = code.data.decode('utf-8')
+                if valid_string in barcode_data:
+                    pass
+                else:
+                    return JsonResponse({'status': 'Invalid', 'code': barcode_data})
                 if barcode_data not in used_codes:
                     used_codes.append(barcode_data)
                     # Save the barcode data or any other required action
@@ -105,4 +110,12 @@ def product_detail(request, id):
     if request.method == 'GET':
         product = get_object_or_404(Product, id=id)
         serializers = ProductSerializer(product)
+        return Response(serializers.data)
+    
+@api_view(['GET'])
+def badge_show(request, id):
+    if request.method == 'GET':
+        user = get_object_or_404(Profile, user=id)
+        badges = Badge.objects.get(user=user)
+        serializers = BadgeSerializer(badges, many=True)
         return Response(serializers.data)
