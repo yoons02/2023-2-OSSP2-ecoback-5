@@ -11,6 +11,7 @@ urlpatterns = [
     path('events/', views.event_all),
     path('events/<int:id>/', views.event_detail),
     path('barcodes/', views.barcode_create),
+    path('barcodes-count/', views.barcode_count),
     path('user/<int:id>/badges/', views.badge_show),
     path('market/categories/', views.category_read),
     path('market/categories/<int:id>/', views.brand_read),
