@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from rest_framework.response import Response
+from django.http import JsonResponse
 from rest_framework.decorators import api_view
 from .models import *
 from .serializers import *
@@ -7,6 +8,8 @@ import cv2
 import numpy as np
 from pyzbar.pyzbar import decode
 import time
+from PIL import Image
+import io
 
 used_codes = []
 
@@ -59,32 +62,29 @@ def event_detail(request, id):
 def barcode_create(request):
     if request.method == 'POST':
         new_barcodes = BarcodeSerializer(data=request.data)
-        
         if new_barcodes.is_valid(raise_exception=True):
-            # 이미지 필드를 가져온 후 저장
             barcode_image = new_barcodes.validated_data.get('image')
-            
-            # pts = np.array([barcode_image.polygon], np.int32)
-            # pts = pts.reshape(-1, 1, 2)
-            # cv2.polylines(frame, [pts], True, green_color, 5)
-            input_string = barcode_image.data.decode('utf-8')
-            target_string = "10"
-            
-            if target_string in input_string:  # 텀블러를 사용했다는 심볼을 확인
-                if input_string not in used_codes:  # 기존 바코드 넘버가 없음을 확인
-                    print('Approved.')
-                    print(input_string)
-                    used_codes.append(input_string)
-                    # time.sleep(5)
+
+            # Convert the ImageFile to an array for pyzbar
+            nparr = np.fromstring(barcode_image.read(), np.uint8)
+            frame = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
+
+            # Process each barcode found in the frame
+            for code in decode(frame):
+                barcode_data = code.data.decode('utf-8')
+                if barcode_data not in used_codes:
+                    used_codes.append(barcode_data)
+                    # Save the barcode data or any other required action
                     new_barcodes.save()
-                    # return Response(data=new_barcodes.data)
-                    return Response(data="바코드 확인이 완료되었습니다.")
+                    # Return a JSON response indicating success
+                    return JsonResponse({'status': 'approved', 'code': barcode_data})
                 else:
-                    return Response(data="중복된 바코드입니다.")
-            elif target_string not in input_string:
-                return Response(data="잘못된 바코드입니다.")
-            else:
-                return Response(data="바코드를 인식할 수 없습니다.")
+                    # Return a JSON response indicating the barcode is a duplicate
+                    return JsonResponse({'status': 'duplicate', 'code': barcode_data})
+
+            # If no barcode is found, return a JSON response indicating failure
+            return JsonResponse({'status': 'not found'})
+
 
 @api_view(['GET'])
 def category_read(request):
