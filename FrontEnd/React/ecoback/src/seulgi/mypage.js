@@ -1,7 +1,7 @@
 import BadgeGrid from './myBadge.js';
 import './mypage.css'
 import TitleBanner from '../components/TitleBanner.js';
-import { Link } from 'react-router-dom';
+
 
 const MyPage=()=>{
     return (

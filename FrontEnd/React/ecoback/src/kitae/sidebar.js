@@ -105,6 +105,12 @@ const Sidebar=() => {
                 // icon is optional
                 elemBefore: () => <Icon name="inbox"/>
               },
+              {
+                title: '프로필 편집',
+                itemId: '/editprofilepage',
+                elemBefore: () =><Icon name="user"/>
+                
+              },
               
             ]}
             
