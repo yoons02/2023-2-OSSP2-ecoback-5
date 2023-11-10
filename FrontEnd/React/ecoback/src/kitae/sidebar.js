@@ -36,13 +36,15 @@ const Sidebar=() => {
             <Icon name="burger" className="w-6 h-6" />
           </button>
         )}
-      <div ref={sidebarRef} className="sidebarobj" >
-      
-      {/* 사이드바 펼쳤을때 나머지화면 어둡게 만들기 */}
-      {/* <div
+      <div
         onClick={() => setIsSidebarOpen(false)}
         className={`overlay ${isSidebarOpen ? "block" : "hidden"}`}
-      /> */}
+        style={{zIndex:20}}
+      />
+      <div ref={sidebarRef} className="sidebarobj" style={{height: isSidebarOpen ? '100vh' : '0'}} >
+      
+      {/* 사이드바 펼쳤을때 나머지화면 어둡게 만들기 */}
+      
     
 
         {isSidebarOpen &&(
@@ -85,6 +87,7 @@ const Sidebar=() => {
                 elemBefore: () =><Icon name="user"/>
                 
               },
+              
               
               
             ]}
