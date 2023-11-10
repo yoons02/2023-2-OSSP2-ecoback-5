@@ -32,6 +32,12 @@ class BadgeSerializer(serializers.ModelSerializer):
 
     image = serializers.ImageField(use_url=True, required=True)
 
+class BrandSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Brand
+        fields = '__all__'
+
+    brand_image = serializers.ImageField(use_url=True, required=True)
 
 class ProductCategorySerializer(serializers.ModelSerializer):
 

@@ -13,6 +13,7 @@ urlpatterns = [
     path('barcodes/', views.barcode_create),
     path('user/<int:id>/badges/', views.badge_show),
     path('market/categories/', views.category_read),
-    path('market/categories/<int:id>/', views.products_read),
-    path('market/product/<int:id>/', views.product_detail),
+    path('market/categories/<int:id>/', views.brand_read),
+    path('market/brands/<int:id>/', views.products_read),
+    path('market/products/<int:id>/', views.product_detail),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
