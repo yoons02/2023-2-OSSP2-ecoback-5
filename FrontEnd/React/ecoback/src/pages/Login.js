@@ -61,7 +61,7 @@ function Login() {
         </center>
         <br></br>
         <br></br>
-        <Link to="/register" class="ask_register">계정이 없으신가요? 가입하기 &nbsp;&nbsp;</Link>
+        <Link to="/register" ><p class="ask_register">계정이 없으신가요? 가입하기 &nbsp;&nbsp;</p></Link>
         {/* 가입하기 누르면 가입창 나오게 제작예정 */}
         <center>
             <a href="./Home">
