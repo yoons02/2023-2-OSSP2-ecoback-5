@@ -1,16 +1,12 @@
 import BadgeGrid from './myBadge.js';
 import './mypage.css'
-
-import Sidebar from '../kitae/sidebar';
+import TitleBanner from '../components/TitleBanner.js';
 import { Link } from 'react-router-dom';
 
 const MyPage=()=>{
     return (
         <div style={{backgroundColor:"#F9F9F9"}}>
-            <div className="normal" id="normalline" style={{ padding: '5px 7px' }}>
-                <div className="title"><Link to="/home">Eco$Back</Link></div>
-                <Sidebar/>
-            </div>
+            <TitleBanner />
             <hr />
             <div className="profileContainer">
                 <div id="username">홍길동님의 프로필</div>

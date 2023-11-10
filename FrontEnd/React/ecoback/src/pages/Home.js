@@ -1,11 +1,10 @@
 import React, { useState } from 'react';
 import ImageSlider from "../slider/slider"; 
 import GaugeBar from "../components/GaugeBar"; //오늘 절약한 컵 개수에 따라 거북이 위치 변화
-import Sidebar from '../kitae/sidebar';
 import '../css/Home.css';
 import { Link } from 'react-router-dom';
 import user_info from '../minju/json/user_info.json';/*개인 포인트 불러오기 */
-
+import TitleBanner from "../components/TitleBanner.js";
 const Home = () => {
   const [isSidebarVisible, setSidebarVisible] = useState(false);
   const saving_cup = 123456;
@@ -13,10 +12,14 @@ const Home = () => {
   const point = user_info.point;
   return (
     <div>
-      <div className="normal" id="normalline" style={{ padding: '5px 7px' }}>
+      {/* <div className="normal" id="normalline" style={{ padding: '5px 7px' }}>
         <div className="title">Eco$Back</div>
         <Sidebar />
-      </div>
+      </div> */
+      }
+      {/*위쪽 titleBanner 반복사용으로 페이지마다 컴포넌트화하여 대체했습니다.*/}
+      <TitleBanner />
+
       <ImageSlider />
       <div className="normal" id="normalline">
         <div className="normal">내 잔여 포인트</div>

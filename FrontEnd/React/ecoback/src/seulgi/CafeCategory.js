@@ -1,15 +1,10 @@
 import React from "react";
 import CafeGrid from "./CafeGrid.js";
-
+import TitleBanner from "../components/TitleBanner.js";
 const CafeCategory=()=>{
     return (
         <div>
-        <div className="normal" id="normalline" style={{ padding: '5px 7px' }}>
-        <div className="title">Eco$Back</div>
-        <div id="menubar_array"> 
-          <line/><line/><line/>
-        </div>
-        </div>
+        <TitleBanner />
         <hr/>
         <div class="top_line">
         <img

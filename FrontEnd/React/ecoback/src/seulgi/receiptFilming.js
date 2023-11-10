@@ -1,17 +1,13 @@
 import './receiptFilming.css'
 import Webcam from "react-webcam";
 import Camera from './Camera'
-import { Link } from 'react-router-dom';
-import Sidebar from '../kitae/sidebar';
+import TitleBanner from "../components/TitleBanner.js"
 import Backbutton from '../kitae/backbutton';
 const WebcamComponent = () => <Webcam />;
 const ReceiptFilming=()=>{
     return (
     <div class="filmingPage" style={{backgroundColor:"#F9F9F9"}}>
-        <div className="normal" id="normalline" style={{ padding: '5px 7px' }}>
-            <div className="title">Eco$Back</div>
-                <Sidebar />
-            </div>
+        <TitleBanner />
             <hr />
             <div class="top_line">
                 <Backbutton />
