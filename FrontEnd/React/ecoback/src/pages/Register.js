@@ -1,5 +1,9 @@
 import React, { useState } from 'react';
 import logo from '../image/logo.png'; // 로고 이미지 경로
+import registerbutton from '../image/register.png';
+
+// import '../css/Register.css';
+import { Link } from 'react-router-dom';
 
 const Register = () => {
   const [username, setUsername] = useState('');
@@ -32,25 +36,29 @@ const Register = () => {
             <input type="text" value={username} onChange={(e) => setUsername(e.target.value)} placeholder="아이디를 입력하세요" className="ip" required />
           </div>
           <br/>
+          <br></br>
           <div className="input-container">
             <label htmlFor="email">이메일</label>
             <br/>
             <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="이메일을 입력하세요" className="ip" required />
           </div>
           <br/>
+          <br></br>
           <div className="input-container">
             <label htmlFor="password">비밀번호</label>
             <br/>
             <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="비밀번호를 입력하세요" className="ip" required />
           </div>
           <br/>
+          <br></br>
           <div className="input-container">
             <label htmlFor="confirmPassword">비밀번호 확인</label>
             <br/>
             <input type="password" value={confirmPassword} onChange={(e) => setConfirmPassword(e.target.value)} placeholder="비밀번호를 다시 입력하세요" className="ip" required />
           </div>
           <br/>
-          <button type="submit">회원가입</button>
+          <br></br>
+          <Link to="/Login"><img src={registerbutton}></img></Link>
         </form>
       </center>
     </html>

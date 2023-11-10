@@ -66,7 +66,9 @@ function Login() {
         <center>
             <a href="./Home">
                 <img class="imagebutton" onClick={handleLogin} id="loginbutton" src={loginbutton} alt="loginbutton"/>
+              {/* 링크 태그로 수정예정 */}           
             </a>
+            
         </center>
         <center>
             <div class="hr-sect">또는</div>
