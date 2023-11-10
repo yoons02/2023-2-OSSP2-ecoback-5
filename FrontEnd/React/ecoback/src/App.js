@@ -12,6 +12,7 @@ import ConvenienceStoreCategory from './seulgi/convenienceStoreCategory.js';
 import ChickenPizzaCategory from './seulgi/ChickenPizzaCategory.js';
 import Product from './pages/Product.js';
 import EditProfile from './pages/EditProfile.js';
+import Register from './pages/Register.js';
 const App = () => {
   return(
     
@@ -19,6 +20,8 @@ const App = () => {
     <Routes>
         <Route path="/"  element={<Start />} />
         <Route path="/Login" element={<Login/>}/>
+        <Route path="/Register" element={<Register />} />
+
         <Route path="/" element={<Home />} /> 
         
         <Route path="/Home" element={<Home />} />
