@@ -1,6 +1,6 @@
 import React from 'react';
 import Sidebar from '../kitae/sidebar';
-
+import {Link} from 'react-router-dom';
 const TitleBanner=()=>{
     const titleStyle={
 
@@ -22,7 +22,9 @@ const TitleBanner=()=>{
     
     return (
         <div style={containerStyle}>
+            <Link to="/Home">
                 <div className="title" style={{titleStyle}}>Eco$Back</div>
+            </Link>
                 <Sidebar />
         </div>
     )

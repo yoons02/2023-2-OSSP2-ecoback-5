@@ -25,7 +25,9 @@ const EditProfile=()=>{
                         <option>남성</option>
                         <option>여성</option>
                     </select><br />
+                    <div id="btnBox">
                     <button id="submitBtn">프로필 편집</button>
+                    </div>
                 </form>
             </div>
        </div>
