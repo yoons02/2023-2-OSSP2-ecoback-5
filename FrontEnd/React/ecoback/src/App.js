@@ -10,12 +10,13 @@ import BeautyHealthCategory from './seulgi/BeautyHealthCategory.js';
 import CafeCategory from './seulgi/CafeCategory.js';
 import ConvenienceStoreCategory from './seulgi/convenienceStoreCategory.js';
 import ChickenPizzaCategory from './seulgi/ChickenPizzaCategory.js';
+import Product from './pages/Product.js';
 const App = () => {
   return(
     
     
     <Routes>
-        <Route path="/"  element={<Start/>} />
+        <Route path="/"  element={<Product />} />
         <Route path="/Login" element={<Login/>}/>
         <Route path="/" element={<Home />} /> 
         
