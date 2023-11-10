@@ -13,6 +13,7 @@ const Register = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    
     // 아이디, 이메일, 비밀번호, 비밀번호 확인 값을 사용하여 회원가입 로직을 구현하세요.
   };
 
