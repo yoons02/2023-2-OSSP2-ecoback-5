@@ -3,6 +3,7 @@ import '../css/Product.css';
 import TitleBanner from '../components/TitleBanner';
 import Backbutton from "../kitae/backbutton.js";
 import DolceLatte from "../image/dolcelatte.png";
+import Check from "../image/check.png";
 const Product=()=>{
     return(
         <div>
@@ -18,8 +19,11 @@ const Product=()=>{
                 </div>
                 <div style={{fontSize:"5vw"}}><b>돌체 콜드 브루 T</b></div>
                 <div className="priceTag">
-                    <div id="resell">리셀 상품</div>
-                    <div id="class" style={{fontSize:"4.5vw"}}><b>6,000원</b></div>
+                    <div id="oneline">
+                        <div id="resell">리셀 상품</div>
+                        <img src={Check} alt="check" id="check" />
+                    </div>
+                    <div id="class" style={{fontSize:"5vw"}}><b>6,000원</b></div>
                 </div>
             </div>
             <div className="btnBox">

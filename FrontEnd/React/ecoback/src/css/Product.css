@@ -9,8 +9,8 @@ body{
 
 }
 .Item{
-    width:50vw;
-    height:50vw;
+    width:40vw;
+    height:40vw;
     margin:10vw;
     background-color: #E2DFDF;
     border-radius:5vw;
@@ -19,7 +19,7 @@ body{
 
 .priceTag{
     width:60vw;
-    height:20vw;
+    height:40vw;
     margin:5vw;
     background-color:#FFE0E0;
     border-radius:5vw;
@@ -30,3 +30,29 @@ body{
     box-sizing:border-box;
 
 }
+
+#oneline{
+    display:flex;
+    align-items:center;
+    justify-content: space-between;
+    
+}
+
+#check{
+    max-width:7vw;
+}
+
+.priceTag{
+    width:60vw;
+    height:30vw;
+    margin:5vw;
+    background-color:#FFE0E0;
+    border-radius:5vw;
+    border-color:#FF4848;
+    border-style:solid;
+    border-width:1px;
+    padding:3vw;
+    box-sizing:border-box;
+}
+
+
