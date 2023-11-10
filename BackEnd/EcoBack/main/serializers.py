@@ -23,3 +23,31 @@ class BarcodeSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
     image = serializers.ImageField(use_url=True, required=True)
+
+class BadgeSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Badge
+        fields = '__all__'
+
+    image = serializers.ImageField(use_url=True, required=True)
+
+
+class ProductCategorySerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = ProductCategory
+        fields = '__all__'
+
+    image = serializers.ImageField(use_url=True, required=True)
+
+
+class ProductSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Product
+        fields = '__all__'
+
+    product_code = serializers.ImageField(use_url=True, required=True)
+    product_image = serializers.ImageField(use_url=True, required=True)
+ 

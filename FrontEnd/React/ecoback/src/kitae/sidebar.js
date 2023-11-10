@@ -52,28 +52,7 @@ const Sidebar=() => {
             // you can use your own router's api to get pathname
             items={[
               
-              {
-                title: '마이 페이지',
-                itemId: '/mypage',
-                elemBefore: () =><Icon name="user"/>
-                // subNav: [
-                //   {
-                //     title: 'Projects',
-                //     itemId: '/management/projects',
-                //   },
-                //   {
-                //     title: 'Members',
-                //     itemId: '/management/members',
-                //   },
-                // ],
-              },
-              {
-                title: '이벤트',
-                itemId: '/event',
-                // you can use your own custom Icon component as well
-                // icon is optional
-                elemBefore: () => <Icon name="inbox"/>
-              },
+             
               {
                 title: 'Another Item',
                 itemId: '/another1',
@@ -103,6 +82,34 @@ const Sidebar=() => {
                     itemId: '/management/teams',
                   },
                 ],
+              },
+              {
+                title: '마이 페이지',
+                itemId: '/mypage',
+                elemBefore: () =><Icon name="user"/>
+                // subNav: [
+                //   {
+                //     title: 'Projects',
+                //     itemId: '/management/projects',
+                //   },
+                //   {
+                //     title: 'Members',
+                //     itemId: '/management/members',
+                //   },
+                // ],
+              },
+              {
+                title: '이벤트',
+                itemId: '/event',
+                // you can use your own custom Icon component as well
+                // icon is optional
+                elemBefore: () => <Icon name="inbox"/>
+              },
+              {
+                title: '프로필 편집',
+                itemId: '/editprofilepage',
+                elemBefore: () =><Icon name="user"/>
+                
               },
               
             ]}

@@ -1,0 +1,31 @@
+.inputBox{
+    display:flex;
+    justify-content: center;
+}
+
+#submitForm{
+    display:flex;
+    flex-direction: column;
+    padding:5vw;
+}
+
+input{
+    width:90vw;
+    height:10vw;
+    border-radius:2vw;
+    border-style:none;
+    background-color:rgb(233, 233, 233);
+}
+
+#btnBox{
+    display:flex;
+    justify-content: center;
+}
+#submitBtn{
+    border-radius: 3vw;
+    border-style:none;
+    width:50vw;
+    height:10vw;
+    color:#FFFFFF;
+    background-color: #8FD36F;
+}

@@ -39,3 +39,31 @@
     gap: auto;
   }
 
+.item{
+  display:flex;
+  justify-content: center;
+  
+}
+  #itemImg{
+    width:70%;
+    margin:0vw 0vw 0vw 7vw;
+  }
+
+.btnBox{
+  width:100vw;
+  display:flex;
+  justify-content: center;
+  background-color: #ECECEC;
+}
+
+#buyBtn{
+  position:relative;
+  margin:5vw;
+  width:40vw;
+  height:12vw;
+  background-color: #8FD36F;
+  border-style:none;
+  border-radius:2vw;
+  color:white;
+  box-sizing:border-box;
+}

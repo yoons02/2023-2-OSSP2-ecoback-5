@@ -52,7 +52,7 @@ const Camera = () => {
         mirrored={true}
       />
       <div className="container">
-      <img id="album" src={require("../image/photoAlbum.png")} alt="photoAlbum" />
+      <button id="album"><img id="album" src={require("../image/photoAlbum.png")} alt="photoAlbum" /></button>
       <button id="turtleBtn" onClick={capturePhoto}><img id="turtleBtn" src={require("../image/turtleBtn.png")} alt="captureBtn" /></button>
       <button id="refresh" onClick={() => { setUrl(null) }}><img id="refreshBtn"src={require("../image/refreshBtn.png")}/></button>
       </div>

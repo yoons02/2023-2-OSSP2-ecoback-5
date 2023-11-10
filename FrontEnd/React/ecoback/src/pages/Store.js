@@ -1,16 +1,17 @@
 import '../css/Store.css';
-import Sidebar from '../kitae/sidebar.js';
 import Backbutton from '../kitae/backbutton.js';
 import {Link} from "react-router-dom";
 import Store_box from "../components/store_box.js";
+import TitleBanner from "../components/TitleBanner.js";
 
 const Store = () => {
     return(
       <div>
-          <div className="normal" id="normalline" style={{ padding: '5px 7px' }}>
+          {/* <div className="normal" id="normalline" style={{ padding: '5px 7px' }}>
                 <div className="title"><Link to="/home">Eco$Back</Link></div>
                 <Sidebar/>
-          </div>
+          </div> */}
+          <TitleBanner />
       <hr/>
       <div class="top_line">
         <Backbutton/>

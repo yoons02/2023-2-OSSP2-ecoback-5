@@ -4,13 +4,11 @@ import './mypage.css'
 //뱃지 아이콘 생성
 function Badge({badge}){
     const containerStyle = {
-        width: '20%', 
-        padding: '10px',
-        margin:'20px',
+        width: '20vw', 
+        margin:'5%',
         display:'flex',
         flexDirection:'column',
         alignItems:'center',
-        justifyContent:'center',
 
     };
 
@@ -27,13 +25,8 @@ function Badge({badge}){
 
 //map함수로 badges 순회하며 뱃지그리드 생성
 function BadgeGrid(){
-    const gridStyle = {
-        display: 'flex',
-        flexWrap: 'wrap', // 아이템이 넘치면 다음 줄로 감싸기
-        margin: '0 -10px' // 컨테이너의 여백을 상쇄한다
-    };
     return (
-        <div className="badgeGrid" style={gridStyle}>
+        <div className="badgeBox">
             {
                 badges.map(badge=>{
                     return <Badge key={badge.id} badge={badge} />

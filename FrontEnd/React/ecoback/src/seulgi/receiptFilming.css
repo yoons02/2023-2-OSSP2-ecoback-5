@@ -3,6 +3,10 @@
     src: url("../font/NotoSansKR.ttf") format("truetype");
   }
 
+.filmingPage{
+    width:100vw;
+    height:100vh;
+}
 .top_line{
     display: grid; /* 그리드 컨테이너로 설정 */
     grid-template-columns: 0.7fr 1fr;
@@ -14,31 +18,31 @@
   }
 
 
-.captureBtn{
-    margin:100px 0px 0px 50px;
-    display:flex;
-    align-items:flex-start;
- 
-}
+
 
 .container{
+    width: 100vw;
     display:flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items:center;
-    padding:30px;
+
 }
 
 #album{
+    width:10vw;
+    padding:10%;
+    border-radius:20%;
+    border-style:none;
     flex:1;
-    text-align:left;
-    max-width:100px;
+    text-align: right;
+    background-color: #F9F9F9;
 }
 
 #turtleBtn{
     border-style:none;
-    width:130px;
+    width:15vw;
     background:none;
-    margin:100px;
+    margin:10%;
     flex:1;
     text-align: center;
 
@@ -46,11 +50,9 @@
 }
 
 #refresh{
-    max-width:100px;
-    padding:10px;
-    border-radius:20px;
-    font-family:"NotoSansKR";
-    font-size:20px;
+    width:10vw;
+    padding:10%;
+    border-radius:20%;
     border-style:none;
     flex:1;
     text-align: right;
@@ -59,6 +61,6 @@
 }
 
 #refreshBtn{
-    max-width:50px;
+    width:50%;
 }
 
