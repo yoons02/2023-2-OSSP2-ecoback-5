@@ -39,9 +39,16 @@ class ProductCategory(models.Model):
     name = models.CharField(max_length=30)
     image = models.ImageField(upload_to=image_upload_path, default='')
 
+class Brand(models.Model):
+    id = models.AutoField(primary_key=True)
+    category = models.ForeignKey(ProductCategory, null=True, blank=False, on_delete=models.CASCADE)
+    brand_name = models.CharField(max_length=30)
+    brand_image = models.ImageField(upload_to=image_upload_path, default='')
+
 class Product(models.Model):
     id = models.AutoField(primary_key=True)
     category = models.ForeignKey(ProductCategory, null=True, blank=False, on_delete=models.CASCADE)
+    brand = models.ForeignKey(Brand, null=True, blank=False, on_delete=models.CASCADE)
     name = models.CharField(max_length=30)
     price = models.IntegerField(default=0)
     product_code = models.ImageField(upload_to=image_upload_path, default='')
