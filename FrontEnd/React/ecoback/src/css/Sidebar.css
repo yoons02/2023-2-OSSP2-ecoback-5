@@ -1,0 +1,32 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 20;
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: opacity 0.3s ease;
+}
+.overlay.hidden {
+  display: none;
+}
+.sidebarobj{
+    position:fixed;
+    right:1px;
+    z-Index:1000;
+    background: white;
+    width:200px;
+    font-size:20px;
+    font-family: "NotoSansKR";
+}
+
+@media (min-width: 1024px) {
+  .overlay {
+    display: none;
+  }
+}
+@font-face{
+    font-family: "NotoSansKR";
+    src: url("../font/NotoSansKR.ttf") format("truetype");
+  }

@@ -3,7 +3,8 @@ import {Navigation} from 'react-minimal-side-navigation';
 import 'react-minimal-side-navigation/lib/ReactMinimalSideNavigation.css';
 import Icon from "awesome-react-icons";
 import { useNavigate } from 'react-router-dom';
-import { Link } from 'react-router-dom';
+
+import '../css/Sidebar.css';
 
 const Sidebar=() => {
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -25,12 +26,6 @@ const Sidebar=() => {
   }, []);
     return (
       <>
-      <div
-        onClick={() => setIsSidebarOpen(false)}
-        className={`fixed inset-0 z-20 block transition-opacity bg-black opacity-50 lg:hidden ${
-          isSidebarOpen ? "block" : "hidden"
-        }`}
-      />
        {!isSidebarOpen && (
           <button
             style={{position:"absolute",right:1, width: 50, height: 50, borderRadius:10, backgroundColor:"white" }}
@@ -41,7 +36,13 @@ const Sidebar=() => {
             <Icon name="burger" className="w-6 h-6" />
           </button>
         )}
-      <div ref={sidebarRef} style={{position:"fixed",right:1,zIndex:1000, backgroundColor: 'white'}}>
+      <div ref={sidebarRef} className="sidebarobj" >
+      
+      {/* 사이드바 펼쳤을때 나머지화면 어둡게 만들기 */}
+      {/* <div
+        onClick={() => setIsSidebarOpen(false)}
+        className={`overlay ${isSidebarOpen ? "block" : "hidden"}`}
+      /> */}
     
 
         {isSidebarOpen &&(
@@ -51,39 +52,9 @@ const Sidebar=() => {
             }}
             // you can use your own router's api to get pathname
             items={[
-              
-             
-              // {
-              //   title: 'Another Item',
-              //   itemId: '/another1',
-                
-              // },
-              // {
-              //   title: 'Another Item',
-              //   itemId: '/another2',
-                
-              // },
-              // {
-              //   title: 'Another Item',
-              //   itemId: '/another3',
-              //   subNav: [
-              //     {
-              //       title: 'Teams',
-              //       itemId: '/management/teams',
-              //     },
-              //   ],
-              // },
-              // {
-              //   title: 'Another Item',
-              //   itemId: '/another4',
-              //   subNav: [
-              //     {
-              //       title: 'Teams',
-              //       itemId: '/management/teams',
-              //     },
-              //   ],
-              // },
+          
               {
+                className:'sidebar-item',
                 title: '마이 페이지',
                 itemId: '/mypage',
                 elemBefore: () =><Icon name="user"/>
@@ -97,8 +68,10 @@ const Sidebar=() => {
                 //     itemId: '/management/members',
                 //   },
                 // ],
+                
               },
               {
+                className:'sidebar-item',
                 title: '이벤트',
                 itemId: '/event',
                 // you can use your own custom Icon component as well
@@ -106,6 +79,7 @@ const Sidebar=() => {
                 elemBefore: () => <Icon name="inbox"/>
               },
               {
+                className:'sidebar-item',
                 title: '프로필 편집',
                 itemId: '/editprofilepage',
                 elemBefore: () =><Icon name="user"/>
