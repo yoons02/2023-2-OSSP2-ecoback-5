@@ -35,12 +35,12 @@
 .ask_register{
     text-align: right;
     font-family: "NotoSansKR";
-    font-size: 10px;
+    font-size: 12px;
     font-weight: 500;
     color: #8fd36f;
-    margin-top: -3%; /* ask_register의 상단 여백을 줄임 */
+    margin-top: -3%;
     margin-right: 8%;
-    padding-bottom: 5%;
+    margin-bottom: 5%;
 }
 
 
