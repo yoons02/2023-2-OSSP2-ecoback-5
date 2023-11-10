@@ -94,21 +94,21 @@ def barcode_create(request):
 @api_view(['GET'])
 def category_read(request):
     if request.method == 'GET':
-        catecories = ProductCategory.objects.all()
-        serializers = ProductCategorySerializer(catecories, many=True)
+        categories = ProductCategory.objects.all()
+        serializers = ProductCategorySerializer(categories, many=True)
         return Response(data = serializers.data)
     
 @api_view(['GET'])
 def brand_read(request, id):
     if request.method == 'GET':
-        brands = Brand.objects.filter(category=id)
+        brands = Brand.objects.filter(id=id)
         serializers = BrandSerializer(brands, many=True)
         return Response(serializers.data)
     
 @api_view(['GET'])
-def products_read(request, category_id, brand_id):
+def products_read(request, id):
     if request.method == 'GET':
-        products = Product.objects.filter(category=category_id, brand=brand_id)
+        products = Product.objects.filter(id=id)
         serializers = ProductSerializer(products, many=True)
         return Response(serializers.data)
         

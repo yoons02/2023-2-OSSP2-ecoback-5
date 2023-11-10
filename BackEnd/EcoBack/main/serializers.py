@@ -37,7 +37,7 @@ class BrandSerializer(serializers.ModelSerializer):
         model = Brand
         fields = '__all__'
 
-    image = serializers.ImageField(use_url=True, required=True)
+    brand_image = serializers.ImageField(use_url=True, required=True)
 
 class ProductCategorySerializer(serializers.ModelSerializer):
 
