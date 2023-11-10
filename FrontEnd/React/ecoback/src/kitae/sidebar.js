@@ -53,36 +53,36 @@ const Sidebar=() => {
             items={[
               
              
-              {
-                title: 'Another Item',
-                itemId: '/another1',
+              // {
+              //   title: 'Another Item',
+              //   itemId: '/another1',
                 
-              },
-              {
-                title: 'Another Item',
-                itemId: '/another2',
+              // },
+              // {
+              //   title: 'Another Item',
+              //   itemId: '/another2',
                 
-              },
-              {
-                title: 'Another Item',
-                itemId: '/another3',
-                subNav: [
-                  {
-                    title: 'Teams',
-                    itemId: '/management/teams',
-                  },
-                ],
-              },
-              {
-                title: 'Another Item',
-                itemId: '/another4',
-                subNav: [
-                  {
-                    title: 'Teams',
-                    itemId: '/management/teams',
-                  },
-                ],
-              },
+              // },
+              // {
+              //   title: 'Another Item',
+              //   itemId: '/another3',
+              //   subNav: [
+              //     {
+              //       title: 'Teams',
+              //       itemId: '/management/teams',
+              //     },
+              //   ],
+              // },
+              // {
+              //   title: 'Another Item',
+              //   itemId: '/another4',
+              //   subNav: [
+              //     {
+              //       title: 'Teams',
+              //       itemId: '/management/teams',
+              //     },
+              //   ],
+              // },
               {
                 title: '마이 페이지',
                 itemId: '/mypage',
@@ -111,6 +111,7 @@ const Sidebar=() => {
                 elemBefore: () =><Icon name="user"/>
                 
               },
+              
               
             ]}
             
