@@ -90,6 +90,11 @@ def barcode_create(request):
             # If no barcode is found, return a JSON response indicating failure
             return JsonResponse({'status': 'not found'})
 
+@api_view(['GET'])
+def barcode_count(request):
+    barcode = Barcode.objects.all()
+    count = len(barcode)
+    return JsonResponse({'count': count})
 
 @api_view(['GET'])
 def category_read(request):
