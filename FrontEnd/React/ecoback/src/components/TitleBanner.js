@@ -11,6 +11,7 @@ const TitleBanner=()=>{
         letterSpacing: "0em",
         textAlign: "left",
         
+        
     }
     // const containerStyle={
     //         display: "flex",
@@ -28,7 +29,7 @@ const TitleBanner=()=>{
         //     </Link>
         //     <Sidebar />
         // </div>
-        <div className="normal" id="normalline" style={{paddingRight:'7px'}} >
+        <div className="normal" id="normalline" style={{marginTop:'1px',paddingRight:'7px'}} >
             <div className="title" style={{titleStyle}}><Link to="/home">Eco$Back</Link></div>
             <Sidebar/>
         </div>  

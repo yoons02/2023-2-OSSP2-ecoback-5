@@ -11,16 +11,27 @@
 .overlay.hidden {
   display: none;
 }
+#closebutton{
+    position: absolute;
+    right: 15px;
+    top:-10px;
+    width:40px;
+    
+}
 .sidebarobj{
     position:fixed;
     right:1px;
     z-Index:1000;
     background: white;
     width:280px;
-    font-size:20px;
+    font-size:22px;
     font-family: "NotoSansKR";
+    
 }
-
+.sidebaritem{
+    margin: 10px;
+   
+}
 @media (min-width: 1024px) {
   .overlay {
     display: none;

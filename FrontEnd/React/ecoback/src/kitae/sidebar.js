@@ -3,6 +3,7 @@ import {Navigation} from 'react-minimal-side-navigation';
 import 'react-minimal-side-navigation/lib/ReactMinimalSideNavigation.css';
 import Icon from "awesome-react-icons";
 import { useNavigate } from 'react-router-dom';
+import closebutton from '../image/close.png';
 
 import '../css/Sidebar.css';
 
@@ -41,39 +42,44 @@ const Sidebar=() => {
         className={`overlay ${isSidebarOpen ? "block" : "hidden"}`}
         style={{zIndex:20}}
       />
+      {isSidebarOpen && (
       <div ref={sidebarRef} className="sidebarobj" style={{height: isSidebarOpen ? '100vh' : '0'}} >
       
       {/* 사이드바 펼쳤을때 나머지화면 어둡게 만들기 */}
-      
-    
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
 
-        {isSidebarOpen &&(
+        <img src={closebutton} id='closebutton' onClick={() => setIsSidebarOpen(false)} ></img>
         <Navigation 
             onSelect={({ itemId }) => {
                 navigate(itemId);
             }}
             // you can use your own router's api to get pathname
+            
             items={[
           
               {
-                className:'sidebar-item',
+                className:'sidebaritem',
                 title: '마이 페이지',
                 itemId: '/mypage',
-                elemBefore: () =><Icon name="user"/>
-                // subNav: [
-                //   {
-                //     title: 'Projects',
-                //     itemId: '/management/projects',
-                //   },
-                //   {
-                //     title: 'Members',
-                //     itemId: '/management/members',
-                //   },
-                // ],
+                elemBefore: () =><Icon name="user"/>,
+                subNav: [
+                  {
+                    title: '프로필 편집',
+                    itemId: '/editprofilepage',
+                    elemBefore: () =><Icon name="user"/>
+                   },
+                  // {
+                  //   title: 'Members',
+                  //   itemId: '/management/members',
+                  // },
+                ],
                 
               },
               {
-                className:'sidebar-item',
+                className:'sidebaritem',
                 title: '이벤트',
                 itemId: '/event',
                 // you can use your own custom Icon component as well
@@ -81,7 +87,7 @@ const Sidebar=() => {
                 elemBefore: () => <Icon name="inbox"/>
               },
               {
-                className:'sidebar-item',
+                className:'sidebaritem',
                 title: '프로필 편집',
                 itemId: '/editprofilepage',
                 elemBefore: () =><Icon name="user"/>
@@ -93,8 +99,9 @@ const Sidebar=() => {
             ]}
             
           />
-          )}
+          
         </div>
+        )}
       </>
     );
 };
