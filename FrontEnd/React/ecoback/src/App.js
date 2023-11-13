@@ -15,6 +15,7 @@ import EditProfile from './pages/EditProfile.js';
 import Register from './pages/Register.js';
 import ProductsCategory from './seulgi/ProductsCategory.js';
 import IndividualGrid from 'components/individualGrid.js';
+import IcecreamCategory from './seulgi/IcecreamCategory.js';
 
 const App = () => {
   return(
@@ -38,9 +39,11 @@ const App = () => {
         <Route path="/카페" element={<CafeCategory />} />
         <Route path="/편의점" element={<ConvenienceStoreCategory />} />
         <Route path="/치킨/피자" element={<ChickenPizzaCategory />} />
+        <Route path="/아이스크림/빙수" element={<IcecreamCategory />} />
         <Route path="/product1" element={<Product />} />
         <Route path="/products" element={<ProductsCategory />} />
         <Route path="/individual" element={<IndividualGrid />} />
+
     </Routes> 
     
   );
