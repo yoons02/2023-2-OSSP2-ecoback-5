@@ -1,26 +1,33 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import Sidebar from './sidebar';
 import Backbutton from './backbutton';
 import TitleBanner from '../components/TitleBanner';
-const Event = ({ events }) => {
+import eventsData from './json/eventlist.json';
+import '../css/Event.css';
+const Event = () => {
+  const [events, setEvents] = useState([]);
+
+  useEffect(() => {
+    setEvents(eventsData);
+  }, []);
+
   return (
     <div style={{backgroundColor:"#F9F9F9"}}>     
-        {/* <div className="normal" id="normalline" style={{ padding: '5px 7px' }}>
-            <div className="title"><Link to="/home">Eco$Back</Link></div>
-            <Sidebar/>
-        </div> */}
-        <TitleBanner />
-        {/* <div style={{ display: 'flex', flexDirection: 'column' }}>
-        {events.map((event, index) => (
-            <Link key={index} to={`/event/${event.id}`}>
-            <img src={event.bannerUrl} alt={event.title} style={{ width: '100%', height: 'auto' }} />
-            </Link>
-        ))}
-        </div> */}
+        <TitleBanner />     
         <hr></hr>
-        <Backbutton/>
+        <div style={{ display: 'flex' }}>
+          <Backbutton/>
+          <p id="event_title">이벤트</p>    
+        </div>
+        <div style={{ display: 'flex', flexDirection: 'column', overflowY: 'scroll' }}>
+          {events.map((event, index) => (
+          <Link key={index} to={`/event/${event.id}`}>
+            <img className="events_image" src={require('../image/events/'+event.imagePath)} alt={event.title}  />
+          </Link>
+        ))}
+      </div>
     </div>
+    
   );
 };
 

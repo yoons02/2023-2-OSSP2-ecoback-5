@@ -12,15 +12,11 @@ const Home = () => {
   const point = user_info.point;
   return (
     <div>
-      {/* <div className="normal" id="normalline" style={{ padding: '5px 7px' }}>
-        <div className="title">Eco$Back</div>
-        <Sidebar />
-      </div> */
-      }
-      {/*위쪽 titleBanner 반복사용으로 페이지마다 컴포넌트화하여 대체했습니다.*/}
       <TitleBanner />
 
-      <ImageSlider />
+      {/* 사이드바 ui 통일 작업하느라 잠시 슬라이더 주석처리 해놓았습니다 */}
+      
+      {/* <ImageSlider /> */}
       <div className="normal" id="normalline">
         <div className="normal">내 잔여 포인트</div>
         <div className="normal">{point} 포인트</div>
