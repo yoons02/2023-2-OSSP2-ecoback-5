@@ -13,7 +13,7 @@ import ChickenPizzaCategory from './seulgi/ChickenPizzaCategory.js';
 import Product from './pages/Product.js';
 import EditProfile from './pages/EditProfile.js';
 import Register from './pages/Register.js';
-import BeautyHealthCategoryCopy from "./seulgi/BeautyHealthCategory.js"
+
 const App = () => {
   return(
     
@@ -36,6 +36,7 @@ const App = () => {
         <Route path="/카페" element={<CafeCategory />} />
         <Route path="/편의점" element={<ConvenienceStoreCategory />} />
         <Route path="/치킨/피자" element={<ChickenPizzaCategory />} />
+        <Route path="/product1" element={<Product />} />
     </Routes> 
     
   );

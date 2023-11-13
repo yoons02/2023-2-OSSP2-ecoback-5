@@ -1,10 +1,7 @@
-//import products from './jsonFile/cafe.json';
 import '../seulgi/productCategories.css'
+import {Link} from 'react-router-dom';
 //상품 카테고리 누르면 상세 페이지로 이동
-const handleProductClick=()=>{
-  window.location.href='url';
 
-}
 
 function Store({ product }) {
   const containerStyle = {
@@ -16,11 +13,13 @@ function Store({ product }) {
 
 };
   return (
-    <div style={containerStyle} onClick={handleProductClick}>
+    <div style={containerStyle}>
+      <Link to="/product1">
       <div className="product_categories">
       <img src={require(`../image/categories/${product.image}`)} alt={product.name}
       style={{ width: '18vw'}} />
       </div>
+      </Link>
       <div id="productName" style={{fontFamily:"NotoSansKR", fontSize:"3vw", fontWeight:"bold", width:"25vw"}}>{product.name}</div>
     </div>
   );

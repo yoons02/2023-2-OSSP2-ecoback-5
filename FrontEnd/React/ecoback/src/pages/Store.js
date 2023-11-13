@@ -1,6 +1,5 @@
 import '../css/Store.css';
 import Backbutton from '../kitae/backbutton.js';
-import {Link} from "react-router-dom";
 import Store_box from "../components/store_box.js";
 import TitleBanner from "../components/TitleBanner.js";
 
