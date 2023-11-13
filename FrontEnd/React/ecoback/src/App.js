@@ -14,6 +14,7 @@ import Product from './pages/Product.js';
 import EditProfile from './pages/EditProfile.js';
 import Register from './pages/Register.js';
 import ProductsCategory from './seulgi/ProductsCategory.js';
+import IndividualGrid from 'components/individualGrid.js';
 
 const App = () => {
   return(
@@ -39,6 +40,7 @@ const App = () => {
         <Route path="/치킨/피자" element={<ChickenPizzaCategory />} />
         <Route path="/product1" element={<Product />} />
         <Route path="/products" element={<ProductsCategory />} />
+        <Route path="/individual" element={<IndividualGrid />} />
     </Routes> 
     
   );

@@ -1,7 +1,7 @@
 import React from "react";
 import individualBox from "./jsonFile/individualBox.json";
 import TitleBanner from "../components/TitleBanner.js";
-import StoreGrid from "../components/storeGrid.js";
+import IndividualGrid from "../components/individualGrid.js";
 const ProductsCategory=()=>{
     return (
         <div>
@@ -16,7 +16,7 @@ const ProductsCategory=()=>{
         <div class="normal" style={{fontSize: '20px',margin:'auto 0'}}>개별 상품목록</div>
       </div>
       <div>
-        <StoreGrid products={individualBox}/>
+        <IndividualGrid products={individualBox}/>
       </div>
 
         </div>
