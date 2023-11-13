@@ -1,4 +1,5 @@
 [
+  
     { "id": 1, "name": "텀블러", "image": "tumbler.png"},
     { "id": 2, "name": "카페", "image": "coffee.png" },
     { "id": 3, "name": "편의점", "image": "convenience_store.png" },
