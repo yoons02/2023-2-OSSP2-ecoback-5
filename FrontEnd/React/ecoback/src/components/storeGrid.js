@@ -14,7 +14,7 @@ function Store({ product }) {
 };
   return (
     <div style={containerStyle}>
-      <Link to="/product1">
+      <Link to="/products">
       <div className="product_categories">
       <img src={require(`../image/categories/${product.image}`)} alt={product.name}
       style={{ width: '18vw'}} />
