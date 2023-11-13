@@ -19,9 +19,20 @@
     /*가로 방향으로 중앙정렬*/
   }
 
+  .pointView{
+    height:20vw;
+    grid-column:1/4;
+    font-weight:bold;
+  }
+
   .footer{
     height:5vw;
     align-items:bottom;
+  }
+
+  #productName{
+  text-align:center;
+  margin: 3vw 0vw 3vw 0vw;
   }
   
  

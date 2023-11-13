@@ -8,9 +8,9 @@ const handleProductClick=()=>{
 
 function Cafe({ product }) {
   const containerStyle = {
-    width: '20vw', 
-    margin:'5vw',
+    width: '10vw', 
     display:'flex',
+    margin:'0vw 0vw 0vw 10vw',
     flexDirection:'column',
     alignItems:'center',
 
@@ -21,7 +21,7 @@ function Cafe({ product }) {
       <img src={require(`../image/categories/cafe/${product.image}`)} alt={product.name}
       style={{ width: '18vw'}} />
       </div>
-      <p style={{fontFamily:"NotoSansKR"}}>{product.name}</p>
+      <div id="productName" style={{fontFamily:"NotoSansKR", fontSize:"3vw", fontWeight:"bold", width:"25vw"}}>{product.name}</div>
     </div>
   );
 }
@@ -36,6 +36,9 @@ function CafeGrid() {
           <Cafe key={product.id} product={product} />
 
       ))}
+      <div class="pointView" style={{textAlign:'center',fontSize:'3vw', margin:'10vh 0'}}>
+        포인트가 2024년 3월 1일에 소멸될 예정이에요.
+        </div>
     
     </div>
   );

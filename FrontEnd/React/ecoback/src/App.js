@@ -31,10 +31,10 @@ const App = () => {
         <Route path="/event" element={<Event />}/>
         <Route path='/editprofilepage' element={<EditProfile />} />
 
-        <Route path="/beautyhealthcategory" element={<BeautyHealthCategory />} />
-        <Route path="/cafecategory" element={<CafeCategory />} />
-        <Route path="/conveniencestorecategory" element={<ConvenienceStoreCategory />} />
-        <Route path="/chickenpizzacategory" element={<ChickenPizzaCategory />} />
+        <Route path="/뷰티/패션/건강" element={<BeautyHealthCategory />} />
+        <Route path="/카페" element={<CafeCategory />} />
+        <Route path="/편의점" element={<ConvenienceStoreCategory />} />
+        <Route path="/치킨/피자" element={<ChickenPizzaCategory />} />
     </Routes> 
     
   );
