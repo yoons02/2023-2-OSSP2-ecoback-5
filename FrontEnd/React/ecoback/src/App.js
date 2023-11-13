@@ -36,7 +36,7 @@ const App = () => {
         <Route path="/mypage" element={<MyPage />}/>
         <Route path="/event" element={<Event />}/>
         <Route path='/editprofilepage' element={<EditProfile />} />
-
+        <Route path="/텀블러" element={<ProductsCategory />} />
         <Route path="/뷰티/패션/건강" element={<BeautyHealthCategory />} />
         <Route path="/카페" element={<CafeCategory />} />
         <Route path="/편의점" element={<ConvenienceStoreCategory />} />
