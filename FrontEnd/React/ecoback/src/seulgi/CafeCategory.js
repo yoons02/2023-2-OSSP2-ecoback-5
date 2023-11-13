@@ -1,6 +1,7 @@
 import React from "react";
-import CafeGrid from "./CafeGrid.js";
+import StoreGrid from "../components/storeGrid.js";
 import TitleBanner from "../components/TitleBanner.js";
+import Cafe from "./jsonFile/cafe.json";
 const CafeCategory=()=>{
     return (
         <div>
@@ -12,10 +13,10 @@ const CafeCategory=()=>{
           alt="receipt"
           style={{ width: '30px', height: '30px' }}
         />
-        <div class="normal" style={{fontSize: '6vw',margin:'auto 0'}}>카페</div>
+        <div class="normal" style={{fontSize: '5vw',margin:'auto 0'}}>카페</div>
       </div>
       <div>
-        <CafeGrid />
+        <StoreGrid products={Cafe} />
       </div>
         </div>
     )

@@ -13,6 +13,7 @@ import ChickenPizzaCategory from './seulgi/ChickenPizzaCategory.js';
 import Product from './pages/Product.js';
 import EditProfile from './pages/EditProfile.js';
 import Register from './pages/Register.js';
+import BeautyHealthCategoryCopy from "./seulgi/BeautyHealthCategory.js"
 const App = () => {
   return(
     
