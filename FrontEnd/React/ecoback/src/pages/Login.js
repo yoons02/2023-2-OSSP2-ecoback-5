@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import logo from '../image/logo.png'; // 로고 이미지 경로
 import loginbutton from '../image/loginbutton.png';
-import googleloginbutton from '../image/googleloginbutton.png';
+// import googleloginbutton from '../image/googleloginbutton.png';
+import GoogleLoginButton from 'kitae/GoogleLogin';
 import { Link } from 'react-router-dom';
 
 import '../css/Login.css';
@@ -72,7 +73,8 @@ function Login() {
         </center>
         <center>
             <div class="hr-sect">또는</div>
-            <img class="imagebutton" id="googleloginbutton" src={googleloginbutton} alt="googleloginbutton"/>
+            {/* <img class="imagebutton" id="googleloginbutton" src={googleloginbutton} alt="googleloginbutton"/> */}
+            <GoogleLoginButton />
         </center>
     </html>
   );
