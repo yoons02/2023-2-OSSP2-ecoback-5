@@ -5,6 +5,7 @@ import '../css/Home.css';
 import { Link } from 'react-router-dom';
 import user_info from '../minju/json/user_info.json';/*개인 포인트 불러오기 */
 import TitleBanner from "../components/TitleBanner.js";
+import PopUp from 'components/PopUp';
 const Home = () => {
   const [isSidebarVisible, setSidebarVisible] = useState(false);
   const saving_cup = 123456;
@@ -13,7 +14,6 @@ const Home = () => {
   return (
     <div>
       <TitleBanner />
-
       {/* 사이드바 ui 통일 작업하느라 잠시 슬라이더 주석처리 해놓았습니다 */}
       
       <ImageSlider />
