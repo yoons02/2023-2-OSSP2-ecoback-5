@@ -1,7 +1,6 @@
 import BadgeGrid from './myBadge.js';
 import './mypage.css'
 import TitleBanner from '../components/TitleBanner.js';
-import Backbutton from 'kitae/backbutton.js';
 
 
 const MyPage=()=>{
