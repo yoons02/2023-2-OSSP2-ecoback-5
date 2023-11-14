@@ -2,19 +2,15 @@ import React from "react";
 import ConvenienceStore from "./jsonFile/convenienceStore.json";
 import TitleBanner from "../components/TitleBanner.js";
 import StoreGrid from "../components/storeGrid.js";
+import BackbuttonBar from "components/BackbuttonBar.js";
 const ConvenienceStoreCategory=()=>{
     return (
         <div>
         <TitleBanner />
         <hr/>
-        <div class="top_line">
-        <img
-          src={require('../image/arrow-right.png')}
-          alt="receipt"
-          style={{ width: '30px', height: '30px' }}
-        />
-        <div class="normal" style={{fontSize: '20px',margin:'auto 0'}}>편의점</div>
-      </div>
+
+        <BackbuttonBar title="편의점"/>
+        <hr></hr>
       <div>
         <StoreGrid products={ConvenienceStore}/>
       </div>

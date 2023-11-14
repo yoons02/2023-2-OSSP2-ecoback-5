@@ -2,20 +2,16 @@ import '../css/Store.css';
 import Backbutton from '../kitae/backbutton.js';
 import Store_box from "../components/store_box.js";
 import TitleBanner from "../components/TitleBanner.js";
+import BackbuttonBar from 'components/BackbuttonBar';
+
 
 const Store = () => {
     return(
       <div>
-          {/* <div className="normal" id="normalline" style={{ padding: '5px 7px' }}>
-                <div className="title"><Link to="/home">Eco$Back</Link></div>
-                <Sidebar/>
-          </div> */}
           <TitleBanner />
       <hr/>
-      <div style={{ display: 'flex' }}>
-          <Backbutton/>
-          <p id="Store_title">포인트 상점</p>    
-      </div>
+      <BackbuttonBar title="포인트 상점"/>
+      <hr></hr>
       <div>
         <Store_box/>
       </div>
