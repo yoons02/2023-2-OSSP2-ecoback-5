@@ -31,10 +31,11 @@ const App = () => {
         <Route path="/event" element={<Event />}/>
         <Route path='/editprofilepage' element={<EditProfile />} />
 
-        <Route path="/beautyhealthcategory" element={<BeautyHealthCategory />} />
-        <Route path="/cafecategory" element={<CafeCategory />} />
-        <Route path="/conveniencestorecategory" element={<ConvenienceStoreCategory />} />
-        <Route path="/chickenpizzacategory" element={<ChickenPizzaCategory />} />
+        {/*메인 상점 페이지와 카테고리별 상점 페이지 연결*/}
+        <Route path="/store/뷰티/패션.건강" element={<BeautyHealthCategory />} />
+        <Route path="/store/카페" element={<CafeCategory />} />
+        <Route path="/store/편의점" element={<ConvenienceStoreCategory />} />
+        <Route path="/store/치킨/피자" element={<ChickenPizzaCategory />} />
     </Routes> 
     
   );

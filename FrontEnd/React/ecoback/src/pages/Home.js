@@ -7,7 +7,7 @@ import user_info from '../minju/json/user_info.json';/*개인 포인트 불러�
 import TitleBanner from "../components/TitleBanner.js";
 const Home = () => {
   const [isSidebarVisible, setSidebarVisible] = useState(false);
-  const saving_cup = 123456;
+  const saving_cup = 0;
   /*위는 이후 barcode api 확정시 id(개수)를 이용하여 불러올 예정*/
   const point = user_info.point;
   return (

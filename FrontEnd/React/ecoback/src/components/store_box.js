@@ -1,6 +1,7 @@
 import React from 'react';
 import '../css/Store.css';
 import category from '../minju/productCategories.json';
+import axios from 'axios';
 import {Link} from "react-router-dom";
 
 const Store_box = () => {
