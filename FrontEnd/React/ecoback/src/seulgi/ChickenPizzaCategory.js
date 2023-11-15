@@ -8,14 +8,7 @@ const ChickenPizzaCategory=()=>{
         <div>
         <TitleBanner />
         <hr></hr>
-        {/* <div class="top_line">
-        <img
-          src={require('../image/arrow-right.png')}
-          alt="receipt"
-          style={{ width: '30px', height: '30px' }}
-        />
-        <div class="normal" style={{fontSize: '5vw',margin:'auto 0'}}>편의점</div>
-      </div> */}
+       
         <BackbuttonBar title="치킨/피자"/>
         <hr></hr>
       <div>

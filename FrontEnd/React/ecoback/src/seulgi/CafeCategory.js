@@ -8,14 +8,6 @@ const CafeCategory=()=>{
         <div>
         <TitleBanner />
         <hr/>
-        {/* <div class="top_line">
-        <img
-          src={require('../image/arrow-right.png')}
-          alt="receipt"
-          style={{ width: '30px', height: '30px' }}
-        />
-        <div class="normal" style={{fontSize: '5vw',margin:'auto 0'}}>카페</div>
-      </div> */}
       <BackbuttonBar title="카페"/>
       <hr></hr>
       <div>
