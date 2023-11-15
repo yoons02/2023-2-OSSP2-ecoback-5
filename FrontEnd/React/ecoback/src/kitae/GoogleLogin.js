@@ -5,9 +5,10 @@ const GoogleLoginButton = () => {
     const clientId = 'clientID'
     return (
         <>
+
             <GoogleOAuthProvider clientId={clientId}>
+                <div className="google-login-button">
                 <GoogleLogin
-                    className="google-login-button"
                     onSuccess={(res) => {
                         console.log(res);
                     }}
@@ -15,7 +16,9 @@ const GoogleLoginButton = () => {
                         console.log(err);
                     }}
                 />
+                </div>
             </GoogleOAuthProvider>
+
         </>
     );
 };
