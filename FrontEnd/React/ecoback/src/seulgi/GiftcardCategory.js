@@ -8,7 +8,6 @@ const GiftcardCategory=()=>{
         <div>
         <TitleBanner />
         <hr/>
-       
       <BackbuttonBar title="기프트카드/상품권"/>
       <hr></hr>
       <div>

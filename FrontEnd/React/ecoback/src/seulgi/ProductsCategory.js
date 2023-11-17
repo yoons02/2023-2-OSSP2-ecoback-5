@@ -2,19 +2,14 @@ import React from "react";
 import individualBox from "./jsonFile/individualBox.json";
 import TitleBanner from "../components/TitleBanner.js";
 import IndividualGrid from "../components/individualGrid.js";
+import BackbuttonBar from "../components/BackbuttonBar.js";
 const ProductsCategory=()=>{
     return (
         <div>
         <TitleBanner />
-        <hr/>
-        <div class="top_line">
-        <img
-          src={require('../image/arrow-right.png')}
-          alt="receipt"
-          style={{ width: '30px', height: '30px' }}
-        />
-        <div class="normal" style={{fontSize: '20px',margin:'auto 0'}}>개별 상품목록</div>
-      </div>
+        <hr />
+        <BackbuttonBar title="개별 상품 목록"/>
+        <hr />
       <div>
         <IndividualGrid products={individualBox}/>
       </div>

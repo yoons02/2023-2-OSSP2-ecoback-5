@@ -1,10 +1,10 @@
 import React,{useState} from 'react';
 import '../css/Product.css';
 import TitleBanner from '../components/TitleBanner';
-import Backbutton from "../kitae/backbutton.js";
 import DolceLatte from "../image/dolcelatte.png";
 import Check from "../image/check.png";
 import BuyingPopup from '../seulgi/BuyingPopup';
+import BackbuttonBar from 'components/BackbuttonBar';
 const Product=()=>{
     const [isModalOpen, setIsModalOpen]=useState(false);
     const handleOpenModal=()=>setIsModalOpen(true);
@@ -12,10 +12,8 @@ const Product=()=>{
         <div>
             <TitleBanner />
             <hr />
-            <div className="top_line">
-                <Backbutton/>
-                <div className="normal" style={{fontSize: '5vw',margin:'auto 0'}}>구매 페이지</div>
-            </div>
+            <BackbuttonBar title="상품 구매 페이지"/>
+            <hr />
             <div className="productBox">
                 <div className="Item">
                     <img id="itemImg" src={DolceLatte} alt="돌체 콜드 브루 T" />

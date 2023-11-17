@@ -11,13 +11,14 @@ function Individual({ product }) {
     flexDirection:'column',
     alignItems:'center',
 
+
 };
   return (
     <div style={containerStyle}>
       <Link to="/product1">
-      <div className="product_categories">
+      <div className="box_categories_m">
       <img src={require(`../image/categories/${product.image}`)} alt={product.name}
-      style={{ width: '18vw'}} />
+      style={{ width: '50%'}} />
       </div>
       </Link>
       <div id="productName" style={{fontFamily:"NotoSansKR", fontSize:"3vw", fontWeight:"bold", width:"25vw"}}>{product.name}</div>
