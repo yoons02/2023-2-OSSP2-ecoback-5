@@ -1,12 +1,16 @@
-.product_categories {
-    display: flex;
+ .box_categories_m{
+    display:flex;
     flex-direction: column;
     justify-content: center;
+    align-content: center;
     align-items: center;
     width: 28vw;
     height: 26vw;
-    border-radius: 10%;
+    top: 435px;
+    left: 206px;
+    border-radius: 10px;
     box-shadow: 0px 2px 5px 0px #00000040;
+    margin: 10px;
   }
   
   .product-grid {
@@ -16,8 +20,10 @@
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows:1fr 1fr 1fr;
     gap: auto; 
-    /*가로 방향으로 중앙정렬*/
+    margin:1.5vw;
   }
+    /*가로 방향으로 중앙정렬*/
+  
 
   .pointView{
     height:20vw;

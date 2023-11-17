@@ -15,12 +15,12 @@ function Store({ product }) {
   return (
     <div style={containerStyle}>
       <Link to="/products">
-      <div className="product_categories">
+      <div className="box_categories_m">
       <img src={require(`../image/categories/${product.image}`)} alt={product.name}
-      style={{ width: '18vw'}} />
+      style={{ width:"50%", margin:"7vw"}} />
       </div>
       </Link>
-      <div id="productName" style={{fontFamily:"NotoSansKR", fontSize:"3vw", fontWeight:"bold", width:"25vw"}}>{product.name}</div>
+      <div id="productName" style={{fontFamily:"NotoSansKR", fontSize:"2vw", fontWeight:"bold", width:"25vw"}}>{product.name}</div>
     </div>
   );
 }
@@ -31,9 +31,7 @@ function StoreGrid({products}) {
     <div className="product-grid">
     
       {products.map(product => (
-        
           <Store key={product.id} product={product} />
-
       ))}
       <div class="pointView" style={{textAlign:'center',fontSize:'3vw', margin:'10vh 0'}}>
         포인트가 2024년 3월 1일에 소멸될 예정이에요.
