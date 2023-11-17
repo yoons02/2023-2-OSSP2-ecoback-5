@@ -1,15 +1,11 @@
 import React from "react";
-import ConvenienceStoreGrid from "./convenienceStoreGrid.js";
-
+import ConvenienceStore from "./jsonFile/convenienceStore.json";
+import TitleBanner from "../components/TitleBanner.js";
+import StoreGrid from "../components/storeGrid.js";
 const ConvenienceStoreCategory=()=>{
     return (
         <div>
-        <div className="normal" id="normalline" style={{ padding: '5px 7px' }}>
-        <div className="title">Eco$Back</div>
-        <div id="menubar_array"> 
-          <line/><line/><line/>
-        </div>
-        </div>
+        <TitleBanner />
         <hr/>
         <div class="top_line">
         <img
@@ -20,7 +16,7 @@ const ConvenienceStoreCategory=()=>{
         <div class="normal" style={{fontSize: '20px',margin:'auto 0'}}>편의점</div>
       </div>
       <div>
-        <ConvenienceStoreGrid />
+        <StoreGrid products={ConvenienceStore}/>
       </div>
 
         </div>

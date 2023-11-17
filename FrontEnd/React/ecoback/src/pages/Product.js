@@ -11,7 +11,7 @@ const Product=()=>{
             <hr />
             <div class="top_line">
                 <Backbutton/>
-                <div class="normal" style={{fontSize: '6vw',margin:'auto 0'}}>포인트 상점</div>
+                <div class="normal" style={{fontSize: '5vw',margin:'auto 0'}}>구매 페이지</div>
             </div>
             <div className="productBox">
                 <div className="Item">

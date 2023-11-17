@@ -2,7 +2,15 @@
     font-family: "NotoSansKR";
     src: url("../font/NotoSansKR.ttf") format("truetype");
   }
-
+#film_title{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: "NotoSansKR";
+    font-size: 15px;
+    font-weight: bold;
+    
+}
 .filmingPage{
     width:100vw;
     height:100vh;

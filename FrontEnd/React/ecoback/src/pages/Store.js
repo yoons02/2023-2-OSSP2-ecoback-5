@@ -1,6 +1,5 @@
 import '../css/Store.css';
 import Backbutton from '../kitae/backbutton.js';
-import {Link} from "react-router-dom";
 import Store_box from "../components/store_box.js";
 import TitleBanner from "../components/TitleBanner.js";
 
@@ -13,9 +12,9 @@ const Store = () => {
           </div> */}
           <TitleBanner />
       <hr/>
-      <div class="top_line">
-        <Backbutton/>
-        <div class="normal" style={{fontSize: '6vw',margin:'auto 0'}}>포인트 상점</div>
+      <div style={{ display: 'flex' }}>
+          <Backbutton/>
+          <p id="Store_title">포인트 상점</p>    
       </div>
       <div>
         <Store_box/>

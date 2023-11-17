@@ -13,6 +13,12 @@ import ChickenPizzaCategory from './seulgi/ChickenPizzaCategory.js';
 import Product from './pages/Product.js';
 import EditProfile from './pages/EditProfile.js';
 import Register from './pages/Register.js';
+import ProductsCategory from './seulgi/ProductsCategory.js';
+import IndividualGrid from 'components/individualGrid.js';
+import IcecreamCategory from './seulgi/IcecreamCategory.js';
+import BakeryCategory from 'seulgi/BakeryCategory.js';
+import GiftcardCategory from 'seulgi/GiftcardCategory.js';
+import MovieCategory from 'seulgi/MovieCategory.js';
 const App = () => {
   return(
     
@@ -30,12 +36,19 @@ const App = () => {
         <Route path="/mypage" element={<MyPage />}/>
         <Route path="/event" element={<Event />}/>
         <Route path='/editprofilepage' element={<EditProfile />} />
+        <Route path="/텀블러" element={<ProductsCategory />} />
+        <Route path="/뷰티/패션/건강" element={<BeautyHealthCategory />} />
+        <Route path="/카페" element={<CafeCategory />} />
+        <Route path="/편의점" element={<ConvenienceStoreCategory />} />
+        <Route path="/치킨/피자" element={<ChickenPizzaCategory />} />
+        <Route path="/아이스크림/빙수" element={<IcecreamCategory />} />
+        <Route path="/베이커리/도넛" element={<BakeryCategory/>} />
+        <Route path="/상품권/마트" element={<GiftcardCategory />} />
+        <Route path="/영화/OTT/체험" element={<MovieCategory />} />
+        <Route path="/product1" element={<Product />} />
+        <Route path="/products" element={<ProductsCategory />} />
+        <Route path="/individual" element={<IndividualGrid />} />
 
-        {/*메인 상점 페이지와 카테고리별 상점 페이지 연결*/}
-        <Route path="/store/뷰티/패션.건강" element={<BeautyHealthCategory />} />
-        <Route path="/store/카페" element={<CafeCategory />} />
-        <Route path="/store/편의점" element={<ConvenienceStoreCategory />} />
-        <Route path="/store/치킨/피자" element={<ChickenPizzaCategory />} />
     </Routes> 
     
   );

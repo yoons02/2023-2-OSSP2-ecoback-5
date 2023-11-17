@@ -11,7 +11,7 @@ const EditProfile=()=>{
                 <div className="faceImage" style={{padding: "5vw"}}>
                     <img id="faceImage" src={require('../image/userProfile.png')} alt="faceImg" />
                     <p style={{fontSize:"3vw"}}><b>2023년 10월 1일부터 함께하는 중</b></p>
-                    <button id="editProfile">프로필 편집</button>
+                    <button id="editProfile">사진 변경</button>
                 </div>
             </div>
             <hr />
@@ -21,7 +21,7 @@ const EditProfile=()=>{
                     <input type="text" name="firstName" placeholder="이름(First name)"/><br />
                     <input type="number" name="phone" placeholder="휴대전화(Phone number)"/><br />
                     <input type="email" name="email" placeholder="이메일(Email address)"/><br />
-                    <select name="gender">
+                    <select name="gender" id="gender">
                         <option>남성</option>
                         <option>여성</option>
                     </select><br />
