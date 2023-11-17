@@ -1,17 +1,21 @@
-import React from 'react';
+import React,{useState} from 'react';
 import '../css/Product.css';
 import TitleBanner from '../components/TitleBanner';
 import Backbutton from "../kitae/backbutton.js";
 import DolceLatte from "../image/dolcelatte.png";
 import Check from "../image/check.png";
+import BuyingPopup from '../seulgi/BuyingPopup';
 const Product=()=>{
+    const [isClicked, setClicked]=useState(false);
+    const [isModalOpen, setIsModalOpen]=useState(false);
+    const handleOpenModal=()=>setIsModalOpen(true);
     return(
         <div>
             <TitleBanner />
             <hr />
-            <div class="top_line">
+            <div className="top_line">
                 <Backbutton/>
-                <div class="normal" style={{fontSize: '5vw',margin:'auto 0'}}>구매 페이지</div>
+                <div className="normal" style={{fontSize: '5vw',margin:'auto 0'}}>구매 페이지</div>
             </div>
             <div className="productBox">
                 <div className="Item">
@@ -27,7 +31,8 @@ const Product=()=>{
                 </div>
             </div>
             <div className="btnBox">
-                <button id="buyBtn"><b style={{fontSize:"4vw"}}>구매하기</b></button>
+                <button id="buyBtn" onClick={()=>setIsModalOpen(true)}><b style={{fontSize:"4vw"}}>구매하기</b></button>
+                <BuyingPopup isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} />
             </div>
 
         </div>

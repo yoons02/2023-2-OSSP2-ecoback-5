@@ -16,7 +16,7 @@ const Home = () => {
 
       {/* 사이드바 ui 통일 작업하느라 잠시 슬라이더 주석처리 해놓았습니다 */}
       
-      {/* <ImageSlider /> */}
+      { <ImageSlider /> }
       <div className="normal" id="normalline">
         <div className="normal">내 잔여 포인트</div>
         <div className="normal">{point} 포인트</div>
