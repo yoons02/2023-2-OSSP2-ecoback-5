@@ -8,7 +8,7 @@ import TitleBanner from "../components/TitleBanner.js";
 import PopUp from 'components/PopUp';
 const Home = () => {
   const [isSidebarVisible, setSidebarVisible] = useState(false);
-  const saving_cup = 123456;
+  const saving_cup = 20000;
   /*위는 이후 barcode api 확정시 id(개수)를 이용하여 불러올 예정*/
   const point = user_info.point;
   return (
@@ -17,6 +17,7 @@ const Home = () => {
       {/* 사이드바 ui 통일 작업하느라 잠시 슬라이더 주석처리 해놓았습니다 */}
       
       <ImageSlider />
+
       <div className="normal" id="normalline">
         <div className="normal">내 잔여 포인트</div>
         <div className="normal">{point} 포인트</div>
