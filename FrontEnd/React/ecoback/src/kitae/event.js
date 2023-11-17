@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import Backbutton from './backbutton';
+import BackbuttonBar from 'components/BackbuttonBar';
 import TitleBanner from '../components/TitleBanner';
 import eventsData from './json/eventlist.json';
 import '../css/Event.css';
@@ -15,10 +15,7 @@ const Event = () => {
     <div style={{backgroundColor:"#F9F9F9"}}>     
         <TitleBanner />     
         <hr></hr>
-        <div style={{ display: 'flex' }}>
-          <Backbutton/>
-          <p id="event_title">이벤트</p>    
-        </div>
+        <BackbuttonBar title="이벤트"/> 
         <div style={{ display: 'flex', flexDirection: 'column', overflowY: 'scroll' }}>
           {events.map((event, index) => (
           <Link key={index} to={`/event/${event.id}`}>
