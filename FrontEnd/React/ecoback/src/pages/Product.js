@@ -6,7 +6,6 @@ import DolceLatte from "../image/dolcelatte.png";
 import Check from "../image/check.png";
 import BuyingPopup from '../seulgi/BuyingPopup';
 const Product=()=>{
-    const [isClicked, setClicked]=useState(false);
     const [isModalOpen, setIsModalOpen]=useState(false);
     const handleOpenModal=()=>setIsModalOpen(true);
     return(
@@ -31,7 +30,7 @@ const Product=()=>{
                 </div>
             </div>
             <div className="btnBox">
-                <button id="buyBtn" onClick={()=>setIsModalOpen(true)}><b style={{fontSize:"4vw"}}>구매하기</b></button>
+                <button id="buyBtn" onClick={()=>handleOpenModal()}><b style={{fontSize:"4vw"}}>구매하기</b></button>
                 <BuyingPopup isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} />
             </div>
 

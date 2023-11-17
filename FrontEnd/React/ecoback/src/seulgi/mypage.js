@@ -2,7 +2,9 @@ import BadgeGrid from './myBadge.js';
 import './mypage.css'
 import TitleBanner from '../components/TitleBanner.js';
 import Backbutton from 'kitae/backbutton.js';
+
 import {Link} from 'react-router-dom';
+
 
 
 const MyPage=()=>{
@@ -15,9 +17,13 @@ const MyPage=()=>{
                 <div className="faceImage" style={{padding: "5vw"}}>
                     <img id="faceImage" src={require('../image/userProfile.png')} alt="faceImg" />
                     <p style={{fontSize:"3vw"}}><b>2023년 10월 1일부터 함께하는 중</b></p>
+
                     <Link to="/editprofilepage">
                     <button id="editProfile">프로필 편집</button>
                     </Link>
+
+                    <Link to="/editprofilepage"><button id="editProfile">프로필 편집</button></Link>
+
                 </div>
             </div>
             <hr />
