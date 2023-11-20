@@ -6,17 +6,16 @@ import { Link } from 'react-router-dom';
 import user_info from '../minju/json/user_info.json';/*개인 포인트 불러오기 */
 import TitleBanner from "../components/TitleBanner.js";
 
+
 const Home = () => {
   const [isSidebarVisible, setSidebarVisible] = useState(false);
-  const saving_cup = 20000;
+  const saving_cup = 123456;
   /*위는 이후 barcode api 확정시 id(개수)를 이용하여 불러올 예정*/
   const point = user_info.point;
   return (
     <div>
       <TitleBanner />
       {/* 사이드바 ui 통일 작업하느라 잠시 슬라이더 주석처리 해놓았습니다 */}
-      
-      { <ImageSlider /> }
 
       <ImageSlider />
 
