@@ -1,0 +1,6 @@
+[
+    { "id": 1, "name": "노티드도넛", "image": "knotted.png"},
+    { "id": 2, "name": "랜디스도넛", "image": "randys.png" },
+    { "id": 3, "name": "파리바게트", "image": "pb.png" },
+    { "id": 4, "name": "뚜레쥬르", "image": "tj.png" }
+  ]

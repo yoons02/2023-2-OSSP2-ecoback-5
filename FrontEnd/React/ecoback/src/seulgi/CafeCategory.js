@@ -1,18 +1,19 @@
 import React from "react";
-import StoreGrid from "../components/storeGrid.js";
-import TitleBanner from "../components/TitleBanner.js";
-import Cafe from "./jsonFile/cafe.json";
-import BackbuttonBar from "components/BackbuttonBar.js";
+import '../css/Store.css';
+import Store_box from "../components/store_box.js";
+
+
 const CafeCategory=()=>{
     return (
         <div>
-        <TitleBanner />
+          <Store_box url='/cafe.json' title="카페"/>
+        {/*<TitleBanner />
         <hr/>
       <BackbuttonBar title="카페"/>
       <hr></hr>
       <div>
         <StoreGrid products={Cafe} />
-      </div>
+      </div>*/}
         </div>
     )
 }

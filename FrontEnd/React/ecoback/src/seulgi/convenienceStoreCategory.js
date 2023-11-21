@@ -1,19 +1,20 @@
 import React from "react";
-import ConvenienceStore from "./jsonFile/convenienceStore.json";
-import TitleBanner from "../components/TitleBanner.js";
-import StoreGrid from "../components/storeGrid.js";
-import BackbuttonBar from "components/BackbuttonBar.js";
+import '../css/Store.css';
+import Store_box from "../components/store_box.js";
+
 const ConvenienceStoreCategory=()=>{
     return (
+      
         <div>
-        <TitleBanner />
+        <Store_box url='/convenienceStore.json' title="편의점"/>
+        {/*<TitleBanner />
         <hr/>
 
         <BackbuttonBar title="편의점"/>
         <hr></hr>
       <div>
         <StoreGrid products={ConvenienceStore}/>
-      </div>
+      </div> */}
 
         </div>
     )

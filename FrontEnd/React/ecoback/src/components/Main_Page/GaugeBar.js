@@ -9,7 +9,7 @@ const GaugeBar = ({ value }) => {
     <div className="gauge-bar">
       <div className="gauge-bar-fill" style={{ width: `${percent}%` }}>
         <div className="gauge-bar-image" style={imagePosition}>
-          <img style={{margin:0, width:'30vw'}}src={require('../image/free-icon-turtle.png')} alt="Image" />
+          <img style={{margin:0, width:'30vw'}}src={require('../../image/free-icon-turtle.png')} alt="Image" />
         </div>
       </div>
     </div>
