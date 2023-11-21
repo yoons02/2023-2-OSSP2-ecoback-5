@@ -106,14 +106,14 @@ def category_read(request):
 @api_view(['GET'])
 def brand_read(request, id):
     if request.method == 'GET':
-        brands = Brand.objects.filter(id=id)
+        brands = Brand.objects.filter(category=id)
         serializers = BrandSerializer(brands, many=True)
         return Response(serializers.data)
     
 @api_view(['GET'])
 def products_read(request, id):
     if request.method == 'GET':
-        products = Product.objects.filter(id=id)
+        products = Product.objects.filter(brand=id)
         serializers = ProductSerializer(products, many=True)
         return Response(serializers.data)
         
