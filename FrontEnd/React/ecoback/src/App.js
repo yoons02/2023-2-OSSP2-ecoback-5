@@ -1,6 +1,7 @@
 import {Route, Routes} from 'react-router-dom';
 import Home from '../src/pages/Home.js';
 import Store from '../src/pages/Store.js';
+import Store_Temp from '../src/pages/Product_temp.js';
 import ReceiptFilming from './seulgi/receiptFilming.js';
 import MyPage from './seulgi/mypage.js';
 import Event from './kitae/event.js';
@@ -32,6 +33,7 @@ const App = () => {
         
         <Route path="/Home" element={<Home />} />
         <Route path="/Store" element={<Store />} />
+        <Route path="/Store_temp" element={<Store_Temp />} />
         <Route path="/receiptfilming" element={<ReceiptFilming />} />
         <Route path="/mypage" element={<MyPage />}/>
         <Route path="/event" element={<Event />}/>
