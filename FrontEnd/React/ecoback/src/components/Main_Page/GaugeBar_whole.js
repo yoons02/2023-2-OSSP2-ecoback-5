@@ -1,5 +1,5 @@
-import GaugeBar from "../components/GaugeBar";
-import '../css/Home.css';
+import GaugeBar from "./GaugeBar";
+import '../../css/Home.css';
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
@@ -29,13 +29,13 @@ const GaugeBar_whole = () => {
       <div style={{ padding: '10px 0 110px 0' }}>
         <div id="turtlebar">
           <img
-            src={require('../image/free-icon-juice.png')}
+            src={require('../../image/free-icon-juice.png')}
             alt="juice"
             style={{ width: '9vw', height: 'auto', margin: '0px' }}
           />
           <GaugeBar value={value} />
           <img
-            src={require('../image/free-icon-paper-cup.png')}
+            src={require('../../image/free-icon-paper-cup.png')}
             alt="paper-cup"
             style={{ width: '7.5vw', height: 'auto', margin: '0px' }}
           />

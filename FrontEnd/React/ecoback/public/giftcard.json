@@ -1,0 +1,9 @@
+[
+    { "id": 1, "name": "신세계", "image": "shinsegae.png"},
+    { "id": 2, "name": "롯데", "image": "lotte.png" },
+    { "id": 3, "name": "까사미아", "image": "casamia.png" },
+    { "id": 4, "name": "틴캐시", "image": "tincash.png" },
+    { "id": 5, "name": "해피머니", "image": "happymoney.png" },
+    { "id": 6, "name": "북앤라이프", "image": "book.png" },
+    { "id": 7, "name": "컬처랜드", "image": "cultureland.png" }
+  ]
