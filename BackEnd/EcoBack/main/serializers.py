@@ -8,6 +8,7 @@ class ProfileSerializer(serializers.ModelSerializer):
         fields = '__all__'
     
     image = serializers.ImageField(use_url=True)
+    read_only_fields = ['id', 'created_at', 'point']
 
 class EventSerializer(serializers.ModelSerializer):
 
