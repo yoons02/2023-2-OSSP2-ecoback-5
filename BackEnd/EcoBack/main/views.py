@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404
 from django.http import JsonResponse
 from rest_framework.generics import RetrieveAPIView, RetrieveUpdateAPIView, ListAPIView, CreateAPIView
 from rest_framework import viewsets
+from rest_framework import status
 from rest_framework.decorators import action
 from rest_framework.permissions import IsAdminUser, IsAuthenticated
 from rest_framework.response import Response
@@ -68,6 +69,13 @@ class ProductCategoryViewSet(viewsets.GenericViewSet):
         serializer = BrandSerializer(brands, many=True)
         return Response(serializer.data)
 
+    @action(methods=['post'], detail=False, permission_classes=[IsAdminUser])
+    def add_category(self, request):
+        serializer = ProductCategorySerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
 class BrandViewSet(viewsets.ReadOnlyModelViewSet):
@@ -80,6 +88,14 @@ class BrandViewSet(viewsets.ReadOnlyModelViewSet):
         products = Product.objects.filter(brand=brand)
         serializer = ProductSerializer(products, many=True)
         return Response(serializer.data)
+    
+    @action(methods=['post'], detail=False, permission_classes=[IsAdminUser])
+    def add_brand(self, request):
+        serializer = BrandSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
 
@@ -106,9 +122,12 @@ class ProductViewSet(viewsets.ModelViewSet):
         return Response(serializer.data)
 
     @action(methods=['post'], detail=False, permission_classes=[IsAdminUser])
-    def register_product(self, request):
-        # Implementation for registering a product
-        pass
+    def add_product(self, request):
+        serializer = ProductSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
 class BadgeViewSet(viewsets.ReadOnlyModelViewSet):
