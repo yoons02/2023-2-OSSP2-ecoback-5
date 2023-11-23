@@ -6,16 +6,15 @@ import '../css/Home.css';
 import { Link } from 'react-router-dom';
 import TitleBanner from "../components/TitleBanner.js";
 
-
 const Home = () => {
   return (
-    <div>
+    <div style={{ maxWidth: '420px', position: 'relative' }}>
       <TitleBanner />
       {/*banner*/}
-      <ImageSlider />
-      
+      <ImageSlider/>
       {/*user(사용자)의 point 표시*/}
       <Point_Mark/>
+
       
       {/*이동 버튼 부분*/}
       <div id="boxline" className="normal">
@@ -24,7 +23,7 @@ const Home = () => {
             <img
               src={require('../image/receipticon.png')}
               alt="receipt"
-              style={{ width: '10vw', height: 'auto' }}
+              style={{ width: '28%', height: 'auto' }}
             />
 
           <div>영수증 촬영</div>
@@ -35,7 +34,7 @@ const Home = () => {
           <img
             src={require('../image/storeicon.png')}
             alt="store"
-            style={{ width: '8vw', height: 'auto' }}
+            style={{ width: '23%', height: 'auto' }}
           />
           <div>포인트 상점</div>
         </div>
@@ -43,7 +42,7 @@ const Home = () => {
       </div>
       <hr />
       {/*게이지바 부분 컴포넌트로 변경 */}
-      <GaugeBar/>
+      <GaugeBar />
     </div>
   );
 };

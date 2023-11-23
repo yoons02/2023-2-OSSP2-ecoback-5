@@ -38,15 +38,15 @@ const App = () => {
         <Route path="/mypage" element={<MyPage />}/>
         <Route path="/event" element={<Event />}/>
         <Route path='/editprofilepage' element={<EditProfile />} />
-        <Route path="/텀블러" element={<ProductsCategory />} />
-        <Route path="/뷰티/패션/건강" element={<BeautyHealthCategory />} />
-        <Route path="/카페" element={<CafeCategory />} />
-        <Route path="/편의점" element={<ConvenienceStoreCategory />} />
-        <Route path="/치킨/피자" element={<ChickenPizzaCategory />} />
-        <Route path="/아이스크림/빙수" element={<IcecreamCategory />} />
-        <Route path="/베이커리/도넛" element={<BakeryCategory/>} />
-        <Route path="/상품권/마트" element={<GiftcardCategory />} />
-        <Route path="/영화/OTT/체험" element={<MovieCategory />} />
+        <Route path="/Store/텀블러" element={<ProductsCategory />} />
+        <Route path="/Store/뷰티/패션/건강" element={<BeautyHealthCategory />} />
+        <Route path="/Store/카페" element={<CafeCategory />} />
+        <Route path="/Store/편의점" element={<ConvenienceStoreCategory />} />
+        <Route path="/Store/치킨/피자" element={<ChickenPizzaCategory />} />
+        <Route path="/Store/아이스크림/빙수" element={<IcecreamCategory />} />
+        <Route path="/Store/베이커리/도넛" element={<BakeryCategory/>} />
+        <Route path="/Store/상품권/마트" element={<GiftcardCategory />} />
+        <Route path="/Store/영화/OTT/체험" element={<MovieCategory />} />
         <Route path="/product1" element={<Product />} />
         <Route path="/products" element={<ProductsCategory />} />
         <Route path="/individual" element={<IndividualGrid />} />
