@@ -33,9 +33,12 @@ class EventViewSet(viewsets.ModelViewSet):
     permission_classes = [IsAuthenticated]
 
     @action(methods=['post'], detail=False, permission_classes=[IsAdminUser])
-    def register_event(self, request):
-        # Implementation for registering an event
-        pass
+    def add_event(self, request):
+        serializer = EventSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
 class BarcodeViewSet(viewsets.GenericViewSet, CreateAPIView, ListAPIView):
@@ -44,8 +47,24 @@ class BarcodeViewSet(viewsets.GenericViewSet, CreateAPIView, ListAPIView):
     permission_classes = [IsAuthenticated]
 
     def create(self, request, *args, **kwargs):
-        # Existing implementation for creating barcodes
-        pass
+        valid_string = '29'
+        new_barcodes = BarcodeSerializer(data=request.data)
+        if new_barcodes.is_valid(raise_exception=True):
+            barcode_image = new_barcodes.validated_data.get('image')
+            nparr = np.fromstring(barcode_image.read(), np.uint8)
+            frame = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
+
+            for code in decode(frame):
+                barcode_data = code.data.decode('utf-8')
+                if valid_string not in barcode_data:
+                    return JsonResponse({'status': 'Invalid', 'code': barcode_data})
+                if barcode_data not in used_codes:
+                    used_codes.append(barcode_data)
+                    new_barcodes.save()
+                    return JsonResponse({'status': 'approved', 'code': barcode_data})
+                else:
+                    return JsonResponse({'status': 'duplicate', 'code': barcode_data})
+            return JsonResponse({'status': 'not found'})
 
     @action(methods=['get'], detail=False)
     def count(self, request):
