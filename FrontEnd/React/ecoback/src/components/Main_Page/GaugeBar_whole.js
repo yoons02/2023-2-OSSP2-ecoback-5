@@ -31,13 +31,13 @@ const GaugeBar_whole = () => {
           <img
             src={require('../../image/free-icon-juice.png')}
             alt="juice"
-            style={{ width: '9vw', height: 'auto', margin: '0px' }}
+            style={{ width: '49%', height: 'auto', margin: '0px' }}
           />
           <GaugeBar value={value} />
           <img
             src={require('../../image/free-icon-paper-cup.png')}
             alt="paper-cup"
-            style={{ width: '7.5vw', height: 'auto', margin: '0px' }}
+            style={{ width: '40%', height: 'auto', margin: '0px' }}
           />
         </div>
         <div className="center-hr">

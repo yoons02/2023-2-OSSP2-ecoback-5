@@ -5,9 +5,9 @@ import {Link} from 'react-router-dom';
 
 function Store({ product }) {
   const containerStyle = {
-    width: '10vw', 
+    width: '10%', 
     display:'flex',
-    margin:'0vw 0vw 0vw 10vw',
+    margin:'0vw 0vw 0vw 10%',
     flexDirection:'column',
     alignItems:'center',
 
@@ -17,7 +17,7 @@ function Store({ product }) {
       <Link to="/products">
       <div className="box_categories_m">
       <img src={require(`../image/categories/${product.image}`)} alt={product.name}
-      style={{ width:"50%", margin:"7vw"}} />
+      style={{ width:"50%", margin:"7%"}} />
       </div>
       </Link>
       <div id="productName" style={{fontFamily:"NotoSansKR", fontSize:"2vw", fontWeight:"bold", width:"25vw"}}>{product.name}</div>

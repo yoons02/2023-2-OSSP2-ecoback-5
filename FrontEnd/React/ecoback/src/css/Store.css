@@ -4,22 +4,23 @@
     justify-content: center;
     align-content: center;
     align-items: center;
-    width: 28vw;
-    height: 26vw;
+    width: 80%;
+    height: 73%;
     top: 435px;
     left: 206px;
     border-radius: 10px;
     box-shadow: 0px 2px 5px 0px #00000040;
     margin: 10px;
   }
+
   .box_categories_P{
     display:flex;
     flex-direction: column;
     justify-content: center;
     align-content: center;
     align-items: center;
-    width: 42vw;
-    height: 35vw;
+    width: 80%;
+    height: 65%;
     top: 435px;
     left: 206px;
     border-radius: 10px;
@@ -36,6 +37,8 @@
     
 }
   .title_line {
+    width: 100%;
+    position: relative;
     display:grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
@@ -43,23 +46,16 @@
     gap: auto;
   }
   .title_line_P{
+    width: 100%;
+    position: relative;
     display:grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     justify-content:center;
-    gap: 3vw;
-    padding: 0 5vw;
+    gap: 0;
+    padding: 0 0.5%;
   }
 
-  .mug_align{
-    display:flex;
-    flex-direction: row;
-    justify-content: center;
-    align-content: center;
-    align-items: center;
-    width: 30vw;
-    height: 28vw;
-  }
   .top_line{
     display: grid; /* 그리드 컨테이너로 설정 */
     grid-template-columns: 0.7fr 1fr;

@@ -24,8 +24,8 @@ const ImageSlider = () => {
 
   return (
     <div className="normal" id="normalline">
-      <div className="normal">내 잔여 포인트</div>
-      <div className="normal">{point} 포인트</div>
+      <div>내 잔여 포인트</div>
+      <div>{point} 포인트</div>
     </div>
   );
 };
