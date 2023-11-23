@@ -61,6 +61,13 @@ class BarcodeViewSet(viewsets.GenericViewSet, CreateAPIView, ListAPIView):
                 if barcode_data not in used_codes:
                     used_codes.append(barcode_data)
                     new_barcodes.save()
+
+                    user = request.user
+                    profile = user.profile
+                    profile.point += 150
+                    profile.save()
+                    new_barcodes.save()
+
                     return JsonResponse({'status': 'approved', 'code': barcode_data})
                 else:
                     return JsonResponse({'status': 'duplicate', 'code': barcode_data})
