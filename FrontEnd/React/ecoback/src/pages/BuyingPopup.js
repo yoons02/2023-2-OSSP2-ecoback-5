@@ -1,6 +1,6 @@
 import Modal from 'react-modal';
 import React from 'react';
-import './popup.css';
+import '../seulgi/popup.css';
   
 const BuyingPopup=({isModalOpen,setIsModalOpen})=> {
     const modalStyle = {

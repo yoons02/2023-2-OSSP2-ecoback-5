@@ -16,7 +16,7 @@ const Home = () => {
       <TitleBanner />
       {/* 사이드바 ui 통일 작업하느라 잠시 슬라이더 주석처리 해놓았습니다 */}
       
-      { <ImageSlider /> }
+      {/* { <ImageSlider /> } */}
 
       <ImageSlider />
 

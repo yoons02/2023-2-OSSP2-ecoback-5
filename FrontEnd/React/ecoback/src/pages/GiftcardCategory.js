@@ -1,20 +1,20 @@
 import React from "react";
 import StoreGrid from "../components/storeGrid.js";
 import TitleBanner from "../components/TitleBanner.js";
-import Cafe from "./jsonFile/cafe.json";
+import Giftcard from "../seulgi/jsonFile/giftcard.json";
 import BackbuttonBar from "components/BackbuttonBar.js";
-const CafeCategory=()=>{
+const GiftcardCategory=()=>{
     return (
         <div>
         <TitleBanner />
         <hr/>
-      <BackbuttonBar title="카페"/>
+      <BackbuttonBar title="기프트카드/상품권"/>
       <hr></hr>
       <div>
-        <StoreGrid products={Cafe} />
+        <StoreGrid products={Giftcard} />
       </div>
         </div>
     )
 }
 
-export default CafeCategory;
+export default GiftcardCategory;

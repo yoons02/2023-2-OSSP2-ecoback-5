@@ -1,7 +1,7 @@
 import React from "react";
 import StoreGrid from "../components/storeGrid.js";
 import TitleBanner from "../components/TitleBanner.js";
-import Icecream from "./jsonFile/icecream.json";
+import Icecream from "../seulgi/jsonFile/icecream.json";
 import BackbuttonBar from "components/BackbuttonBar.js";
 const IcecreamCategory=()=>{
     return (

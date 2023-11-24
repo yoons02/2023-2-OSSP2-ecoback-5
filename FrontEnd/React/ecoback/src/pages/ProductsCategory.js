@@ -1,5 +1,5 @@
 import React from "react";
-import individualBox from "./jsonFile/individualBox.json";
+import individualBox from "../seulgi/jsonFile/individualBox.json";
 import TitleBanner from "../components/TitleBanner.js";
 import IndividualGrid from "../components/individualGrid.js";
 import BackbuttonBar from "../components/BackbuttonBar.js";

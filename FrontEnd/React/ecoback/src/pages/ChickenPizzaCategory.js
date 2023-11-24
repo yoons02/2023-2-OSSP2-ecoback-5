@@ -1,6 +1,6 @@
 import React from "react";
 import TitleBanner from "../components/TitleBanner.js";
-import ChickenPizza from "./jsonFile/chickenPizza.json";
+import ChickenPizza from "../seulgi/jsonFile/chickenPizza.json";
 import StoreGrid from "../components/storeGrid.js";
 import BackbuttonBar from "components/BackbuttonBar.js";
 const ChickenPizzaCategory=()=>{

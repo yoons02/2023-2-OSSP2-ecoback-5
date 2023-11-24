@@ -1,5 +1,5 @@
 import React from "react";
-import BeautyHealth from "./jsonFile/beautyHealth.json";
+import BeautyHealth from "../seulgi/jsonFile/beautyHealth.json";
 import TitleBanner from "../components/TitleBanner.js";
 import StoreGrid from '../components/storeGrid.js';
 import BackbuttonBar from "components/BackbuttonBar.js";

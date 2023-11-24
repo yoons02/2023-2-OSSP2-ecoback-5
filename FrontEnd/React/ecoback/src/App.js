@@ -2,23 +2,23 @@ import {Route, Routes} from 'react-router-dom';
 import Home from '../src/pages/Home.js';
 import Store from '../src/pages/Store.js';
 import ReceiptFilming from './seulgi/receiptFilming.js';
-import MyPage from './seulgi/mypage.js';
+import MyPage from './pages/mypage.js';
 import Event from './kitae/event.js';
 import Login from './pages/Login.js';
 import Start from './pages/Start.js';
-import BeautyHealthCategory from './seulgi/BeautyHealthCategory.js';
-import CafeCategory from './seulgi/CafeCategory.js';
-import ConvenienceStoreCategory from './seulgi/convenienceStoreCategory.js';
-import ChickenPizzaCategory from './seulgi/ChickenPizzaCategory.js';
+import BeautyHealthCategory from './pages/BeautyHealthCategory.js';
+import CafeCategory from './pages/CafeCategory.js';
+import ConvenienceStoreCategory from './pages/convenienceStoreCategory.js';
+import ChickenPizzaCategory from './pages/ChickenPizzaCategory.js';
 import Product from './pages/Product.js';
 import EditProfile from './pages/EditProfile.js';
 import Register from './pages/Register.js';
-import ProductsCategory from './seulgi/ProductsCategory.js';
+import ProductsCategory from './pages/ProductsCategory.js';
 import IndividualGrid from 'components/individualGrid.js';
-import IcecreamCategory from './seulgi/IcecreamCategory.js';
-import BakeryCategory from 'seulgi/BakeryCategory.js';
-import GiftcardCategory from 'seulgi/GiftcardCategory.js';
-import MovieCategory from 'seulgi/MovieCategory.js';
+import IcecreamCategory from './pages/IcecreamCategory.js';
+import BakeryCategory from 'pages/BakeryCategory.js';
+import GiftcardCategory from 'pages/GiftcardCategory.js';
+import MovieCategory from 'pages/MovieCategory.js';
 const App = () => {
   return(
     

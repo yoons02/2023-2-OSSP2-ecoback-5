@@ -3,7 +3,7 @@ import '../css/Product.css';
 import TitleBanner from '../components/TitleBanner';
 import DolceLatte from "../image/dolcelatte.png";
 import Check from "../image/check.png";
-import BuyingPopup from '../seulgi/BuyingPopup';
+import BuyingPopup from './BuyingPopup';
 import BackbuttonBar from 'components/BackbuttonBar';
 const Product=()=>{
     const [isModalOpen, setIsModalOpen]=useState(false);

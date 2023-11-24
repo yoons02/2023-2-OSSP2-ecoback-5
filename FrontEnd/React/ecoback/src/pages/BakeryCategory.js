@@ -1,8 +1,8 @@
 import React from "react";
 import StoreGrid from "../components/storeGrid.js";
 import TitleBanner from "../components/TitleBanner.js";
-import Bakery from "./jsonFile/bakery.json";
-import BackbuttonBar from "components/BackbuttonBar.js";
+import Bakery from "../seulgi/jsonFile/bakery.json";
+import BackbuttonBar from "../components/BackbuttonBar.js";
 const BakeryCategory=()=>{
     return (
         <div>

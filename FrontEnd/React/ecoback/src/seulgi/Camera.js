@@ -12,7 +12,9 @@ import './receiptFilming.css';
 
 const videoConstraints = {
   width: { ideal: window.innerWidth },
-  facingMode: "environment",
+  height:{ideal:window.innerHeight},
+  facingMode: "user",
+  /*전면카메라(PC용): user, 후면카메라(모바일용): environment*/
 };
 
 const Camera = () => {
@@ -37,7 +39,7 @@ const Camera = () => {
   }, [webcamRef]);
 
   const onUserMedia = (e) => {
-    console.log(e);
+    console.log("User Media accessed", e);
   }
 
   return (

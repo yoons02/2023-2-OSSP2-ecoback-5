@@ -1,5 +1,5 @@
-import badges from './jsonFile/badges.json';
-import './mypage.css'
+import badges from '../seulgi/jsonFile/badges.json';
+import '../seulgi/mypage.css'
 
 //뱃지 아이콘 생성
 function Badge({badge}){
