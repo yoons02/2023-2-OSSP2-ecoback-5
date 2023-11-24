@@ -5,7 +5,6 @@ import axios from 'axios';
 import '../css/Register.css';
 import { useNavigate } from 'react-router-dom';
 import API from 'api/axios';
-import checkUserInfo from 'kitae/checkUserInfo';
 
 
 const Register = () => {
@@ -14,16 +13,10 @@ const Register = () => {
   const [password1, setPassword1] = useState('');
   const [password2, setPassword2] = useState('');
 
-
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
-    // if (checkUserInfo(username, email, password1, password2)) 
-    //     return;
-
-    // 아이디, 이메일, 비밀번호, 비밀번호 확인 값을 사용하여 회원가입 로직을 구현하세요.
       const userData = {
         username: username,
         email: email,
