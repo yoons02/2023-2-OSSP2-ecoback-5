@@ -16,17 +16,20 @@ function Login() {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
-    },
+    },  
+
     body: JSON.stringify({
       id: id,
       password: password
     })
+
   });
 
   if (response.ok) {
     const data = await response.json();
     console.log('로그인 성공:', data);
-  } else {
+  } 
+  else {
     console.log('로그인 실패:', response.status);
   }
 };
@@ -63,7 +66,6 @@ function Login() {
         <br></br>
         <br></br>
         <Link to="/register" ><p class="ask_register">계정이 없으신가요? 가입하기 &nbsp;&nbsp;</p></Link>
-        {/* 가입하기 누르면 가입창 나오게 제작예정 */}
         <center>
             <a href="./Home">
                 <img class="imagebutton" onClick={handleLogin} id="loginbutton" src={loginbutton} alt="loginbutton"/>
@@ -73,7 +75,6 @@ function Login() {
         </center>
         <center>
             <div class="hr-sect">또는</div>
-            {/* <img class="imagebutton" id="googleloginbutton" src={googleloginbutton} alt="googleloginbutton"/> */}
             <GoogleLoginButton />
         </center>
     </html>

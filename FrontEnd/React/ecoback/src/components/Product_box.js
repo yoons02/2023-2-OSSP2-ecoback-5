@@ -3,7 +3,7 @@ import '../css/Store.css';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import BackbuttonBar from 'components/BackbuttonBar';
-import TitleBanner from "../components/TitleBanner.js";
+import TitleBanner from "./TitleBanner.js";
 const Store_box = ({url, title}) => {
   const [category, setEvents] = useState([]);
 
@@ -28,20 +28,22 @@ const Store_box = ({url, title}) => {
       <hr/>
       <BackbuttonBar title={title}/>
       <hr></hr>
-    <div className='title_line'>
+    <div className='title_line_P'>
       {category.map((categoryData, index) => (
         <div key={index}>
-          <Link to={'./' + categoryData.name}>
-            <div className='box_categories_m'>
-              <img style={{ width: '70%' }} src={require('../image/categories/' + categoryData.image)} alt={categoryData.name} />
+          <Link to={'./' + categoryData.id}>
+            <div className='box_categories_P'>
+              <img style={{ width: '60%' }} src={require('../image/categories/' + categoryData.product_image)} alt={categoryData.name} />
             </div>
+        <div style={{ marginBottom: '15%' }}>
+          <div className='normal' style={{ textAlign: 'center', fontWeight:'normal'}}>{categoryData.name}</div>
+          <div className='normal' style={{ textAlign: 'center' }}>{categoryData.price}원</div>
+        </div>
           </Link>
-          <div className='normal' style={{ textAlign: 'center' }}>{categoryData.name}</div>
         </div>
       ))}
     </div>
-    <div class="normal" style={{textAlign:'center',fontSize:'90%', margin:'10%'}}>포인트가 2024년 3월 1일에 소멸될 예정이에요.</div> 
-    
+     
     </div>
   );
 };

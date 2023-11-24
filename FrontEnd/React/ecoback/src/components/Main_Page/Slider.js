@@ -2,16 +2,26 @@ import React, { useState, useEffect } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import eventsData from '../minju/json/eventlist.json';
 import { Link } from 'react-router-dom';
+import axios from "axios";
 
 const ImageSlider = () => {
   const [events, setEvents] = useState([]);
 
   useEffect(() => {
-    // Assuming eventsData is an array directly containing events
-    setEvents(eventsData);
+    fetchData();
   }, []);
+
+  const fetchData = async () => {
+    try {
+      const response = await axios.get('/eventlist.json');
+      // Use response.data directly, no need for response.json()
+      const data = response.data;
+      setEvents(data);
+    } catch (error) {
+      console.error("API 오류", error);
+    }
+  };
 
   const settings = {
     dots: false,
@@ -28,7 +38,7 @@ const ImageSlider = () => {
       {events.map((event, index) => (
         <Link key={index} to={`/event/${event.id}`}>
           {/* Assuming event.imagePath contains the correct path to the image */}
-          <img className="events_image" src={require(`../image/events/${event.imagePath}`)} alt={event.title} />
+          <img className="events_image"  src={require(`../../image/events/${event.imagePath}`)} alt={event.title} />
         </Link>
       ))}
     </Slider>

@@ -21,9 +21,15 @@ const MyPage=()=>{
                     <Link to="/editprofilepage">
                     <button id="editProfile">프로필 편집</button>
                     </Link>
+<<<<<<< HEAD:FrontEnd/React/ecoback/src/pages/mypage.js
 
                     
 
+=======
+                    {/*프로필 편집 부분이 2번 표시되어 주석처리 해놓았습니다.
+                    <Link to="/editprofilepage"><button id="editProfile">프로필 편집</button></Link>
+                    */}
+>>>>>>> eb9dffde7b0c58648871e2dd5a80f0a8457bf48d:FrontEnd/React/ecoback/src/seulgi/mypage.js
                 </div>
             </div>
             <hr />

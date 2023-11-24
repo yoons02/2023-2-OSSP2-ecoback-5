@@ -1,20 +1,20 @@
-from django.urls import path
-from .views import *
-from . import views
+from django.urls import include, path
 from django.conf import settings
 from django.conf.urls.static import static
+from rest_framework.routers import DefaultRouter
+from .views import MyProfileViewSet, EventViewSet, BarcodeViewSet, ProductCategoryViewSet, BrandViewSet, ProductViewSet, BadgeViewSet
 
 app_name = "main"
+
+router = DefaultRouter()
+router.register(r'mypage', MyProfileViewSet, basename='mypage')
+router.register(r'events', EventViewSet, basename='events')
+router.register(r'barcodes', BarcodeViewSet, basename='barcodes')
+router.register(r'market/categories', ProductCategoryViewSet, basename='categories')
+router.register(r'market/brands', BrandViewSet, basename='brands')
+router.register(r'market/products', ProductViewSet, basename='products')
+router.register(r'badges', BadgeViewSet, basename='badges')
+
 urlpatterns = [
-    path('mypage/', views.my_profile),
-    path('mypage-update/', views.profile_update),
-    path('events/', views.event_all),
-    path('events/<int:id>/', views.event_detail),
-    path('barcodes/', views.barcode_create),
-    path('barcodes-count/', views.barcode_count),
-    path('user/<int:id>/badges/', views.badge_show),
-    path('market/categories/', views.category_read),
-    path('market/categories/<int:id>/', views.brand_read),
-    path('market/brands/<int:id>/', views.products_read),
-    path('market/products/<int:id>/', views.product_detail),
+    path('', include(router.urls)),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

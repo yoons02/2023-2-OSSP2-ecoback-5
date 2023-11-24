@@ -1,0 +1,6 @@
+[
+    { "id": 1, "name": "나뚜루", "image": "natuur.png"},
+    { "id": 2, "name": "하겐다즈", "image": "hagendazs.png" },
+    { "id": 3, "name": "배스킨라빈스", "image": "baskin.png" },
+    { "id": 4, "name": "설빙", "image": "sulbing.png" }
+  ]
