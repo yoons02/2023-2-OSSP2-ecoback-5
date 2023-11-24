@@ -42,6 +42,29 @@ const Camera = () => {
     console.log("User Media accessed", e);
   }
 
+  /*서버로 사진 전송하는 함수*/
+  const sendPhotoServer = async()=>{
+    const formData = new FormData();
+    /*<input name="photo" value={url} />이라고 생각하면 됨. */
+    formData.append('photo', url);
+
+    try{
+      const response = await fetch('',{
+        method: 'POST',
+        body: formData,
+      });
+      if(response.ok){
+        console.log('Photo uploaded Successfully!');
+      }
+      else{
+        console.log('Fail to Upload');
+      }
+    }catch(e){
+      console.error('Error: ',e);
+    }
+
+  }
+
   return (
     <>
       <Webcam
@@ -60,10 +83,12 @@ const Camera = () => {
       </div>
      
       {url && (
-        <div>
+        <div id="screenShot">
           <img src={url} alt='ScreenShot'/>
+          <button id="sendPhotoBtn" onCllick={sendPhotoServer}>전송하기</button>
         </div>
       )}
+     
     </>
   );
 }

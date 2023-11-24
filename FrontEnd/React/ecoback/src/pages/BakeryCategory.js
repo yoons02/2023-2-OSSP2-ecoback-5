@@ -1,7 +1,4 @@
 import React from "react";
-import StoreGrid from "../components/storeGrid.js";
-import TitleBanner from "../components/TitleBanner.js";
-import BackbuttonBar from "../components/BackbuttonBar.js";
 import '../css/Store.css';
 import Store_box from "../components/store_box.js";
 
