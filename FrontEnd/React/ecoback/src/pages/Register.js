@@ -7,19 +7,21 @@ import { useNavigate } from 'react-router-dom';
 import API from 'api/axios';
 import checkUserInfo from 'kitae/checkUserInfo';
 
+
 const Register = () => {
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password1, setPassword1] = useState('');
   const [password2, setPassword2] = useState('');
 
+
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     
-    if (checkUserInfo(username, email, password1, password2)) 
-        return;
+    // if (checkUserInfo(username, email, password1, password2)) 
+    //     return;
 
     // 아이디, 이메일, 비밀번호, 비밀번호 확인 값을 사용하여 회원가입 로직을 구현하세요.
       const userData = {
@@ -35,9 +37,38 @@ const Register = () => {
                 if (response.status === 201) {
                     navigate('/login');
                 }
+              
             })
-            .catch((error) => console.log(error.response));
+            .catch((error) => {
+                if (error.response) {
+                  const errorData = error.response.data;
+                  let errorMessage = '';
+
+                  if (errorData.non_field_errors) {
+                    errorMessage = errorData.non_field_errors[0];
+                  } else if (errorData.username) {
+                    errorMessage = errorData.username[0];
+                  } else if (errorData.password1) {
+                    errorMessage = errorData.password1[0];
+                  }
+
+                  if (errorMessage.includes('이미')) {
+                    alert('이미 존재하는 사용자입니다. 다른 사용자명을 입력해주세요.');
+                  } else if (errorMessage.includes('짧습니다')) {
+                    alert('비밀번호가 8글자보다 짧습니다. 더욱 긴 비밀번호를 입력해주세요.');
+                  } 
+                  else if (errorMessage.includes('일상적인')) {
+                    alert('비밀번호가 너무 간단합니다. 더욱 복잡한 비밀번호를 입력해주세요.');
+                  }
+                  else {
+                    alert('회원가입에 실패하였습니다. 다시 시도해주세요.');
+                  }
+                } else {
+                  console.log(error);
+                }
+              });
   };
+
   return (
     <html>
       <center>
@@ -89,9 +120,7 @@ const Register = () => {
           <br/>
           <br></br>
 
-          {/* <Link to="/Login"><img src={registerbutton}></img></Link>
-           */}
-
+        
           <button className="register-button" type="submit">
             <img src={registerbutton} alt="Register Button" />
           </button>
