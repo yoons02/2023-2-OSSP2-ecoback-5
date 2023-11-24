@@ -9,6 +9,7 @@ import {Link} from 'react-router-dom';
 
 const MyPage=()=>{
     return (
+        <div /*className="full_container"*/>
         <div style={{backgroundColor:"#F9F9F9"}}>
             <TitleBanner />
             <hr />
@@ -32,7 +33,7 @@ const MyPage=()=>{
                 <div id="badgeCount">6/12</div>
                 <BadgeGrid />
             </div>
-        </div>
+        </div></div>
     )
 }
 

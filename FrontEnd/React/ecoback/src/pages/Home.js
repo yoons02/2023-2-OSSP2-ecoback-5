@@ -8,7 +8,7 @@ import TitleBanner from "../components/TitleBanner.js";
 
 const Home = () => {
   return (
-    <div style={{ maxWidth: '420px', position: 'relative' }}>
+    <div className="full_container">
       <TitleBanner />
       {/*banner*/}
       <ImageSlider/>

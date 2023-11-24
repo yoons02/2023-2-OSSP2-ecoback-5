@@ -12,7 +12,8 @@ const Event = () => {
   }, []);
 
   return (
-    <div style={{backgroundColor:"#F9F9F9"}}>     
+
+    <div className="full_container" style={{backgroundColor:"#F9F9F9"}}>     
         <TitleBanner />     
         <hr></hr>
         <BackbuttonBar title="이벤트"/> 

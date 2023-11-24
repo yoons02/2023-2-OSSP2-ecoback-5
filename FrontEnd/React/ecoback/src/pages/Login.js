@@ -35,7 +35,7 @@ function Login() {
 };
 
   return (
-    <html>
+    <html className="full_container">
         <center>
             <div id="logo">
                 <img src={logo} alt="logo" />
