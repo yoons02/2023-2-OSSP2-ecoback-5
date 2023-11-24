@@ -1,11 +1,7 @@
 import React from "react";
 import StoreGrid from "../components/storeGrid.js";
 import TitleBanner from "../components/TitleBanner.js";
-FrontEnd/React/ecoback/src/pages/BakeryCategory.js
 import BackbuttonBar from "../components/BackbuttonBar.js";
-=======
-import Bakery from "./jsonFile/bakery.json";
-import BackbuttonBar from "components/BackbuttonBar.js";
 import '../css/Store.css';
 import Store_box from "../components/store_box.js";
 

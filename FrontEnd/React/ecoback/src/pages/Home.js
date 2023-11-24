@@ -13,22 +13,22 @@ const Home = () => {
       {/*banner*/}
       <ImageSlider/>
       {/*user(사용자)의 point 표시*/}
-      <Point_Mark/>
+      <Point_Mark />
 
       
-<<<<<<< HEAD
+
       {/* { <ImageSlider /> } */}
 
       <ImageSlider />
 
       <div className="normal" id="normalline">
         <div className="normal">내 잔여 포인트</div>
-        <div className="normal">{point} 포인트</div>
+        <div className="normal">{/*{point}*/} 포인트</div>
       </div>
 
-=======
+
       {/*이동 버튼 부분*/}
->>>>>>> eb9dffde7b0c58648871e2dd5a80f0a8457bf48d
+
       <div id="boxline" className="normal">
       <Link to="/receiptfilming">
         <div className="box">

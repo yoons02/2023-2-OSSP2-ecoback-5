@@ -20,7 +20,7 @@ const ImageSlider = () => {
       console.error("API 오류", error);
     }
   };
-  const point=datas.point;
+ const point=datas.point;
 
   return (
     <div className="normal" id="normalline">
