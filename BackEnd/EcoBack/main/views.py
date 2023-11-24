@@ -39,6 +39,17 @@ class EventViewSet(viewsets.ModelViewSet):
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    
+    @action(methods=['patch'], detail=True, permission_classes=[IsAdminUser])
+    def admin_update_event(self, request, pk=None):
+        event = self.get_object()
+        serializer = self.get_serializer(event, data=request.data, partial=True)
+        
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
 class BarcodeViewSet(viewsets.GenericViewSet, CreateAPIView, ListAPIView):
@@ -102,6 +113,17 @@ class ProductCategoryViewSet(viewsets.GenericViewSet):
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    
+    @action(methods=['patch'], detail=True, permission_classes=[IsAdminUser])
+    def admin_update_category(self, request, pk=None):
+        category = self.get_object()
+        serializer = self.get_serializer(category, data=request.data, partial=True)
+        
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
 class BrandViewSet(viewsets.ReadOnlyModelViewSet):
@@ -121,6 +143,17 @@ class BrandViewSet(viewsets.ReadOnlyModelViewSet):
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    
+    @action(methods=['patch'], detail=True, permission_classes=[IsAdminUser])
+    def admin_update_brand(self, request, pk=None):
+        brand = self.get_object()
+        serializer = self.get_serializer(brand, data=request.data, partial=True)
+        
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
@@ -153,6 +186,17 @@ class ProductViewSet(viewsets.ModelViewSet):
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    
+    @action(methods=['patch'], detail=True, permission_classes=[IsAdminUser])
+    def admin_update_product(self, request, pk=None):
+        product = self.get_object()
+        serializer = self.get_serializer(product, data=request.data, partial=True)
+        
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
