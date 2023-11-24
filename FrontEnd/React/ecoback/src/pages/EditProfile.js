@@ -6,6 +6,7 @@ const EditProfile=()=>{
        <div>
         <TitleBanner />
         <hr />
+        <div /*className="full_container"*/>
         <div className="profileContainer">
                 <div id="username">홍길동님의 프로필</div>
                 <div className="faceImage" style={{padding: "5vw"}}>
@@ -30,7 +31,7 @@ const EditProfile=()=>{
                     </div>
                 </form>
             </div>
-       </div>
+       </div></div>
     )
 }
 export default EditProfile;

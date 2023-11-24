@@ -21,7 +21,7 @@ const Store_box = ({url, title}) => {
   };
 
   return (
-    <div style={{ maxWidth: '420px', position: 'relative' }}>
+    <div className="full_container">
       <div>
         <TitleBanner />
       </div>

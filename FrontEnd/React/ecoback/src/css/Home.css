@@ -1,3 +1,8 @@
+.full_container {
+  max-width: 420px;
+  position: relative;
+  margin: 0 auto;
+}
 img{
   margin:10px;
 }
@@ -94,7 +99,7 @@ hr {
 
 .hr {
   width: 60%;
-  height: 1vw; /* 선의 두께 조절 */
+  height: 4.5px; /* 선의 두께 조절 */
   background: linear-gradient(270deg, #65CE40 26.04%, #FFC700 100%);
   border: none; /* 기본 테두리 제거 */
   margin:0px;
