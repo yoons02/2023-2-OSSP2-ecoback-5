@@ -146,7 +146,7 @@ class BrandViewSet(viewsets.ReadOnlyModelViewSet):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     
     @action(methods=['patch'], detail=True, permission_classes=[IsAdminUser])
-    def admin_update_category(self, request, pk=None):
+    def admin_update_brand(self, request, pk=None):
         brand = self.get_object()
         serializer = self.get_serializer(brand, data=request.data, partial=True)
         
