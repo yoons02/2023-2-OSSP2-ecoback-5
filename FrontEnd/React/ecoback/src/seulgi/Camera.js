@@ -9,6 +9,7 @@ Refrsh 버튼 누르면 사진 사라지게 일단 임시로 버튼 만들어놓
 import React, { useState, useRef, useCallback } from 'react';
 import Webcam from 'react-webcam';
 import './receiptFilming.css';
+import SendPhotoModal from './sendPhotoModal';
 
 const videoConstraints = {
   width: { ideal: window.innerWidth },
@@ -18,6 +19,8 @@ const videoConstraints = {
 };
 
 const Camera = () => {
+  const [isModalOpen, setIsModalOpen]=useState(false);
+    const handleOpenModal=()=>setIsModalOpen(true);
   const webcamRef = useRef(null);
   const [url, setUrl] = useState(null);
 
@@ -44,10 +47,12 @@ const Camera = () => {
 
   /*서버로 사진 전송하는 함수*/
   const sendPhotoServer = async()=>{
+    handleOpenModal();
     const formData = new FormData();
     /*<input name="photo" value={url} />이라고 생각하면 됨. */
     formData.append('photo', url);
 
+    <SendPhotoModal isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen}/>
     try{
       const response = await fetch('',{
         method: 'POST',
@@ -55,6 +60,7 @@ const Camera = () => {
       });
       if(response.ok){
         console.log('Photo uploaded Successfully!');
+        
       }
       else{
         console.log('Fail to Upload');
@@ -62,7 +68,7 @@ const Camera = () => {
     }catch(e){
       console.error('Error: ',e);
     }
-
+    
   }
 
   return (
@@ -85,10 +91,11 @@ const Camera = () => {
       {url && (
         <div id="screenShot">
           <img src={url} alt='ScreenShot'/>
-          <button id="sendPhotoBtn" onCllick={sendPhotoServer}>전송하기</button>
+          <button id="sendPhotoBtn" onClick={sendPhotoServer}>전송하기</button>
         </div>
       )}
      
+    <SendPhotoModal isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} />
     </>
   );
 }
