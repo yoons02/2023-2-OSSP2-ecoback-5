@@ -3,36 +3,44 @@ import logo from '../image/logo.png'; // 로고 이미지 경로
 import loginbutton from '../image/loginbutton.png';
 // import googleloginbutton from '../image/googleloginbutton.png';
 import GoogleLoginButton from 'kitae/GoogleLogin';
-import { Link } from 'react-router-dom';
-
+import { Link,useNavigate } from 'react-router-dom';
+import axios from 'axios';
 import '../css/Login.css';
 
 function Login() {
   const [id, setId] = useState('');
   const [password, setPassword] = useState('');
+  const [isLoggedIn, setIsLoggedIn] = useState(false); // 로그인 상태
+  const [error, setError] = useState(null);
+  const navigate = useNavigate();
 
   const handleLogin = async () => {
-  const response = await fetch('https://your-api-url.com/login', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },  
+    try {
+      const response = await axios.post('http://52.79.233.106:8000/accounts/token/', {
+        username: id,
+        password: password
+      });
 
-    body: JSON.stringify({
-      id: id,
-      password: password
-    })
-
-  });
-
-  if (response.ok) {
-    const data = await response.json();
-    console.log('로그인 성공:', data);
-  } 
-  else {
-    console.log('로그인 실패:', response.status);
-  }
-};
+      // 로그인 성공
+      if (response.status === 200) {
+        console.log('로그인 성공:', response.data);
+        setIsLoggedIn(true); // 로그인 상태 변경
+        navigate('/home'); // 메인 페이지로 이동
+      }
+    } catch (error) {
+      console.error('로그인 요청 중 오류가 발생했습니다:', error);
+      setError('로그인에 실패했습니다.'); // 실패 메시지 설정
+    }
+  };
+  const LoginFunc = (e) => {
+    e.preventDefault();
+    if (!id) {
+      return alert("ID를 입력하세요.");
+    }
+    else if (!password) {
+      return alert("Password를 입력하세요.");
+    }
+    };
 
   return (
     <html className="full_container">
@@ -67,10 +75,11 @@ function Login() {
         <br></br>
         <Link to="/register" ><p class="ask_register">계정이 없으신가요? 가입하기 &nbsp;&nbsp;</p></Link>
         <center>
-            <a href="./Home">
-                <img class="imagebutton" onClick={handleLogin} id="loginbutton" src={loginbutton} alt="loginbutton"/>
-              {/* 링크 태그로 수정예정 */}           
-            </a>
+
+
+            <a href="./Home">{/* 로그인 구현이 끝나면 <a>태그 없애고 가운데 <img> 태그만 사용 */}
+                <img class="imagebutton" onClick={handleLogin} id="loginbutton" src={loginbutton} alt="loginbutton"/>           
+            </a>{/* 로그인 구현이 끝나면 <a>태그 없애고 가운데 <img> 태그만 사용 */}
             
         </center>
         <center>
