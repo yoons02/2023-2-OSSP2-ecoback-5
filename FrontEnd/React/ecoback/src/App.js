@@ -5,6 +5,7 @@ import Store_Temp from '../src/pages/Product_temp.js';
 import ReceiptFilming from './seulgi/receiptFilming.js';
 import MyPage from './pages/mypage.js';
 import Event from './kitae/event.js';
+import EventCopy from './kitae/EventCopy.js';
 import Login from './pages/Login.js';
 import Start from './pages/Start.js';
 import BeautyHealthCategory from './pages/BeautyHealthCategory.js';
@@ -36,7 +37,7 @@ const App = () => {
         <Route path="/Store_temp" element={<Store_Temp />} />
         <Route path="/receiptfilming" element={<ReceiptFilming />} />
         <Route path="/mypage" element={<MyPage />}/>
-        <Route path="/event" element={<Event />}/>
+        <Route path="/event" element={<EventCopy />}/>
         <Route path='/editprofilepage' element={<EditProfile />} />
         <Route path="/Store/텀블러" element={<ProductsCategory />} />
         <Route path="/Store/뷰티/패션/건강" element={<BeautyHealthCategory />} />

@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import '../css/Store.css';
-import axios from 'axios';
 import { Link } from 'react-router-dom';
 import BackbuttonBar from 'components/BackbuttonBar';
 import TitleBanner from "../components/TitleBanner.js";
-const Store_box = ({url, title}) => {
+import API from './api/axios.js';
+const Store_box = ({id, title}) => {
   const [category, setEvents] = useState([]);
 
   useEffect(() => {
@@ -14,7 +14,8 @@ const Store_box = ({url, title}) => {
   const fetchData = async () => {
     
     try {
-      const response = await axios.get(url);
+      const endpoint =`/market/categories/${id}/brands`;
+      const response = await API.get(endpoint);
       setEvents(response.data); 
     } catch (error) {
       console.error('API 오류', error);
@@ -34,7 +35,7 @@ const Store_box = ({url, title}) => {
         <div key={index}>
           <Link to={'./' + categoryData.name}>
             <div className='box_categories_m'>
-              <img style={{ width: '70%' }} src={require('../image/categories/' + categoryData.image)} alt={categoryData.name} />
+              <img style={{ width: '70%' }} src={require(API.defaults.baseURL + categoryData.brand_image)} alt={categoryData.brand_name} />
             </div>
           </Link>
           <div className='normal' style={{ textAlign: 'center' }}>{categoryData.name}</div>

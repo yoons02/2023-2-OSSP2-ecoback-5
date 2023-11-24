@@ -5,8 +5,6 @@ import TitleBanner from '../components/TitleBanner.js';
 
 import {Link} from 'react-router-dom';
 
-
-
 const MyPage=()=>{
     return (
         <div style={{backgroundColor:"#F9F9F9"}}>

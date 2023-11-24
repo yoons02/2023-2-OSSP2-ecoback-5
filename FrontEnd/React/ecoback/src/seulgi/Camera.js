@@ -54,7 +54,7 @@ const Camera = () => {
 
     <SendPhotoModal isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen}/>
     try{
-      const response = await fetch('',{
+      const response = await fetch('서버 엔드포인트 주소???',{
         method: 'POST',
         body: formData,
       });
