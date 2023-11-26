@@ -1,3 +1,6 @@
+/*sotre_box copy.js 파일 만들어서 백엔드 API와 연동 해놨습니다.
+-> API Store.js 페이지에서 불러와서 store_box 컴포넌트에 props 전달
+*/
 import React, { useState, useEffect } from 'react';
 import '../css/Store.css';
 import axios from 'axios';

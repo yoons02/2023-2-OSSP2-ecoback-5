@@ -1,4 +1,3 @@
-import React, { useState, useEffect } from 'react';
 import '../css/Store.css';
 import API from 'api/axios';
 import { Link } from 'react-router-dom';

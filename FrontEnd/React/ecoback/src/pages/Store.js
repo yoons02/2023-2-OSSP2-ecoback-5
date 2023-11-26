@@ -32,6 +32,7 @@ const Store = () => {
         }
       });
       setStoreCategory(response.data);
+      console.log(storeCategory);
     }catch(e){
       console.error("API 오류: ",e);
     }
