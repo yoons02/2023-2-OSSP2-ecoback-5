@@ -1,17 +1,20 @@
-.box_categories_m{
-    display:flex;
-    flex-direction: column;
-    justify-content: center;
-    align-content: center;
-    align-items: center;
-    width: 80%;
-    height: 73%;
-    top: 435px;
-    left: 206px;
-    border-radius: 10px;
-    box-shadow: 0px 2px 5px 0px #00000040;
-    margin: 10px;
-  }
+.box_categories_m {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  width: 80%;
+  top: 435px;
+  left: 206px;
+  border-radius: 10px;
+  box-shadow: 0px 2px 5px 0px #00000040;
+  margin: 10px;
+
+  /* Set aspect ratio to 1:1 (height equal to width) */
+  aspect-ratio: 1 / 1;
+}
+
 
   .box_categories_P{
     display:flex;

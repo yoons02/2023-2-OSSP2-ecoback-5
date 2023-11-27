@@ -6,7 +6,7 @@ import BackbuttonBar from 'components/BackbuttonBar';
 const WebcamComponent = () => <Webcam />;
 const ReceiptFilming=()=>{
     return (
-    <div /*className="full_container"*/>
+    <div className="full_container">
         <div class="filmingPage" style={{backgroundColor:"#F9F9F9"}}>
             <TitleBanner />
             <hr />

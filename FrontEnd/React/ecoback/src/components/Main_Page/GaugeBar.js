@@ -1,7 +1,7 @@
 import React from 'react';
 
 const GaugeBar = ({ value }) => {
-  const percent = (value / 150000) * 100;
+  const percent = (value / 50) * 84;
 
   const imagePosition = { marginLeft: `${percent}%` };
 

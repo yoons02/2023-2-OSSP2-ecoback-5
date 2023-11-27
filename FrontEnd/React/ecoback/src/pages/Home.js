@@ -15,12 +15,6 @@ const Home = () => {
       {/*user(사용자)의 point 표시*/}
       <Point_Mark />
 
-      {/* <div className="normal" id="normalline">
-        <div className="normal">내 잔여 포인트</div>
-        <div className="normal">{point} 포인트</div>
-      </div> */}
-
-
       {/*이동 버튼 부분*/}
 
       <div id="boxline" className="normal">
