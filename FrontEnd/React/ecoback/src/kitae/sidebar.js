@@ -3,7 +3,14 @@ import {Navigation} from 'react-minimal-side-navigation';
 import 'react-minimal-side-navigation/lib/ReactMinimalSideNavigation.css';
 import Icon from "awesome-react-icons";
 import { useNavigate } from 'react-router-dom';
-import closebutton from '../image/close.png';
+import closebutton from '../image/close1.png';
+
+import { FaUserEdit } from "react-icons/fa";
+import { FaUser } from "react-icons/fa";
+import { MdOutlineEventAvailable } from "react-icons/md"
+import { FaCircleUser } from "react-icons/fa6";
+
+import { FaBars } from "react-icons/fa";
 
 import '../css/Sidebar.css';
 
@@ -35,13 +42,16 @@ const Sidebar=() => {
             onClick={() => setIsSidebarOpen(true)}
             type="button"
           >
-            <Icon name="burger" className="w-6 h-6" />
+            {/* <Icon name="burger" className="w-6 h-6" />
+             */}
+             {/* <GoSidebarExpand size={30} /> */}
+             <FaBars size={30}/>
           </button>
         )}
       <div
         onClick={() => setIsSidebarOpen(false)}
         className={`overlay ${isSidebarOpen ? "block" : "hidden"}`}
-        style={{zIndex:20}}
+        style={{zIndex:30}}
       />
       {isSidebarOpen && (
       <div ref={sidebarRef} className="sidebarobj" style={{height: isSidebarOpen ? '100vh' : '0'}} >
@@ -51,7 +61,7 @@ const Sidebar=() => {
         <br></br>
         <br></br>
         <br></br>
-
+        {/* <p id='closebutton' onClick={() => setIsSidebarOpen(false)}>X</p> */}
         <img src={closebutton} id='closebutton' onClick={() => setIsSidebarOpen(false)} ></img>
         <Navigation 
             onSelect={({ itemId }) => {
@@ -65,12 +75,12 @@ const Sidebar=() => {
                 className:'sidebaritem',
                 title: '마이 페이지',
                 itemId: '/mypage',
-                elemBefore: () =><Icon name="user"/>,
+                elemBefore: () =><FaCircleUser />,
                 subNav: [
                   {
                     title: '프로필 편집',
                     itemId: '/editprofilepage',
-                    elemBefore: () =><Icon name="user"/>
+                    elemBefore: () =><FaUserEdit />
                    },
                   // {
                   //   title: 'Members',
@@ -85,28 +95,41 @@ const Sidebar=() => {
                 itemId: '/event',
                 // you can use your own custom Icon component as well
                 // icon is optional
-                elemBefore: () => <Icon name="inbox"/>
+                elemBefore: () => <MdOutlineEventAvailable />
               },
               {
                 className:'sidebaritem',
                 title: '프로필 편집',
                 itemId: '/editprofilepage',
-                elemBefore: () =><Icon name="user"/>
+                elemBefore: () =><FaUserEdit />
                 
               },
-              {
-                className:'sidebaritem',
-                title: '  ',
-                itemId: '/logout',
-                elemBefore: () => <Logout />,
-              },
-              
-              
-              
+              // {
+              //   className:'sidebaritem',
+              //   title: '  ',
+              //   itemId: '/logout',
+              //   elemBefore: () => <Logout />,
+              // },
             ]}
-            
-          />
           
+          />
+          <br></br>
+
+          {/* <br></br>
+          <br></br>
+          <br></br>
+          <br></br>
+          <br></br>
+          <br></br>
+          <br></br>
+          <br></br>
+          <br></br>
+          <br></br>
+          <br></br>
+          <br></br> */}
+          <Logout />
+          
+
         </div>
         )}
       </>
