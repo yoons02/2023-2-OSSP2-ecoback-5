@@ -2,9 +2,11 @@ import Modal from 'react-modal';
 import React, {useState, useEffect} from 'react';
 import '../seulgi/popup.css';
 import API from 'api/axios';
+import PaymentSuccessModal from './paymentSuccess';
   
 const BuyingPopup=({isModalOpen,setIsModalOpen, price})=> {
-  
+
+  const [paymentSuccessModalOpen, setPaymentSuccessModalOpen]=useState(false);
   const access_token=localStorage.getItem('access');
   const [userInfo, setUserInfo]=useState([]);
   useEffect(()=>{
@@ -56,6 +58,9 @@ const BuyingPopup=({isModalOpen,setIsModalOpen, price})=> {
         });
         setUserInfo(changePoint.data);
         console.log("point update success: ",changePoint.data);
+        setPaymentSuccessModalOpen(true);
+
+        
       }catch(e){
         console.log("PATCH method 동작 실패: ",e);
       }
@@ -64,6 +69,7 @@ const BuyingPopup=({isModalOpen,setIsModalOpen, price})=> {
     }
   return (
     <div>
+      <PaymentSuccessModal isModalOpen={paymentSuccessModalOpen} setIsModalOpen={setPaymentSuccessModalOpen}/>
       <Modal style={modalStyle} isOpen={isModalOpen}>
         <div className="pointViewer">
             <b>{userInfo.name}</b>님의 가용 포인트 <b>{userInfo.point}</b><br/>
