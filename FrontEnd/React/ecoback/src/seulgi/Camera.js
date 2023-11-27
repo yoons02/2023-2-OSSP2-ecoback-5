@@ -81,6 +81,7 @@ const Camera = () => {
         videoConstraints={videoConstraints}
         onUserMedia={onUserMedia}
         mirrored={true}
+        width="100%"
       />
       <div className="container">
       <button id="album"><img id="album" src={require("../image/photoAlbum.png")} alt="photoAlbum" /></button>

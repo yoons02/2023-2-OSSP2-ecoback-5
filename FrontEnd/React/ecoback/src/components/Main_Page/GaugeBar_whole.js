@@ -1,7 +1,7 @@
 import GaugeBar from "./GaugeBar";
 import '../../css/Home.css';
 import React, { useState, useEffect } from "react";
-import axios from "axios";
+import API from "api/axios";
 
 const GaugeBar_whole = () => {
      const [datas, setCount] = useState([]);
@@ -11,10 +11,15 @@ const GaugeBar_whole = () => {
   }, []);
 
   const fetchData = async () => {
-    try {
-      const response = await axios.get('/barcodes-count.json');
-      const data = response.data;
-      setCount(data);
+    const endpoint="/barcodes-count/"
+    const access_token=localStorage.getItem('access');
+    try{
+      const response=await API.get(endpoint,{
+        headers:{
+          Authorization: `Bearer ${access_token}`
+        }
+      });
+      setCount(response.data);
     } catch (error) {
       console.error("API 오류", error);
     }
