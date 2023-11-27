@@ -1,15 +1,13 @@
 import React from "react";
-import StoreGrid from "../components/storeGrid.js";
-import TitleBanner from "../components/TitleBanner.js";
-import Giftcard from "../seulgi/jsonFile/giftcard.json";
-import BackbuttonBar from "components/BackbuttonBar.js";
+
 import '../css/Store.css';
-import Store_box from "../components/store_box.js";
+import Brand_box from "../components/brand_box.js";
 
 const GiftcardCategory=()=>{
+  const id=1;
     return (
         <div>
-          <Store_box url='/giftcard.json' title="기프트카드/상품권"/>
+          <Brand_box url={id} title="기프트카드/상품권"/>
         {/*
         <TitleBanner />
         <hr/>

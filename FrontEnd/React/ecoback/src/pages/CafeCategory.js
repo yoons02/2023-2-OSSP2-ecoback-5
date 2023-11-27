@@ -1,13 +1,13 @@
 import React from "react";
-
 import '../css/Store.css';
-import Store_box from "../components/store_box.js";
+import Brand_box from "../components/brand_box";
 
 
 const CafeCategory=()=>{
+  const id=1;
     return (
         <div>
-          <Store_box url='2' title="카페"/>
+          <Brand_box url={id} title="카페"/>
         {/*<TitleBanner />
         <hr/>
       <BackbuttonBar title="카페"/>

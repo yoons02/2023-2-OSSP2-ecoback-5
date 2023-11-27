@@ -1,14 +1,11 @@
 import React from "react";
-import TitleBanner from "../components/TitleBanner.js";
-import ChickenPizza from "../seulgi/jsonFile/chickenPizza.json";
-import StoreGrid from "../components/storeGrid.js";
-import BackbuttonBar from "components/BackbuttonBar.js";
 import '../css/Store.css';
-import Store_box from "../components/store_box.js";
+import Brand_box from "../components/brand_box.js";
 const ChickenPizzaCategory=()=>{
+  const id=1;
     return (
         <div>
-          <Store_box url='/chickenPizza.json' title="치킨/피자"/>
+          <Brand_box url={id} title="치킨/피자"/>
           {/*
           <TitleBanner />
           <hr></hr>

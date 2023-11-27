@@ -1,15 +1,12 @@
 import React from "react";
-import StoreGrid from "../components/storeGrid.js";
-import TitleBanner from "../components/TitleBanner.js";
-import Icecream from "../seulgi/jsonFile/icecream.json";
-import BackbuttonBar from "components/BackbuttonBar.js";
 import '../css/Store.css';
-import Store_box from "../components/store_box.js";
+import Brand_box from "../components/brand_box.js";
 
 const IcecreamCategory=()=>{
+  const id=1;
     return (
         <div>
-          <Store_box url='/icecream.json' title="아이스크림/빙수"/>
+          <Brand_box url={id} title="아이스크림/빙수"/>
        {/* <TitleBanner />
         <hr/>
         

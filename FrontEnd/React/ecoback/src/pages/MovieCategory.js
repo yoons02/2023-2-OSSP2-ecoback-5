@@ -1,15 +1,12 @@
 import React from "react";
-import StoreGrid from "../components/storeGrid.js";
-import TitleBanner from "../components/TitleBanner.js";
-import Movie from "../seulgi/jsonFile/movie.json";
-import BackbuttonBar from "components/BackbuttonBar.js";
 import '../css/Store.css';
-import Store_box from "../components/store_box.js";
+import Brand_box from "../components/brand_box";
 
 const MovieCategory=()=>{
+  const id=1;
     return (
         <div>
-          <Store_box url='/movie.json' title="영화"/>
+          <Brand_box url={id} title="영화"/>
         {/* 
         <TitleBanner />
         <hr/>
