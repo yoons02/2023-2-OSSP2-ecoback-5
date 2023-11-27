@@ -33,3 +33,11 @@ button{
     font-family:NotoSansKR;
 
 }
+#close{
+    border-style:none;
+    width:100%;
+    background-color:transparent;
+    font-weight:bold;
+    font-family:NotoSansKR;
+
+}
