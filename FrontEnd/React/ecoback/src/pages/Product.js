@@ -54,7 +54,7 @@ const Product=()=>{
             </div>
             <div className="btnBox">
                 <button id="buyBtn" onClick={()=>handleOpenModal()}><b style={{fontSize:"4vw"}}>구매하기</b></button>
-                <BuyingPopup isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} />
+                <BuyingPopup isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} price={product.price} />
             </div>
 
         </div>
