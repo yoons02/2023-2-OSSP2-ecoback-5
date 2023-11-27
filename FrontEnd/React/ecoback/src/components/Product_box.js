@@ -17,7 +17,7 @@ const Product_box = ({url, title}) => {
   const fetchProductData=async()=>{
     const access_token=localStorage.getItem('access');
     try{
-      /*아직 에러 해결 못함*/
+      /*임시적으로 개별 상품 data 목록 id 2번과 편의점 카테고리 연결해놨습니다.*/
       const response=await API.get(`market/brands/${url}/products/`,{
         headers: {
           Authorization: `Bearer ${access_token}`,
@@ -40,7 +40,7 @@ const Product_box = ({url, title}) => {
     <div className='title_line_P'>
       {product.map((productData, index) => (
         <div key={index}>
-          <Link to={'./' + productData.id}>
+          <Link to={'/product1'}>
             <div className='box_categories_P'>
               <img style={{ width: '60%' }} src={API.defaults.baseURL + productData.product_image} alt={productData.name} />
             </div>
