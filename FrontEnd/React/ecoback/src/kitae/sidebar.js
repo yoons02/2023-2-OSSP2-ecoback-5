@@ -7,6 +7,7 @@ import closebutton from '../image/close.png';
 
 import '../css/Sidebar.css';
 
+import Logout from './logout';
 const Sidebar=() => {
     const [isSidebarOpen, setIsSidebarOpen] = useState(false);
     const sidebarRef = useRef(); // 사이드바 요소에 대한 ref를 생성
@@ -92,6 +93,12 @@ const Sidebar=() => {
                 itemId: '/editprofilepage',
                 elemBefore: () =><Icon name="user"/>
                 
+              },
+              {
+                className:'sidebaritem',
+                title: '  ',
+                itemId: '/logout',
+                elemBefore: () => <Logout />,
               },
               
               

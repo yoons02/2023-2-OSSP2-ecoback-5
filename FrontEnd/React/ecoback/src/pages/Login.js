@@ -93,12 +93,7 @@ function Login() {
 
             <button className="login-button" type="submit">
               <img class="imagebutton"  id="loginbutton" src={loginbutton} alt="loginbutton"/>
-            </button>
-
-            {/*             
-              <a href="./Home">
-                  <img class="imagebutton" onClick={handleLogin} id="loginbutton" src={loginbutton} alt="loginbutton"/>           
-              </a> */}
+            </button>=
               
           </center>
           
