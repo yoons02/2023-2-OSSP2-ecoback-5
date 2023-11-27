@@ -1,9 +1,5 @@
 
 import React from "react";
-
-import TitleBanner from "../components/TitleBanner.js";
-import IndividualGrid from "../components/individualGrid.js";
-import BackbuttonBar from "../components/BackbuttonBar.js";
 import '../css/Store.css';
 import Product_box from "../components/Product_box";
 

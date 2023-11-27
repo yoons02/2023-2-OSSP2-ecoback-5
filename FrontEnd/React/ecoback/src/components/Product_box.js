@@ -1,27 +1,33 @@
-/*sotre_box copy.js 파일 만들어서 백엔드 API와 연동 해놨습니다.
+/*store_box copy.js 파일 만들어서 백엔드 API와 연동 해놨습니다.
 -> API Store.js 페이지에서 불러와서 store_box 컴포넌트에 props 전달
 */
 import React, { useState, useEffect } from 'react';
 import '../css/Store.css';
-import axios from 'axios';
+import API from 'api/axios';
 import { Link } from 'react-router-dom';
 import BackbuttonBar from 'components/BackbuttonBar';
 import TitleBanner from "./TitleBanner.js";
-const Store_box = ({url, title}) => {
-  const [category, setEvents] = useState([]);
+const Product_box = ({url, title}) => {
+  const [product, setProduct] = useState([]);
 
   useEffect(() => {
-    fetchData();
+    fetchProductData();
   }, []);
 
-  const fetchData = async () => {
-    try {
-      const response = await axios.get(url);
-      setEvents(response.data); 
-    } catch (error) {
-      console.error('API 오류', error);
+  const fetchProductData=async()=>{
+    const access_token=localStorage.getItem('access');
+    try{
+      /*아직 에러 해결 못함*/
+      const response=await API.get(`market/brands/${url}/products/`,{
+        headers: {
+          Authorization: `Bearer ${access_token}`,
+        },
+      });
+      setProduct(response.data);
+    }catch(e){
+      console.log("API 오류: ",e);
     }
-  };
+  }
 
   return (
     <div className="full_container">
@@ -32,15 +38,15 @@ const Store_box = ({url, title}) => {
       <BackbuttonBar title={title}/>
       <hr></hr>
     <div className='title_line_P'>
-      {category.map((categoryData, index) => (
+      {product.map((productData, index) => (
         <div key={index}>
-          <Link to={'./' + categoryData.id}>
+          <Link to={'./' + productData.id}>
             <div className='box_categories_P'>
-              <img style={{ width: '60%' }} src={require('../image/categories/' + categoryData.product_image)} alt={categoryData.name} />
+              <img style={{ width: '60%' }} src={API.defaults.baseURL + productData.product_image} alt={productData.name} />
             </div>
         <div style={{ marginBottom: '15%' }}>
-          <div className='normal' style={{ textAlign: 'center', fontWeight:'normal'}}>{categoryData.name}</div>
-          <div className='normal' style={{ textAlign: 'center' }}>{categoryData.price}원</div>
+          <div className='normal' style={{ textAlign: 'center', fontWeight:'normal'}}>{productData.name}</div>
+          <div className='normal' style={{ textAlign: 'center' }}>{productData.price}원</div>
         </div>
           </Link>
         </div>
@@ -51,4 +57,4 @@ const Store_box = ({url, title}) => {
   );
 };
 
-export default Store_box;
+export default Product_box;

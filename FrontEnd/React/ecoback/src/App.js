@@ -4,7 +4,6 @@ import Store from '../src/pages/Store.js';
 import Store_Temp from '../src/pages/Product_temp.js';
 import ReceiptFilming from './seulgi/receiptFilming.js';
 import MyPage from './pages/mypage.js';
-import Event from './kitae/event.js';
 import EventCopy from './kitae/EventCopy.js';
 import Login from './pages/Login.js';
 import Start from './pages/Start.js';
@@ -21,9 +20,11 @@ import IcecreamCategory from './pages/IcecreamCategory.js';
 import BakeryCategory from 'pages/BakeryCategory.js';
 import GiftcardCategory from 'pages/GiftcardCategory.js';
 import MovieCategory from 'pages/MovieCategory.js';
+import Product_temp from './pages/Product_temp.js'
 const App = () => {
   return(
-    
+    /*브랜드별 개별 상품페이지 API 보니까 현재 id 2, 5번에 대한 data만
+    들어있길래 일단 id:2번 data로 개별 상품 페이지 임시적으로 연결해놨습니다.*/
     
     <Routes>
         <Route path="/"  element={<Start />} />
@@ -51,7 +52,7 @@ const App = () => {
         <Route path="/product1" element={<Product />} />
         <Route path="/products" element={<ProductsCategory />} />
         <Route path="/individual" element={<IndividualGrid />} />
-
+        <Route path="/product_temp" element={<Product_temp />} />
     </Routes> 
     
   );
