@@ -11,7 +11,7 @@ const GaugeBar_whole = () => {
   }, []);
 
   const fetchData = async () => {
-    const endpoint="/barcodes-count/"
+    const endpoint="barcodes/count/"
     const access_token=localStorage.getItem('access');
     try{
       const response=await API.get(endpoint,{

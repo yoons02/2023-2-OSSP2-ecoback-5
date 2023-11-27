@@ -16,7 +16,7 @@ const Brand_box = ({ url, title }) => {
     const access_token = localStorage.getItem('access');
 
     try {
-      const response = await API.get('market/categories/'+url+'/', {
+      const response = await API.get('market/categories/'+url+'/brands/', {
         headers: {
           Authorization: `Bearer ${access_token}`,
         },
