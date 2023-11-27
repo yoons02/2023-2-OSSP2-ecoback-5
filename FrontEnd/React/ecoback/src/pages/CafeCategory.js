@@ -7,7 +7,7 @@ import Store_box from "../components/store_box.js";
 const CafeCategory=()=>{
     return (
         <div>
-          <Store_box url='/cafe.json' title="카페"/>
+          <Store_box url='2' title="카페"/>
         {/*<TitleBanner />
         <hr/>
       <BackbuttonBar title="카페"/>

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import axios from "axios";
+import API from "api/axios";
 
 const ImageSlider = () => {
   const [datas, setDatas] = useState([]);
@@ -11,21 +11,23 @@ const ImageSlider = () => {
   }, []);
 
   const fetchData = async () => {
-    try {
-      const response = await axios.get('/user_info.json');
-      // Use response.data directly, no need for response.json()
-      const data = response.data;
-      setDatas(data);
+    const endpoint="mypage/get_object/"
+    const access_token=localStorage.getItem('access');
+    try{
+      const response=await API.get(endpoint,{
+        headers:{
+          Authorization: `Bearer ${access_token}`
+        }
+      });
+      setDatas(response.data);
     } catch (error) {
       console.error("API 오류", error);
     }
   };
- const point=datas.point;
-
   return (
     <div className="normal" id="normalline">
       <div>내 잔여 포인트</div>
-      <div>{point} 포인트</div>
+      <div>{datas.point} 포인트</div>
     </div>
   );
 };

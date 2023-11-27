@@ -9,7 +9,8 @@
 }
 .events_image{
     width:95%;
-    height: auto;
+    aspect-ratio: 1/0.55;
+    /*이부분 수정하면 매너 이미지 크기 조정가능*/
 }
 
 @font-face{
