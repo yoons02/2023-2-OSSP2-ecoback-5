@@ -93,7 +93,7 @@ function Login() {
 
             <button className="login-button" type="submit">
               <img class="imagebutton"  id="loginbutton" src={loginbutton} alt="loginbutton"/>
-            </button>=
+            </button>
               
           </center>
           
