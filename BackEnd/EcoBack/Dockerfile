@@ -8,13 +8,21 @@ RUN apt-get update && apt-get install -y libgl1-mesa-glx
 RUN apt-get update && apt-get install -y libzbar0
 
 ## Install packages 
-COPY requirements.txt ./                
-RUN pip install -r requirements.txt     
+COPY requirements.txt /requirements.txt
+RUN apk add --upgrade --no-cache build-base linux-headers && \
+    pip install --upgrade pip && \
+    pip install -r /requirements.txt   
 
 ## Copy all src files 
-COPY . .                                
+COPY EcoBack/ /EcoBack
+WORKDIR /EcoBack     
+
 ## Run the application on the port 8080 
-EXPOSE 8000                             
+# EXPOSE 8000           
+
+RUN adduser --disabled-password --no-create-home django
+
+USER django
 
 #CMD ["python", "./setup.py", "runserver", "--host=0.0.0.0", "-p 8080"] 
 #CMD ["gunicorn", "--bind", "0.0.0.0:8000", "EcoBack.wsgi:application"] 
