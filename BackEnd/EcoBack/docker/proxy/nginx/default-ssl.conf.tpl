@@ -25,6 +25,8 @@ server {
     add_header Strict-Transport-Security "max-age=31536000; includeSubDomains" always;
 
     # Proxy Buffer Settings
+    proxy_pass "http://${DOMAIN}:9000";
+
     proxy_buffer_size   256k;
     proxy_buffers       8 256k;
     proxy_busy_buffers_size 512k;
