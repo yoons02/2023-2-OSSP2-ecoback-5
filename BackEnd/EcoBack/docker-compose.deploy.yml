@@ -1,7 +1,7 @@
 version: "3.9"
 
 services:
-  app:
+  EcoBack:
     build:
       context: .
     restart: always
@@ -14,7 +14,7 @@ services:
       context: ./docker/proxy
     restart: always
     depends_on:
-      - app
+      - EcoBack
     ports:
       - 80:80
       - 443:443
