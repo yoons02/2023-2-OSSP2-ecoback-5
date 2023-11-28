@@ -10,6 +10,7 @@ gunicorn==21.2.0
 numpy==1.23.5
 oauthlib==3.2.2
 opencv-contrib-python==4.8.1.78
+uWSGI==2.0.20
 Pillow==9.5.0
 pipenv==2023.5.19
 psutil==5.9.5

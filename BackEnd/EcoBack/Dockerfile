@@ -17,4 +17,5 @@ COPY . .
 EXPOSE 8000                             
 
 #CMD ["python", "./setup.py", "runserver", "--host=0.0.0.0", "-p 8080"] 
-CMD ["gunicorn", "--bind", "0.0.0.0:8000", "EcoBack.wsgi:application"] 
+#CMD ["gunicorn", "--bind", "0.0.0.0:8000", "EcoBack.wsgi:application"] 
+CMD ["uwsgi", "--socket", ":9000", "-workers", "4", "--master", "--enabled-threads", "--module", "app.wsgi"]
