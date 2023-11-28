@@ -16,7 +16,7 @@ RUN apk add --upgrade --no-cache build-base linux-headers && \
 ## Copy all src files 
 COPY EcoBack/ /EcoBack
 WORKDIR /EcoBack     
-
+ 
 ## Run the application on the port 8080 
 # EXPOSE 8000           
 
