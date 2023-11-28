@@ -1,14 +1,13 @@
 version: '3.9'
 
 services:
-  ecoBack:
+  ecoback:  # 서비스 이름을 소문자로 변경
     build:
       context: .
-    comand: sh -c "python manage.py runserver 0.0.0.0:8000"
+    command: sh -c "python manage.py runserver 0.0.0.0:8000"  # 'command' 오타 수정
     volumes: 
-    - ./EcoBack:/EcoBack
+      - ./EcoBack:/EcoBack
     ports: 
-    - 8000:8000
+      - 8000:8000
     environment:
       - DJANGO_DEBUG=1
-  
