@@ -76,13 +76,14 @@ const Camera = () => {
       <Webcam
         class="webcam"
         ref={webcamRef}
-        audio={false}
+       audio={false}
         screenshotFormat="image/png"
         videoConstraints={videoConstraints}
-        onUserMedia={onUserMedia}
+       onUserMedia={onUserMedia}
         mirrored={true}
         width="100%"
       />
+
       <div className="container">
       <button id="album"><img id="album" src={require("../image/photoAlbum.png")} alt="photoAlbum" /></button>
       <button id="turtleBtn" onClick={capturePhoto}><img id="turtleBtn" src={require("../image/turtleBtn.png")} alt="captureBtn" /></button>
