@@ -8,7 +8,7 @@ RUN apt-get update && apt-get install -y libgl1-mesa-glx
 RUN apt-get update && apt-get install -y libzbar0
 
 ## Install packages 
-COPY requirements.txt /requirements.txt
+COPY requirements.txt ./
 RUN apk add --upgrade --no-cache build-base linux-headers && \
     pip install --upgrade pip && \
     pip install -r /requirements.txt   
