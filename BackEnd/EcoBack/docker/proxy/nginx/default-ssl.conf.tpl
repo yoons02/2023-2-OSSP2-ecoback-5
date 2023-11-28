@@ -29,7 +29,7 @@ server {
         alias /vol/static;
 
         # Proxy Buffer Settings
-        proxy_pass "http://localhost:8000";
+        proxy_pass "https://localhost:8000";
 
         proxy_buffer_size   256k;
         proxy_buffers       8 256k;
