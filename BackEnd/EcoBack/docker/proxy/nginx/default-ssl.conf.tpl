@@ -24,16 +24,16 @@ server {
     # Security Headers
     add_header Strict-Transport-Security "max-age=31536000; includeSubDomains" always;
 
-    # Proxy Buffer Settings
-    proxy_pass "http://localhost:8000";
-
-    proxy_buffer_size   256k;
-    proxy_buffers       8 256k;
-    proxy_busy_buffers_size 512k;
-
     # Static Asset Handling
     location /static {
         alias /vol/static;
+
+        # Proxy Buffer Settings
+        proxy_pass "http://localhost:8000";
+
+        proxy_buffer_size   256k;
+        proxy_buffers       8 256k;
+        proxy_busy_buffers_size 512k;
     }
 
     # uWSGI Handling
