@@ -4,7 +4,7 @@ import '../seulgi/mypage.css'
 //뱃지 아이콘 생성
 function Badge({badge}){
     const containerStyle = {
-        width: '20vw', 
+        width: '80%', 
         margin:'5%',
         display:'flex',
         flexDirection:'column',
