@@ -9,9 +9,10 @@ RUN apt-get update && apt-get install -y libzbar0
 
 ## Install packages 
 COPY requirements.txt ./
-RUN apk add --upgrade --no-cache build-base linux-headers && \
+RUN apt-get update && \
+    apt-get install -y build-essential linux-headers-$(uname -r) && \
     pip install --upgrade pip && \
-    pip install -r /requirements.txt   
+    pip install -r /requirements.txt
 
 ## Copy all src files 
 COPY EcoBack/ /EcoBack
