@@ -1,7 +1,7 @@
 version: "3.9"
 
 services:
-  EcoBack:
+  ecoback:  # 서비스 이름을 소문자로 변경
     build:
       context: .
     restart: always
@@ -14,7 +14,7 @@ services:
       context: ./docker/proxy
     restart: always
     depends_on:
-      - EcoBack
+      - ecoback  # 서비스 이름을 소문자로 변경
     ports:
       - 80:80
       - 443:443
