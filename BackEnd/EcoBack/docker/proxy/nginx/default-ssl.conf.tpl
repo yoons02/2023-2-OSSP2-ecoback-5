@@ -25,9 +25,9 @@ server {
     add_header Strict-Transport-Security "max-age=31536000; includeSubDomains" always;
 
     # Proxy Buffer Settings
-    proxy_buffer_size   128k;
-    proxy_buffers       4 256k;
-    proxy_busy_buffers_size 256k;
+    proxy_buffer_size   256k;
+    proxy_buffers       8 256k;
+    proxy_busy_buffers_size 512k;
 
     # Static Asset Handling
     location /static {
