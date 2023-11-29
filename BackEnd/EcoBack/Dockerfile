@@ -15,6 +15,10 @@ RUN apt-get update && \
     pip install -r requirements.txt
 
 
+ENV DB_DIR=db.sqlite
+RUN mkdir -p $DB_DIR && chown -R www-data:www-data $DB_DIR
+
+
 ## Copy all src files 
 COPY . .   
  
