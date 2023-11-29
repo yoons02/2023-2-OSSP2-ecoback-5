@@ -123,7 +123,8 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 REST_AUTH = {
-    'SESSION_LOGIN': False
+    'SESSION_LOGIN': False,
+    'REGISTER_PERMISSION_CLASSES': ('rest_framework.permissions.AllowAny',),
 }
 
 # Internationalization
