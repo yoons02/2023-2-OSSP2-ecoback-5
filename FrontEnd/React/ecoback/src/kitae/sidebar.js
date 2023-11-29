@@ -76,19 +76,25 @@ const Sidebar=() => {
                 title: '마이 페이지',
                 itemId: '/mypage',
                 elemBefore: () =><FaCircleUser />,
-                subNav: [
-                  {
-                    title: '프로필 편집',
-                    itemId: '/editprofilepage',
-                    elemBefore: () =><FaUserEdit />
-                   },
-                  // {
-                  //   title: 'Members',
-                  //   itemId: '/management/members',
-                  // },
-                ],
-                
               },
+              // {
+              //   className:'sidebaritem',
+              //   title: '마이 페이지',
+              //   itemId: '/mypage',
+              //   elemBefore: () =><FaCircleUser />,
+              //   subNav: [
+              //     {
+              //       title: '프로필 편집',
+              //       itemId: '/editprofilepage',
+              //       elemBefore: () =><FaUserEdit />
+              //      },
+              //     {
+              //       title: 'Members',
+              //       itemId: '/management/members',
+              //     },
+              //   ],
+                
+              // },
               {
                 className:'sidebaritem',
                 title: '이벤트',
