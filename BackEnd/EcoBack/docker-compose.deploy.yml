@@ -7,7 +7,8 @@ services:
     restart: always
     environment:
       - DJANGO_SECRET_KEY=${DJANGO_SECRET_KEY}
-      - DJANGO_ALLOWED_HOSTS=${DOMAIN}
+      - DJANGO_ALLOWED_HOSTS="${DOMAIN},www.${DOMAIN}"
+
 
   proxy:
     build:
@@ -23,7 +24,7 @@ services:
       - proxy-dhparams:/vol/proxy
       - certbot-certs:/etc/letsencrypt
     environment:
-      - DOMAIN=${DOMAIN}
+      - DOMAIN="${DOMAIN},www.${DOMAIN}"
 
   certbot:
     build:
@@ -31,7 +32,7 @@ services:
     command: echo "Skipping..."
     environment:
       - EMAIL=${ACME_DEFAULT_EMAIL}
-      - DOMAIN=${DOMAIN}
+      - DOMAIN="${DOMAIN},www.${DOMAIN}"
     volumes:
       - certbot-web:/vol/www
       - certbot-certs:/etc/letsencrypt/
