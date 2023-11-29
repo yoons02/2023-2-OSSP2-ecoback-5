@@ -1,30 +1,27 @@
-##./Dockerfile 
+# Use an official Python runtime as a parent image
 FROM python:3.9-slim                            
+
+# Set the working directory in the container to /usr/src/app
 WORKDIR /usr/src/app                    
 
-RUN apt-get update && apt-get install -y libgl1-mesa-glx
+# Install any needed packages specified in requirements.txt
+RUN apt-get update && apt-get install -y libgl1-mesa-glx libzbar0 build-essential python3-dev libssl-dev
+RUN pip install --upgrade pip
 
-# 필요한 라이브러리 설치
-RUN apt-get update && apt-get install -y libzbar0
+# Copy the current directory contents into the container at /usr/src/app
+COPY . .
 
-## Install packages 
-COPY requirements.txt ./
-RUN apt-get update && \
-    apt-get install -y build-essential python3-dev libssl-dev && \
-    pip install --upgrade pip && \
-    pip install -r requirements.txt
+# Install any needed packages using pip
+RUN pip install -r requirements.txt
 
-
-## Copy all src files 
-COPY . .   
- 
-## Run the application on the port 8080 
-# EXPOSE 8000           
-
+# Create a user 'django' to run the app
 RUN adduser --disabled-password --no-create-home django
 
+# Change the ownership of the working directory to the 'django' user
+RUN chown -R django:django /usr/src/app
+
+# Switch to 'django' user
 USER django
 
-#CMD ["python", "./setup.py", "runserver", "--host=0.0.0.0", "-p 8080"] 
-#CMD ["gunicorn", "--bind", "0.0.0.0:8000", "EcoBack.wsgi:application"] 
+# Run the application
 CMD ["uwsgi", "--socket", ":9000", "--workers", "4", "--master", "--enable-threads", "--module", "EcoBack.wsgi:application"]
