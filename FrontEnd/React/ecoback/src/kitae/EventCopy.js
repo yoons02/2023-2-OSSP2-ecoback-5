@@ -36,7 +36,7 @@ const EventCopy = () => {
         <div style={{ display: 'flex', flexDirection: 'column', overflowY: 'scroll' }}>
           {events.map((event, index) => (
           <Link key={index} to={`/event/${event.id}`}>
-            <img className="events_image" src={API.defaults.baseURL +event.image} alt={event.writer}  />
+            <img className="events_image" src={event.image} alt={event.writer}  />
           </Link>
         ))}
       </div>
