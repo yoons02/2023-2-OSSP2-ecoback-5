@@ -13,7 +13,6 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 from pathlib import Path
 import os
 from datetime import timedelta
-import my_settings
 import pymysql
 
 # pymysql.install_as_MySQLdb()
@@ -30,11 +29,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'setmeinprod')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = True
-DEBUG = bool(int(os.environ.get("DJANGO_DEBUG", 0)))
+DEBUG = True
 
-# ALLOWED_HOSTS = ['*']
-ALLOWED_HOSTS = [] if DEBUG else os.environ.get("DJANGO_ALLOWED_HOSTS").split(',')
+ALLOWED_HOSTS = ['*']
+# ALLOWED_HOSTS = [] if DEBUG else os.environ.get("DJANGO_ALLOWED_HOSTS").split(',')
+
 
 # Application definition
 
@@ -101,7 +100,7 @@ WSGI_APPLICATION = 'EcoBack.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3')
     }
 }
 
@@ -124,7 +123,8 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 REST_AUTH = {
-    'SESSION_LOGIN': False
+    'SESSION_LOGIN': False,
+    'REGISTER_PERMISSION_CLASSES': ('rest_framework.permissions.AllowAny',),
 }
 
 # Internationalization

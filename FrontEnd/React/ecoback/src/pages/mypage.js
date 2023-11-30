@@ -21,14 +21,6 @@ const MyPage=()=>{
                     <button id="editProfile">프로필 편집</button>
                     </Link>
 
-
-                    
-
-
-                    {/*프로필 편집 부분이 2번 표시되어 주석처리 해놓았습니다.
-                    <Link to="/editprofilepage"><button id="editProfile">프로필 편집</button></Link>
-                    */}
-
                 </div>
             </div>
             <hr />

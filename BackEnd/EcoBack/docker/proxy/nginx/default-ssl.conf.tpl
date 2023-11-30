@@ -29,7 +29,7 @@ server {
         alias /vol/static;
 
         # Proxy Buffer Settings
-        proxy_pass "https://43.200.164.57:443";
+        proxy_pass "https://15.164.229.6:443";
 
         proxy_buffer_size   256k;
         proxy_buffers       8 256k;
