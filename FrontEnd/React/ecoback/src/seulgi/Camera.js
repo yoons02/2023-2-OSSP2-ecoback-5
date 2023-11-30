@@ -264,7 +264,7 @@ const Camera = () => {
       console.error('Error: ',e);
     }
 
-    <SendPhotoModal isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen}/>
+    //<SendPhotoModal isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen}/>
 
   }
 
