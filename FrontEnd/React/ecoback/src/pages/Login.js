@@ -4,6 +4,7 @@ import loginbutton from '../image/loginbutton.png';
 import GoogleLoginButton from 'kitae/GoogleLogin';
 import { Link,useNavigate } from 'react-router-dom';
 import '../css/Login.css';
+import css from '../css/Login.css';
 import API from 'api/axios';
 function Login() {
   const [id, setId] = useState('');
@@ -71,7 +72,7 @@ function Login() {
             <div class="input-container">
                 <label for="username">아이디</label>
                 <br></br>
-                <input type="text" id="username" value={id} onChange={(e) => setId(e.target.value)}  placeholder="아이디를 입력하세요" class="ip" />
+                <input type="text" id="css.username" value={id} onChange={(e) => setId(e.target.value)}  placeholder="아이디를 입력하세요" class="ip" />
             </div>
             <br></br>
             <br></br>
@@ -83,7 +84,7 @@ function Login() {
               <div class="input-container">  
                   <label for="password">비밀번호</label>
                   <br></br>
-                  <input type="password" id="password" value={password} onChange={(e) => setPassword(e.target.value) }  placeholder="비밀번호를 입력하세요"class="ip" />           
+                  <input type="password" id="css.password" value={password} onChange={(e) => setPassword(e.target.value) }  placeholder="비밀번호를 입력하세요"class="ip" />           
               </div>
           </center>
           <br></br>
