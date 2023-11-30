@@ -40,7 +40,8 @@ function Badge({badge}){
     return (
         <div style={containerStyle}>
             <div id="hexagon">
-            {(barcodeCounts.count>10)? <img id="badgeImg" src={require(`../image/${badge.img}`)} alt={badge.name} />: <img id="badgeImg" src={require('../image/badge_unlock.png')} alt={badge.name} />}
+                {console.log("minCount: ",badge.minCount)}
+            {(badge.minCount<barcodeCounts.count)? <img id="badgeImg" src={require(`../image/${badge.img}`)} alt={badge.name} />: <img id="badgeImg" src={require('../image/badge_unlock.png')} alt={badge.name} />}
          
             
             </div>
