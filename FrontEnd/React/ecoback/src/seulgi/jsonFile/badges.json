@@ -1,18 +1,3 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 [
  {"id":1, "name":"실천의 시작", "img":"badge_earth.png", "minCount":3},
     {"id":2, "name":"티끌모아 태산", "img":"sand.png", "minCount":5},

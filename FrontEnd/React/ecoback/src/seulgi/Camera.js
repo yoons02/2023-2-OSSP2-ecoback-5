@@ -241,7 +241,7 @@ const Camera = () => {
     formData.append('code','0036000291452');
     formData.append('image',imageBlob, 'barcode.png');
 
-    const endpoint="barcodes/";
+    const endpoint="/barcodes/";
     const access_token=localStorage.getItem('access');
     
     try{
