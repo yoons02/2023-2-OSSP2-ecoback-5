@@ -78,7 +78,8 @@
   }
 
 .btnBox{
-  width:100vw;
+  width:100%;
+  min-height: 16vh;
   display:flex;
   justify-content: center;
   background-color: #ECECEC;
@@ -86,12 +87,12 @@
 
 #buyBtn{
   position:relative;
-  margin:5vw;
-  width:40vw;
-  height:12vw;
+  margin:8%;
+  width:40%;
+  aspect-ratio: 10 / 2;
   background-color: #8FD36F;
   border-style:none;
-  border-radius:2vw;
+  border-radius:10px;
   color:white;
   box-sizing:border-box;
 }

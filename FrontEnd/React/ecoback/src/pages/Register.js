@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import logo from '../image/logo.png'; // 로고 이미지 경로
 import registerbutton from '../image/register.png';
 import axios from 'axios';
-import '../css/Register.css';
+import css from '../css/Register.css';
 import { useNavigate } from 'react-router-dom';
 import API from 'api/axios';
 
@@ -80,7 +80,7 @@ const Register = () => {
           <div className="input-container">
             <label htmlFor="username">아이디</label>
             <br/>
-            <input type="text" id="username" value={username} onChange={(e) => setUsername(e.target.value)} placeholder="아이디를 입력하세요" className="ip" required />
+            <input type="text" id="css.username" value={username} onChange={(e) => setUsername(e.target.value)} placeholder="아이디를 입력하세요" className="ip" required />
           </div>
 
           <br/>
@@ -89,7 +89,7 @@ const Register = () => {
           <div className="input-container">
             <label htmlFor="email">이메일</label>
             <br/>
-            <input type="email" id="email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="이메일을 입력하세요" className="ip" required />
+            <input type="email" id="css.email" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="이메일을 입력하세요" className="ip" required />
           </div>
           
           <br/>
@@ -98,7 +98,7 @@ const Register = () => {
           <div className="input-container">
             <label htmlFor="password1">비밀번호</label>
             <br/>
-            <input type="password" id="password1" value={password1} onChange={(e) => setPassword1(e.target.value)} placeholder="비밀번호를 입력하세요" className="ip" required />
+            <input type="password" id="css.password1" value={password1} onChange={(e) => setPassword1(e.target.value)} placeholder="비밀번호를 입력하세요" className="ip" required />
           </div>
 
           <br/>
@@ -107,7 +107,7 @@ const Register = () => {
           <div className="input-container">
             <label htmlFor="password2">비밀번호 확인</label>
             <br/>
-            <input type="password" id="password2" value={password2} onChange={(e) => setPassword2(e.target.value)} placeholder="비밀번호를 다시 입력하세요" className="ip" required />
+            <input type="password" id="css.password2" value={password2} onChange={(e) => setPassword2(e.target.value)} placeholder="비밀번호를 다시 입력하세요" className="ip" required />
           </div>
 
           <br/>

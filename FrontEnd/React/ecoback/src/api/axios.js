@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export const API = axios.create({
-  baseURL: "http://52.79.233.106:8000",
+  baseURL: "https://ecoback.r-e.kr",
 
   headers: {
     "Content-Type": "application/json"
