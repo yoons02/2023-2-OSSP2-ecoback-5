@@ -27,7 +27,7 @@ const PaymentSuccessModal=({isModalOpen, setIsModalOpen})=> {
           <button id="xbutton" onClick={()=>{handleCloseModal()}}>X</button>
           </div>
           <div className="middle">
-            <img style={{width: "40vw"}}src="https://img.freepik.com/free-psd/barcode-illustration-isolated_23-2150584094.jpg?size=626&ext=jpg" alt="barcode"/>
+            <img style={{width: "40vw"}}src="https://img.freepik.com/free-vector/seasonal-sale-discounts-presents-purchase-visiting-boutiques-luxury-shopping-price-reduction-promotional-coupons-special-holiday-offers-vector-isolated-concept-metaphor-illustration_335657-2766.jpg?w=740&t=st=1701356185~exp=1701356785~hmac=8a924dfccef73c6f358e328c09853e251da311964d75089dc3375510ad0c8671" alt="barcode"/>
             <div className="text"><b>상품 구매가 완료되었습니다.</b></div>
           </div>
           </Modal>
