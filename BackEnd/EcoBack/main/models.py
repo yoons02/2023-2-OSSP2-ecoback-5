@@ -56,6 +56,7 @@ class Product(models.Model):
 
 class MyProduct(models.Model):
     id = models.AutoField(primary_key=True)
+    user = models.ForeignKey(User, null=False, blank=False, on_delete=models.CASCADE)
     name = models.CharField(max_length=30)
     price = models.IntegerField(default=0)
     product_code = models.ImageField(upload_to=image_upload_path, default='')
