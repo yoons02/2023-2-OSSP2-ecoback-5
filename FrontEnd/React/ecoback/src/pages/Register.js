@@ -28,6 +28,7 @@ const Register = () => {
     API.post('/accounts/', userData)
             .then((response) => {
                 if (response.status === 201) {
+                    alert('회원가입에 성공하였습니다.');
                     navigate('/login');
                 }
               
