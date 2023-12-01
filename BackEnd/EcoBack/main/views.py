@@ -15,6 +15,7 @@ import time
 from PIL import Image
 import io
 from rest_framework.routers import DefaultRouter, Route, DynamicRoute
+from dateutil.relativedelta import relativedelta
 
 
 class MyProfileViewSet(viewsets.GenericViewSet, RetrieveAPIView, RetrieveUpdateAPIView):
@@ -100,9 +101,12 @@ class BarcodeViewSet(viewsets.GenericViewSet, CreateAPIView, ListAPIView):
         user = request.user
         try:
             last_barcode = Barcode.objects.filter(writer=user).latest('create_at')
-            return JsonResponse({'last_barcode_date': last_barcode.create_at})
+            # 3개월을 추가합니다
+            date_with_three_months = last_barcode.create_at + relativedelta(months=3)
+            return JsonResponse({'last_barcode_date_plus_3_months': date_with_three_months})
         except Barcode.DoesNotExist:
-            return JsonResponse({'last_barcode_date': 'None'})
+            return JsonResponse({'last_barcode_date_plus_3_months': 'None'})
+
 
 
 
