@@ -227,8 +227,8 @@ class ProductViewSet(viewsets.ModelViewSet):
         my_product = MyProduct(
             user=user,
             name=product.name,  
-            product_code=product.code,  
-            product_image=product.image 
+            product_code=product.product_codecode,  
+            product_image=product.product_image
         )
         my_product.save()
 
