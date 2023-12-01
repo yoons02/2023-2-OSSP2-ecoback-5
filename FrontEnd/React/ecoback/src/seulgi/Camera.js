@@ -189,7 +189,7 @@ import API from 'api/axios';
 const videoConstraints = {
   width: { ideal: window.innerWidth },
   height:{ideal:window.innerHeight},
-  facingMode: "user",
+  facingMode: "environment",
   /*전면카메라(PC용): user, 후카메라(모바일용): environment*/
 };
 
