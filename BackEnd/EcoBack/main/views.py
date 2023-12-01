@@ -15,6 +15,7 @@ import time
 from PIL import Image
 import io
 from rest_framework.routers import DefaultRouter, Route, DynamicRoute
+from dateutil.relativedelta import relativedelta
 
 
 class MyProfileViewSet(viewsets.GenericViewSet, RetrieveAPIView, RetrieveUpdateAPIView):
@@ -100,9 +101,12 @@ class BarcodeViewSet(viewsets.GenericViewSet, CreateAPIView, ListAPIView):
         user = request.user
         try:
             last_barcode = Barcode.objects.filter(writer=user).latest('create_at')
-            return JsonResponse({'last_barcode_date': last_barcode.create_at})
+            # 3개월을 추가합니다
+            date_with_three_months = last_barcode.create_at + relativedelta(months=3)
+            return JsonResponse({'last_barcode_date_plus_3_months': date_with_three_months})
         except Barcode.DoesNotExist:
-            return JsonResponse({'last_barcode_date': 'None'})
+            return JsonResponse({'last_barcode_date_plus_3_months': 'None'})
+
 
 
 
@@ -195,6 +199,23 @@ class ProductViewSet(viewsets.ModelViewSet):
         product = self.get_object()
         serializer = self.get_serializer(product)
         return Response(serializer.data)
+    
+    @action(methods=['post'], detail=True, permission_classes=[IsAuthenticated])
+    def purchase(self, request, pk=None):
+        product = get_object_or_404(Product, pk=pk)
+        user = request.user
+
+        # 사용자의 포인트 확인
+        if user.profile.point < product.price:
+            return Response({'error': 'Insufficient points'})
+
+        # 상품 가격만큼 포인트 차감
+        user.profile.point -= product.price
+        user.profile.save()
+
+        # 추가적으로 구매 기록을 저장하거나 다른 로직을 구현할 수 있습니다.
+
+        return Response({'message': 'Purchase successful'}, status=status.HTTP_200_OK)
 
     @action(methods=['post'], detail=False, permission_classes=[IsAdminUser])
     def add_product(self, request):
