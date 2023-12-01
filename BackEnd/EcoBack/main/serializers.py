@@ -23,7 +23,6 @@ class BarcodeSerializer(serializers.ModelSerializer):
         model = Barcode
         fields = '__all__'
 
-    image = serializers.ImageField(use_url=True, required=True)
 
 class BadgeSerializer(serializers.ModelSerializer):
 
