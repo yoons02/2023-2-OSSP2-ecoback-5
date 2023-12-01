@@ -17,8 +17,6 @@ import io
 from rest_framework.routers import DefaultRouter, Route, DynamicRoute
 
 
-used_codes = []
-
 class MyProfileViewSet(viewsets.GenericViewSet, RetrieveAPIView, RetrieveUpdateAPIView):
     serializer_class = ProfileSerializer
     permission_classes = [IsAuthenticated]
@@ -78,7 +76,8 @@ class BarcodeViewSet(viewsets.GenericViewSet, CreateAPIView, ListAPIView):
                     profile.point += 150
                     profile.save()
 
-                    new_barcodes['writer'] = request.user.id
+                    new_barcodes['writer'] = request.user
+                    new_barcodes['barcode_number'] = barcode_data
                     new_barcodes.save()
 
                     return JsonResponse({'status': 'approved', 'code': barcode_data})
