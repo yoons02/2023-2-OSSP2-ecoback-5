@@ -10,6 +10,7 @@
 .events_image{
     width:95%;
     aspect-ratio: 1/0.55;
+    border-radius: 5%;
     /*이부분 수정하면 매너 이미지 크기 조정가능*/
 }
 
