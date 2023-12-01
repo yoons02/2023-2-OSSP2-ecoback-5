@@ -207,7 +207,7 @@ class ProductViewSet(viewsets.ModelViewSet):
 
         # 사용자의 포인트 확인
         if user.profile.point < product.price:
-            return Response({'error': 'Insufficient points'}, status=status.HTTP_400_BAD_REQUEST)
+            return Response({'error': 'Insufficient points'})
 
         # 상품 가격만큼 포인트 차감
         user.profile.point -= product.price
