@@ -6,6 +6,7 @@ WORKDIR /usr/src/app
 
 # Install any needed packages specified in requirements.txt
 RUN apt-get update && apt-get install -y libgl1-mesa-glx libzbar0 build-essential python3-dev libssl-dev
+RUN pip install python-dateutil
 RUN pip install --upgrade pip
 
 # Copy the current directory contents into the container at /usr/src/app
