@@ -24,6 +24,15 @@ class MyProfileViewSet(viewsets.GenericViewSet, RetrieveAPIView, RetrieveUpdateA
 
     def get_object(self):
         return get_object_or_404(Profile, user=self.request.user)
+    
+    @action(methods=['get'], detail=False, permission_classes=[IsAuthenticated])
+    def my_products(self, request):
+        user = request.user
+        my_products = MyProduct.objects.filter(user=user)  # 현재 사용자의 MyProduct 객체들을 필터링
+
+        # MyProduct 객체들의 데이터를 시리얼라이즈
+        serializer = MyProductSerializer(my_products, many=True)  # MyProductSerializer가 존재한다고 가정
+        return Response(serializer.data)
 
 
 class EventViewSet(viewsets.ModelViewSet):
