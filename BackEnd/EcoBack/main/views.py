@@ -67,10 +67,7 @@ class BarcodeViewSet(viewsets.GenericViewSet, CreateAPIView, ListAPIView):
                 barcode_data = code.data.decode('utf-8')
                 if valid_string not in barcode_data:
                     return JsonResponse({'status': 'Invalid', 'code': barcode_data})
-                if barcode_data not in used_codes:
-                    used_codes.append(barcode_data)
-                    new_barcodes.save()
-
+                if barcode_data not in Barcode.objects.all():
                     user = request.user
                     profile = user.profile
                     profile.point += 150
