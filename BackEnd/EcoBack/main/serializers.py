@@ -57,3 +57,11 @@ class ProductSerializer(serializers.ModelSerializer):
     product_code = serializers.ImageField(use_url=True, required=True)
     product_image = serializers.ImageField(use_url=True, required=True)
  
+class MyProductSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = MyProduct
+        fields = '__all__'
+
+    product_code = serializers.ImageField(use_url=True, required=True)
+    product_image = serializers.ImageField(use_url=True, required=True)

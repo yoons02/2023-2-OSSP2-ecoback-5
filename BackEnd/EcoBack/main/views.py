@@ -103,9 +103,9 @@ class BarcodeViewSet(viewsets.GenericViewSet, CreateAPIView, ListAPIView):
             last_barcode = Barcode.objects.filter(writer=user).latest('create_at')
             # 3개월을 추가합니다
             date_with_three_months = last_barcode.create_at + relativedelta(months=3)
-            return JsonResponse({'last_barcode_date_plus_3_months': date_with_three_months})
+            return JsonResponse({'extinction period': date_with_three_months})
         except Barcode.DoesNotExist:
-            return JsonResponse({'last_barcode_date_plus_3_months': 'None'})
+            return JsonResponse({'extinction period': 'None'})
 
 
 
@@ -200,6 +200,7 @@ class ProductViewSet(viewsets.ModelViewSet):
         serializer = self.get_serializer(product)
         return Response(serializer.data)
     
+
     @action(methods=['post'], detail=True, permission_classes=[IsAuthenticated])
     def purchase(self, request, pk=None):
         product = get_object_or_404(Product, pk=pk)
@@ -207,15 +208,23 @@ class ProductViewSet(viewsets.ModelViewSet):
 
         # 사용자의 포인트 확인
         if user.profile.point < product.price:
-            return Response({'error': 'Insufficient points'})
+            return Response({'message': 'Insufficient points'})
 
         # 상품 가격만큼 포인트 차감
         user.profile.point -= product.price
         user.profile.save()
 
-        # 추가적으로 구매 기록을 저장하거나 다른 로직을 구현할 수 있습니다.
+        # MyProduct 객체 생성 및 저장
+        my_product = MyProduct(
+            user=user,
+            name=product.name,  
+            product_code=product.code,  
+            product_image=product.image 
+        )
+        my_product.save()
 
-        return Response({'message': 'Purchase successful'}, status=status.HTTP_200_OK)
+        # 구매 성공 메시지 반환
+        return Response({'message': 'Purchase successful'})
 
     @action(methods=['post'], detail=False, permission_classes=[IsAdminUser])
     def add_product(self, request):
