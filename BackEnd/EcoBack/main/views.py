@@ -195,6 +195,23 @@ class ProductViewSet(viewsets.ModelViewSet):
         product = self.get_object()
         serializer = self.get_serializer(product)
         return Response(serializer.data)
+    
+    @action(methods=['post'], detail=True, permission_classes=[IsAuthenticated])
+    def purchase(self, request, pk=None):
+        product = get_object_or_404(Product, pk=pk)
+        user = request.user
+
+        # 사용자의 포인트 확인
+        if user.profile.point < product.price:
+            return Response({'error': 'Insufficient points'}, status=status.HTTP_400_BAD_REQUEST)
+
+        # 상품 가격만큼 포인트 차감
+        user.profile.point -= product.price
+        user.profile.save()
+
+        # 추가적으로 구매 기록을 저장하거나 다른 로직을 구현할 수 있습니다.
+
+        return Response({'message': 'Purchase successful'}, status=status.HTTP_200_OK)
 
     @action(methods=['post'], detail=False, permission_classes=[IsAdminUser])
     def add_product(self, request):
