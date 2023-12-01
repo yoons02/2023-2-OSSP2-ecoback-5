@@ -17,8 +17,6 @@ import io
 from rest_framework.routers import DefaultRouter, Route, DynamicRoute
 
 
-used_codes = []
-
 class MyProfileViewSet(viewsets.GenericViewSet, RetrieveAPIView, RetrieveUpdateAPIView):
     serializer_class = ProfileSerializer
     permission_classes = [IsAuthenticated]
@@ -77,6 +75,9 @@ class BarcodeViewSet(viewsets.GenericViewSet, CreateAPIView, ListAPIView):
                     profile = user.profile
                     profile.point += 150
                     profile.save()
+
+                    new_barcodes['writer'] = request.user
+                    new_barcodes['barcode_number'] = barcode_data
                     new_barcodes.save()
 
                     return JsonResponse({'status': 'approved', 'code': barcode_data})
@@ -88,6 +89,16 @@ class BarcodeViewSet(viewsets.GenericViewSet, CreateAPIView, ListAPIView):
     def count(self, request):
         count = self.get_queryset().count()
         return JsonResponse({'count': count})
+    
+    @action(methods=['get'], detail=False)
+    def last_barcode(self, request):
+        user = request.user
+        try:
+            last_barcode = Barcode.objects.filter(writer=user).latest('create_at')
+            return JsonResponse({'last_barcode_date': last_barcode.created_at})
+        except Barcode.DoesNotExist:
+            return JsonResponse({'last_barcode_date': 'None'})
+
 
 
 class ProductCategoryViewSet(viewsets.GenericViewSet):
