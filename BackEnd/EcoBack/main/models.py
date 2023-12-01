@@ -20,7 +20,7 @@ class Event(models.Model):
     content = models.TextField(max_length=1000)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
-    image = models.ImageField(upload_to=image_upload_path, default='')
+    image = models.ImageField(upload_to=image_upload_path, null=False)
 
 class Barcode(models.Model):
     id = models.AutoField(primary_key=True)
@@ -37,13 +37,13 @@ class Badge(models.Model):
 class ProductCategory(models.Model):
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=30)
-    image = models.ImageField(upload_to=image_upload_path, default='')
+    image = models.ImageField(upload_to=image_upload_path, null=False)
 
 class Brand(models.Model):
     id = models.AutoField(primary_key=True)
     category = models.ForeignKey(ProductCategory, null=True, blank=False, on_delete=models.CASCADE)
     brand_name = models.CharField(max_length=30)
-    brand_image = models.ImageField(upload_to=image_upload_path, default='')
+    brand_image = models.ImageField(upload_to=image_upload_path, null=False)
 
 class Product(models.Model):
     id = models.AutoField(primary_key=True)
@@ -52,4 +52,4 @@ class Product(models.Model):
     name = models.CharField(max_length=30)
     price = models.IntegerField(default=0)
     product_code = models.ImageField(upload_to=image_upload_path, default='')
-    product_image = models.ImageField(upload_to=image_upload_path, default='')
+    product_image = models.ImageField(upload_to=image_upload_path, null=False)
