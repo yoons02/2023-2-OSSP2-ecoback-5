@@ -103,9 +103,9 @@ class BarcodeViewSet(viewsets.GenericViewSet, CreateAPIView, ListAPIView):
             last_barcode = Barcode.objects.filter(writer=user).latest('create_at')
             # 3개월을 추가합니다
             date_with_three_months = last_barcode.create_at + relativedelta(months=3)
-            return JsonResponse({'last_barcode_date_plus_3_months': date_with_three_months})
+            return JsonResponse({'extinction period': date_with_three_months})
         except Barcode.DoesNotExist:
-            return JsonResponse({'last_barcode_date_plus_3_months': 'None'})
+            return JsonResponse({'extinction period': 'None'})
 
 
 
