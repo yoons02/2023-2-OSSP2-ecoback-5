@@ -51,12 +51,12 @@ class Product(models.Model):
     brand = models.ForeignKey(Brand, null=True, blank=False, on_delete=models.CASCADE)
     name = models.CharField(max_length=30)
     price = models.IntegerField(default=0)
-    product_code = models.ImageField(upload_to=image_upload_path, default='')
+    product_code = models.ImageField(upload_to=image_upload_path, null=False, default='')
     product_image = models.ImageField(upload_to=image_upload_path, null=False)
 
 class MyProduct(models.Model):
     id = models.AutoField(primary_key=True)
     user = models.ForeignKey(User, null=False, blank=False, on_delete=models.CASCADE)
     name = models.CharField(max_length=30)
-    product_code = models.ImageField(upload_to=image_upload_path, default='')
+    product_code = models.ImageField(upload_to=image_upload_path, null=False, default='')
     product_image = models.ImageField(upload_to=image_upload_path, null=False)
