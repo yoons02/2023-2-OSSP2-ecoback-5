@@ -6,7 +6,7 @@ import ReceiptFilming from './seulgi/receiptFilming.js';
 import MyPage from './pages/mypage.js';
 import EventCopy from './kitae/EventCopy.js';
 import Login from './pages/Login.js';
-import Start from './pages/Start.js';
+import Start from './pages/index.js';
 import BeautyHealthCategory from './pages/BeautyHealthCategory.js';
 import CafeCategory from './pages/CafeCategory.js';
 import ConvenienceStoreCategory from './pages/convenienceStoreCategory.js';

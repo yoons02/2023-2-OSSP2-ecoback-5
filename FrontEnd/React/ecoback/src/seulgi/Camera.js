@@ -177,9 +177,8 @@
 파일을 저장할 수 없다고 함. 대신 사용자에게 캡처된 이미지를 다운로드할 수 있도록
 유도할 수 있는 기능을 찾아 코드를 추가해놓음.
 
-->Refresh버튼:원래 없는건데 사진 캡처하고 사용자가 수동으로 이미지 저장할 수 있게 화면에 띄워놓고
-Refrsh 버튼 누르면 사진 사라지게 일단 임시로 버튼 만들어놓음.
-*/
+->Refresh버튼:사진 캡처하고 사용자가 수동으로 이미지 저장할 수 있게 화면에 띄워놓고
+Refrsh 버튼 누르면 사진 사라지게*/
 
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import Webcam from 'react-webcam';
@@ -203,10 +202,11 @@ const Camera = () => {
   const capturePhoto = useCallback(() => {
     const imageSrc = webcamRef.current.getScreenshot();/*스크린샷 url 저장*/
     setUrl(imageSrc);
+    console.log(url);
 
     // 캡처된 이미지를 다운로드하기 위한 링크 요소를 생성
     const downloadLink = document.createElement('a');
-    downloadLink.href = url;
+    downloadLink.href = imageSrc;
     downloadLink.download = 'barcode.png'; // 다운로드될 파일의 이름을 지정
 
     // 링크를 문서에 추가하고 클릭 이벤트를 발생
@@ -241,7 +241,7 @@ const Camera = () => {
     formData.append('code','0036000291452');
     formData.append('image',imageBlob, 'barcode.png');
 
-    const endpoint="barcodes/";
+    const endpoint="/barcodes/";
     const access_token=localStorage.getItem('access');
     
     try{
@@ -264,7 +264,7 @@ const Camera = () => {
       console.error('Error: ',e);
     }
 
-    <SendPhotoModal isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen}/>
+    //<SendPhotoModal isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen}/>
 
   }
 
@@ -277,7 +277,7 @@ const Camera = () => {
         screenshotFormat="image/png"
         videoConstraints={videoConstraints}
        onUserMedia={onUserMedia}
-        mirrored={true}
+        mirrored={false}
         width="100%"
       />
 

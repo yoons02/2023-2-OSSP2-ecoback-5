@@ -1,7 +1,25 @@
 import React from 'react';
 import TitleBanner from '../components/TitleBanner.js';
 import '../css/EditProfile.css';
+import API from 'api/axios';
 const EditProfile=()=>{
+    const handleSubmit=async()=>{
+        const endpoint="/mypage/get_object/";
+        const access_token=localStorage.getItem('access');
+        const patchData={
+
+        }
+        try{
+            const response=await API.patch(endpoint,patchData,{
+                headers:{
+                    'Authorization':`Bearer ${access_token}`
+                }
+            });
+
+        }catch(e){
+            console.log('API 오류: ',e);
+        }
+    }
     return (
        <div>
         <div className="full_container" style={{backgroundColor:"#F9F9F9",paddingBottom:"15px", minHeight:"100vh"}}>
@@ -17,9 +35,8 @@ const EditProfile=()=>{
             </div>
             <hr />
             <div className="inputBox">
-                <form id="submitForm" action="" method="POST">
-                    <input type="text" name="lastName" placeholder="성(Last name)"/><br />
-                    <input type="text" name="firstName" placeholder="이름(First name)"/><br />
+                <form id="submitForm"  onSubmit={handleSubmit}>
+                    <input type="text" name="name" placeholder="이름(Name)"/><br />
                     <input type="number" name="phone" placeholder="휴대전화(Phone number)"/><br />
                     <input type="email" name="email" placeholder="이메일(Email address)"/><br />
                     <select name="gender" id="gender">

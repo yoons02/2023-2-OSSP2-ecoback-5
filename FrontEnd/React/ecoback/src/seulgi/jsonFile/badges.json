@@ -1,14 +1,14 @@
 [
- {"id":1, "name":"실천의 시작", "img":"badge_earth.png"},
-    {"id":2, "name":"티끌모아 태산", "img":"badge_unlock.png"},
-    {"id":3, "name": "단골 손님", "img":"badge_calender.png"},
-    {"id":4, "name": "커피중독", "img":"badge_unlock.png"},
-    {"id":5, "name": "텀블러 홀릭", "img":"badge_tumbler.png"},
-    {"id":6, "name": "환경 지킴이", "img":"badge_unlock.png"},
-    {"id":7, "name": "당신은 천사", "img":"badge_angel.png"},
-    {"id":8, "name": "포인트 재벌", "img":"badge_unlock.png"},
-    {"id":9, "name": "10회 달성", "img":"badge_10.png"},
-    {"id":10, "name": "50회 달성", "img":"badge_50.png"},
-    {"id":11, "name": "100회 달성", "img":"badge_unlock.png"},
-    {"id":12, "name": "500회 달성", "img":"badge_unlock.png"}
+ {"id":1, "name":"실천의 시작", "img":"badge_earth.png", "minCount":3},
+    {"id":2, "name":"티끌모아 태산", "img":"sand.png", "minCount":5},
+    {"id":3, "name": "단골 손님", "img":"badge_calender.png", "minCount":7},
+    {"id":4, "name": "커피중독", "img":"coffee.png", "minCount":10},
+    {"id":5, "name": "텀블러 홀릭", "img":"badge_tumbler.png", "minCount":13},
+    {"id":6, "name": "환경 지킴이", "img":"ecosystem.png", "minCount":15},
+    {"id":7, "name": "당신은 천사", "img":"badge_angel.png", "minCount":20},
+    {"id":8, "name": "포인트 재벌", "img":"rich.png", "minCount":30},
+    {"id":9, "name": "10회 달성", "img":"badge_10.png", "minCount":10},
+    {"id":10, "name": "50회 달성", "img":"badge_50.png", "minCount":55},
+    {"id":11, "name": "100회 달성", "img":"100.png", "minCount":100},
+    {"id":12, "name": "500회 달성", "img":"500.png", "minCount":500}
 ]

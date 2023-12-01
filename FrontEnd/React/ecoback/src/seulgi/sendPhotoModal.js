@@ -21,8 +21,8 @@ const SendPhotoModal=({isModalOpen, setIsModalOpen})=> {
         setIsModalOpen(false);
     }
     return (
-        <div>
-          <Modal style={modalStyle} isOpen={isModalOpen}>
+        <div class='full_container'>
+          <Modal  ariaHideApp={false}  style={modalStyle} isOpen={isModalOpen}>
           <div className="xbutton">
           <button id="xbutton" onClick={()=>{handleCloseModal()}}>X</button>
           </div>
