@@ -2,7 +2,7 @@ from django.urls import include, path
 from django.conf import settings
 from django.conf.urls.static import static
 from rest_framework.routers import DefaultRouter
-from .views import MyProfileViewSet, EventViewSet, BarcodeViewSet, ProductCategoryViewSet, BrandViewSet, ProductViewSet, BadgeViewSet
+from .views import *
 
 app_name = "main"
 
