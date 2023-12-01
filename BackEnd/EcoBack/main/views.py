@@ -57,30 +57,38 @@ class BarcodeViewSet(viewsets.GenericViewSet, CreateAPIView, ListAPIView):
 
     def create(self, request, *args, **kwargs):
         valid_string = '29'
-        new_barcodes = BarcodeSerializer(data=request.data)
-        if new_barcodes.is_valid(raise_exception=True):
-            barcode_image = new_barcodes.validated_data.get('image')
-            nparr = np.fromstring(barcode_image.read(), np.uint8)
-            frame = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
+        barcode_image = request.data.get('image')
+        nparr = np.fromstring(barcode_image.read(), np.uint8)
+        frame = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
 
-            for code in decode(frame):
-                barcode_data = code.data.decode('utf-8')
-                if valid_string not in barcode_data:
-                    return JsonResponse({'status': 'Invalid', 'code': barcode_data})
-                if barcode_data not in Barcode.objects.all():
+        for code in decode(frame):
+            barcode_data = code.data.decode('utf-8')
+            if valid_string not in barcode_data:
+                return JsonResponse({'status': 'Invalid', 'code': barcode_data})
+
+            if not Barcode.objects.filter(barcode_number=barcode_data).exists():
+                request_data = {
+                    'writer': request.user.id,  # 현재 사용자 ID
+                    'barcode_number': barcode_data,  # 추출한 바코드 데이터
+                    'other_field': request.data.get('other_field')  # 다른 필요한 필드들
+                }
+
+                new_barcodes = BarcodeSerializer(data=request_data)
+                if new_barcodes.is_valid(raise_exception=True):
+                    new_barcodes.save()  # Barcode 객체 저장
+
                     user = request.user
                     profile = user.profile
                     profile.point += 150
                     profile.save()
 
-                    new_barcodes['writer'] = request.user
-                    new_barcodes['barcode_number'] = barcode_data
-                    new_barcodes.save()
-
                     return JsonResponse({'status': 'approved', 'code': barcode_data})
-                else:
-                    return JsonResponse({'status': 'duplicate', 'code': barcode_data})
-            return JsonResponse({'status': 'not found'})
+            else:
+                return JsonResponse({'status': 'duplicate', 'code': barcode_data})
+
+        return JsonResponse({'status': 'not found'})
+        
+
 
     @action(methods=['get'], detail=False)
     def count(self, request):
@@ -92,7 +100,7 @@ class BarcodeViewSet(viewsets.GenericViewSet, CreateAPIView, ListAPIView):
         user = request.user
         try:
             last_barcode = Barcode.objects.filter(writer=user).latest('create_at')
-            return JsonResponse({'last_barcode_date': last_barcode.created_at})
+            return JsonResponse({'last_barcode_date': last_barcode.create_at})
         except Barcode.DoesNotExist:
             return JsonResponse({'last_barcode_date': 'None'})
 
