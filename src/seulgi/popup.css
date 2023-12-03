@@ -1,0 +1,43 @@
+.pointViewer{
+    height: 80%;
+    text-align:center;
+    line-height:8vw;
+}
+.btnContainer{
+    background-color: aquamarine;
+}
+
+#leftPointer{
+    align-items:center;
+}
+#sentence{
+    line-height:4vw;
+    font-size:3vw;
+}
+
+#buy{
+    color:#3E97FF;
+}
+button{
+    border-style:none;
+    width:50%;
+    background-color:transparent;
+    font-weight:bold;
+    font-family:NotoSansKR;
+}
+#cancel{
+    border-style:none;
+    width:50%;
+    background-color:transparent;
+    font-weight:bold;
+    font-family:NotoSansKR;
+
+}
+#close{
+    border-style:none;
+    width:100%;
+    background-color:transparent;
+    font-weight:bold;
+    font-family:NotoSansKR;
+
+}
