@@ -1,0 +1,112 @@
+@font-face{
+    font-family: "NanumPen";
+    src: url("../font/NanumPen.ttf") format("truetype");
+  }
+
+  @font-face{
+    font-family: "Pattaya";
+    src: url("../font/Pattaya.ttf") format("truetype");
+  }
+.profileContainer{
+    width: 100%;
+    aspect-ratio: 1/1.05;
+}
+  #username{
+    font-family: "NotoSansKR";
+    font-weight:bold;
+    font-size:19px;
+    padding-left: 17px;
+}
+
+.faceImage{
+    font-family: "NotoSansKR";
+    text-align:center;
+}
+
+#faceImage{
+    width:40%;
+}
+
+#editProfile{
+    font-family: "NotoSansKR";
+    background-color: #8FD36F;
+    width:33%;
+    padding:4% 3%;
+    border-radius: 20%;
+    color:white;
+    border-style:none;
+    font-size:17px;
+}
+
+.badgeCollection{
+    max-width:100%;
+  }
+
+#badgeText{
+    font-family:"NotoSansKR";
+    font-weight:bold;
+    font-size:19px;
+    margin: 22px 0 0 18px;
+}
+
+#badgeCount{
+    font-family:"NotoSansKR";
+    font-weight:bold;
+    font-size:18px;
+    margin: 0 20px 0 0;
+    text-align:right;
+
+}
+
+  .badgeBox{
+    width:100%;
+    display:grid;
+    grid-template-columns: repeat(4,1fr);
+    grid-template-rows: repeat(3,1fr);
+    justify-items: center;
+    margin:20px 0;
+  }
+
+#badgeName{
+    font-size:14px;
+        font-weight: bold;
+        text-align: center;
+        font-family: "NotoSansKR";
+}
+
+#badgeImg{
+    box-sizing: border-box;/*padding, margin이 너비에 포함되도록*/
+        max-width:50%;
+        max-height:50%;
+        display:block;
+        margin:0 auto;
+}
+
+
+#hexagon {
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    background:#E8E8E8;
+    border-radius:50%;
+    width: 100%;
+    aspect-ratio: 1/1;
+    position: relative;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+}
+
+
+
+
+
+.menuContainer {
+    display: flex;
+    justify-content: space-between; /*title과 menuBar 떨어뜨려놓기*/
+    align-items: center; /*수직위치 기준 center*/
+  }
+  
+  .title {
+    margin: 10px;
+    font-family: "Pattaya";
+    font-size: 35px;
+  }

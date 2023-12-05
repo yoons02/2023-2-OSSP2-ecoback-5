@@ -1,0 +1,9 @@
+[
+    {"id":1, "name":"넷플릭스", "image":"netflix.png"},
+       {"id":2, "name":"웨이브", "image":"wavve.png"},
+       {"id":3, "name": "왓챠", "image":"watcha.png"},
+       {"id":4, "name": "티빙", "image":"tving.png"},
+       {"id":5, "name": "롯데시네마", "image":"lottecinema.png"},
+       {"id":6, "name": "CGV", "image":"cgv.png"},
+       {"id":7, "name": "메가박스", "image":"megabox.png"}
+   ]
