@@ -36,7 +36,7 @@ const GaugeBar_whole = () => {
           <img
             src={require('../../image/free-icon-juice.png')}
             alt="juice"
-            style={{ width: '49%', height: 'auto', margin: '0px' }}
+            style={{ width: '33%', height: 'auto', margin: '0px' }}
           />
           <GaugeBar value={value} />
           <img
