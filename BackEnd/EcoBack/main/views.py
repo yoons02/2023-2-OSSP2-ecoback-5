@@ -206,7 +206,7 @@ class ProductViewSet(viewsets.ModelViewSet):
     @action(detail=True, methods=['get'])
     def detail(self, request, *args, **kwargs):
         product = self.get_object()
-        serializer = self.get_serializer(product)
+        serializer = self.get_serializer(product) 
         return Response(serializer.data)
     
 
