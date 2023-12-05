@@ -4,6 +4,7 @@ import API from 'api/axios';
 import { Link } from 'react-router-dom';
 import BackbuttonBar from 'components/BackbuttonBar';
 import TitleBanner from '../components/TitleBanner.js';
+import StorePointDisappear from 'components/StorePointDisappear';
 
 const Brand_box = ({ url, title }) => {
   const [categories, setCategories] = useState([]);
@@ -54,9 +55,7 @@ const Brand_box = ({ url, title }) => {
         ))}
         
       </div>
-      <div className="normal" style={{ textAlign: 'center', fontSize: '90%', margin: '10%' }}>
-        포인트가 2024년 3월 1일에 소멸될 예정이에요.
-      </div>
+      <StorePointDisappear/>
     </div>
   );
 };
