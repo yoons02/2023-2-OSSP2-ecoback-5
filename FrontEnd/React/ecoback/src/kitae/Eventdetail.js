@@ -4,9 +4,11 @@ import BackbuttonBar from 'components/BackbuttonBar';
 import TitleBanner from '../components/TitleBanner';
 import API from "api/axios";
 
+import '../css/Eventdetail.css';
+
 const EventDetail = () => {
   const location = useLocation();
-  const eventId = location.pathname.split('/').pop(); // Assuming the event id is present in the URL
+  const eventId = location.pathname.split('/').pop(); // URL에서 이벤트 ID가 있다고 가정합니다.
   const [eventDetail, setEventDetail] = useState(null);
 
   useEffect(() => {
@@ -28,6 +30,11 @@ const EventDetail = () => {
     fetchData();
   }, [eventId]);
 
+  const formatDate = (dateString) => {
+    const options = { year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric' };
+    return new Date(dateString).toLocaleDateString('ko-KR', options);
+  };
+
   return (
     <div className="full_container">
       <TitleBanner />
@@ -36,11 +43,15 @@ const EventDetail = () => {
         <React.Fragment>
           <BackbuttonBar title={eventDetail.writer} />
           <div>
-            <h2>{eventDetail.writer}</h2>
+            {/* <h2>{eventDetail.writer}</h2> */}
+            <br></br>
+            <div className='datebox'>
+            작성일: {formatDate(eventDetail.created_at)}<br></br>
+            수정일: {formatDate(eventDetail.updated_at)}
+            </div>
+            <br></br>
+            <img className="events_image" src={eventDetail.image} alt={eventDetail.writer} />
             <p>{eventDetail.content}</p>
-            <p>작성 날짜: {eventDetail.created_at}</p>
-            <p>수정 날짜: {eventDetail.updated_at}</p>
-            <img src={eventDetail.image} alt={eventDetail.writer} />
           </div>
         </React.Fragment>
       )}
@@ -49,3 +60,5 @@ const EventDetail = () => {
 };
 
 export default EventDetail;
+
+	
