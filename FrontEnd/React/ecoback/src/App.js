@@ -4,7 +4,10 @@ import Store from '../src/pages/Store.js';
 import Store_Temp from '../src/pages/Product_temp.js';
 import ReceiptFilming from './seulgi/receiptFilming.js';
 import MyPage from './pages/mypage.js';
+
 import EventCopy from './kitae/EventCopy.js';
+import EventDetail from 'kitae/Eventdetail.js';
+
 import Login from './pages/Login.js';
 import Start from './pages/index.js';
 import BeautyHealthCategory from './pages/BeautyHealthCategory.js';
@@ -53,6 +56,15 @@ const App = () => {
         <Route path="/products" element={<ProductsCategory />} />
         <Route path="/individual" element={<IndividualGrid />} />
         <Route path="/product_temp" element={<Product_temp />} />
+
+        {/* <Switch>
+          <Route exact path="/event" component={EventCopy} />
+          <Route path="/event/:id" component={EventDetail} />
+        </Switch> */}
+
+        <Route exact path="/event" element={<EventCopy />} />
+        <Route path="/event/:id" element={<EventDetail />} />
+
     </Routes> 
     
   );
