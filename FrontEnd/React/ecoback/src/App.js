@@ -57,11 +57,7 @@ const App = () => {
         <Route path="/individual" element={<IndividualGrid />} />
         <Route path="/product_temp" element={<Product_temp />} />
 
-        {/* <Switch>
-          <Route exact path="/event" component={EventCopy} />
-          <Route path="/event/:id" component={EventDetail} />
-        </Switch> */}
-
+    
         <Route exact path="/event" element={<EventCopy />} />
         <Route path="/event/:id" element={<EventDetail />} />
 
