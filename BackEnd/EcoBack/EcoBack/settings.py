@@ -167,7 +167,7 @@ SIMPLE_JWT = {
     'TOKEN_USER_CLASS': 'django.contrib.auth.models.User',
 }
 
-
+ 
 SITE_ID = 1
 REST_USE_JWT = True
 ACCOUNT_USER_MODEL_USERNAME_FIELD = 'username'
