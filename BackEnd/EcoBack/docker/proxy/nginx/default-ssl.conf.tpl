@@ -2,7 +2,7 @@ server {
     listen 80;
     server_name ${DOMAIN} www.${DOMAIN};
 
-    if ($http_x_forwarded_proto = 'http') {
+    if (\$http_x_forwarded_proto != 'https') {
         return 301 https://$host$request_uri;
     }
 
