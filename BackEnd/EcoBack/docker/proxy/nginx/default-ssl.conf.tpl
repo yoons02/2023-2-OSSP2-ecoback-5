@@ -1,8 +1,3 @@
-map $http_x_forwarded_proto $ssl_redirect {
-    default "";
-    http    "https";
-}
-
 server {
     listen 80;
     server_name ${DOMAIN} www.${DOMAIN};
