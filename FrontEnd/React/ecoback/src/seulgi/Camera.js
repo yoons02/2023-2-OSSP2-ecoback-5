@@ -100,64 +100,120 @@ const Camera = () => {
       alert("오류 발생");
     }
   };
+
+
   /*갤러리 접근이 잘 안돼서 우선 file 업로드 방향으로 수정하였습니다.*/
-  const handleFileSelect=(e)=>{
-    const file=e.target.files[0];
-    if(file){
-      setSelectedFile(file);/*selectedFile*/
-      console.log(file);
-    }
-  }
-
-  
-  const handleAlbumClick =()=>{
-    const fileInput=document.createElement('input');
+  const handleAlbumClick = () => {
+    const fileInput = document.createElement('input');
     fileInput.type = 'file';
-    fileInput.accept='image/*';//image 파일만 선택 가능하도록 설정
-    fileInput.onchange=handleFileSelect;
-    /*사진 선택 후 uploadFile 진행*/
-    uploadFile();
-  }
-
-  const uploadFile = async () => {
-    
-    if(selectedFile){
-      const formData=new FormData();
-      formData.append('file',selectedFile);
-
+    fileInput.accept = 'image/*'; // 이미지 파일만 선택 가능하도록 설정
+    fileInput.onchange = handleFileSelect; // 파일 선택 시 handleFileSelect 호출
+    fileInput.click();
+  };
+  
+  const handleFileSelect = async (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      setSelectedFile(file); // selectedFile 상태 업데이트
+      console.log(file);
+      await uploadFile(file); // 파일 업로드 함수 호출
+    }
+  };
+  
+  const uploadFile = async (file) => {
+    const formData = new FormData();
+    formData.append('file', file); // 선택된 파일 추가
+  
     const endpoint = "/barcodes/";
     const access_token = localStorage.getItem('access');
   
-
-        try {
-          /* post 형식으로 formData 전송 */
-          const response = await API.post(endpoint, formData, {
-            headers: {
-              'Authorization': `Bearer ${access_token}`,
-              'Content-Type': 'multipart/form-data' // formData 형식으로 파일 전달
-            }
-          });
-      
-          console.log("response.data: ", response.data);
-          setResponseStatus(response.data.status);
-      
-          if (response.data.status === "approved") {
-            alert("바코드 전송에 성공하였습니다.");
-            /*duplicate: 중복된 요청, 이미 서버에 저장된 이미지인 경우*/
-          } else if (response.data.status === "duplicate") {
-            alert("duplicate: 이미 등록된 바코드입니다.");
-          } else if (response.data.status === "invalid") {
-            alert("텀블러 미사용 바코드로 적립이 불가합니다.");
-          } else{
-            alert("바코드 정보를 인식할 수 없습니다.");
-          }
-        } catch (error) {
-          console.error('Error: ', error);
-          alert("오류 발생");
+    try {
+      /* post 형식으로 formData 전송 */
+      const response = await API.post(endpoint, formData, {
+        headers: {
+          'Authorization': `Bearer ${access_token}`,
+          'Content-Type': 'multipart/form-data' // formData 형식으로 파일 전달
         }
-    } else{
-      alert("file이 선택되지 않았습니다.");
-    }
+      });
+  
+      console.log("response.data: ", response.data);
+      setResponseStatus(response.data.status);
+      if (response.data.status === "approved") {
+        alert("바코드 전송에 성공하였습니다.");
+        /*duplicate: 중복된 요청, 이미 서버에 저장된 이미지인 경우*/
+      } else if (response.data.status === "duplicate") {
+        alert("duplicate: 이미 등록된 바코드입니다.");
+      } else if (response.data.status === "invalid") {
+        alert("텀블러 미사용 바코드로 적립이 불가합니다.");
+      } else{
+        alert("바코드 정보를 인식할 수 없습니다.");
+      }
+    } catch (error) {
+      console.error('Error: ', error);
+      alert("오류 발생");
+    } 
+  };
+  
+
+
+  // const handleFileSelect = async (e) => {
+  //   const file = e.target.files[0];
+  //   if (file) {
+  //     setSelectedFile(file); // selectedFile 상태 업데이트
+  //     console.log(file);
+  //     await uploadFile(file); // 파일 업로드 함수 호출
+  //   }
+  // };
+
+  
+  // const handleAlbumClick =()=>{
+  //   const fileInput=document.createElement('input');
+  //   fileInput.type = 'file';
+  //   fileInput.accept='image/*';//image 파일만 선택 가능하도록 설정
+  //   fileInput.onchange=handleFileSelect;
+  //   /*사진 선택 후 uploadFile 진행*/
+  //   fileInput.click();
+  // }
+
+  // const uploadFile = async () => {
+    
+  //   if(selectedFile){
+  //     const formData=new FormData();
+  //     formData.append('file',selectedFile);
+
+  //   const endpoint = "/barcodes/";
+  //   const access_token = localStorage.getItem('access');
+  
+
+  //       try {
+  //         /* post 형식으로 formData 전송 */
+  //         const response = await API.post(endpoint, formData, {
+  //           headers: {
+  //             'Authorization': `Bearer ${access_token}`,
+  //             'Content-Type': 'multipart/form-data' // formData 형식으로 파일 전달
+  //           }
+  //         });
+      
+  //         console.log("response.data: ", response.data);
+  //         setResponseStatus(response.data.status);
+      
+  //         if (response.data.status === "approved") {
+  //           alert("바코드 전송에 성공하였습니다.");
+  //           /*duplicate: 중복된 요청, 이미 서버에 저장된 이미지인 경우*/
+  //         } else if (response.data.status === "duplicate") {
+  //           alert("duplicate: 이미 등록된 바코드입니다.");
+  //         } else if (response.data.status === "invalid") {
+  //           alert("텀블러 미사용 바코드로 적립이 불가합니다.");
+  //         } else{
+  //           alert("바코드 정보를 인식할 수 없습니다.");
+  //         }
+  //       } catch (error) {
+  //         console.error('Error: ', error);
+  //         alert("오류 발생");
+  //       }
+  //   } else{
+  //     alert("file이 선택되지 않았습니다.");
+  //   }
   
     
   
