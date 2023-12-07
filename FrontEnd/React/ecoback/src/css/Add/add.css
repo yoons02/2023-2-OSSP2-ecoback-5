@@ -1,0 +1,67 @@
+/* add.css */
+
+/* 파일 선택 버튼에 대한 스타일 */
+.filebox {
+  float: right;
+  margin-bottom: 20px;
+}
+
+.filebox label {
+  display: inline-block;
+  width: 10%;
+  color: #FFFFFF;
+  aspect-ratio: 1 / 0.5;
+  padding: 10px 20px;
+  vertical-align: middle;
+  background-color: #999999;
+  cursor: pointer;
+  margin-left: 10px;
+  text-align: center;
+  border-radius: 10px;
+}
+.filebox .upload-name {
+  display: inline-block;
+  height: 40px;
+  padding: 0 10px;
+  vertical-align: middle;
+  border: 1px solid #dddddd;
+  width: 72%;
+  color: #999999;
+}
+.filebox input[type="file"] {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+/* 제출 버튼에 대한 스타일 */
+.button {
+  width: 99%;
+  background-color: #8FD36F;
+  color: #FFFFFF;
+  aspect-ratio: 1 / 0.1;
+  border-radius: 10px;
+  margin-top: 10px; /* 버튼 위쪽에 여백 추가 */
+  cursor: pointer; /* 커서를 포인터로 변경하여 사용자에게 클릭 가능한 요소임을 나타냄 */
+}
+.filebox input[type="file"] {
+  position: absolute;
+  width: 0;
+  height: 0;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+}
+#name{
+  width: 99%;
+}
+#align{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap:10px;
+}
