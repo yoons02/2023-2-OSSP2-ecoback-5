@@ -1,10 +1,11 @@
+map $http_x_forwarded_proto $ssl_redirect {
+    default "";
+    http    "https";
+}
+
 server {
     listen 80;
     server_name ${DOMAIN} www.${DOMAIN};
-
-    if (\$http_x_forwarded_proto != 'https') {
-        return 301 https://$host$request_uri;
-    }
 
     location /.well-known/acme-challenge/ {
         root /vol/www/;
