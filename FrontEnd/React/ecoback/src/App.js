@@ -21,6 +21,9 @@ import BakeryCategory from 'pages/BakeryCategory.js';
 import GiftcardCategory from 'pages/GiftcardCategory.js';
 import MovieCategory from 'pages/MovieCategory.js';
 import Product_temp from './pages/Product_temp.js'
+import Manager from './pages/manager/Manager.js'
+import Category_add from './pages/manager/Category_add.js'
+
 const App = () => {
   return(
     /*브랜드별 개별 상품페이지 API 보니까 현재 id 2, 5번에 대한 data만
@@ -53,6 +56,8 @@ const App = () => {
         <Route path="/products" element={<ProductsCategory />} />
         <Route path="/individual" element={<IndividualGrid />} />
         <Route path="/product_temp" element={<Product_temp />} />
+        <Route path="/manager" element={<Manager />} />
+        <Route path="/manager/category_add" element={<Category_add />} />
     </Routes> 
     
   );
