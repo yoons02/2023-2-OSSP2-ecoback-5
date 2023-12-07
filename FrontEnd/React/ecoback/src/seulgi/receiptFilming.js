@@ -1,6 +1,6 @@
 import './receiptFilming.css'
 import Webcam from "react-webcam";
-import Camera from './Camera'
+import Camera from './Camera.js'
 import TitleBanner from "../components/TitleBanner.js"
 import BackbuttonBar from 'components/BackbuttonBar';
 const WebcamComponent = () => <Webcam />;

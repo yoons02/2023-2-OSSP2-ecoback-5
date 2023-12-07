@@ -30,7 +30,7 @@ const Camera = () => {
   const capturePhoto = useCallback(() => {
     const imageSrc = webcamRef.current.getScreenshot();/*스크린샷 url 저장*/
     setUrl(imageSrc);
-    console.log(url);
+    console.log("url: ",imageSrc);
 
     // 캡처된 이미지를 다운로드하기 위한 링크 요소를 생성
     const downloadLink = document.createElement('a');
@@ -88,6 +88,7 @@ const Camera = () => {
       if (response.data.status === "approved") {
         /*모달창으로 대체*/
         /*duplicate: 중복된 요청, 이미 서버에 저장된 이미지인 경우*/
+        handleOpenModal();
       } else if (response.data.status === "duplicate") {
         alert("duplicate: 이미 등록된 바코드입니다.");
       } else if (response.data.status === "invalid") {
@@ -114,15 +115,16 @@ const Camera = () => {
   const handleFileSelect = async (e) => {
     const file = e.target.files[0];
     if (file) {
-      setSelectedFile(file); // selectedFile 상태 업데이트
-      console.log(file);
+      setSelectedFile(file); // selectedFile 업데이트
+      console.log("File: ", file);
       await uploadFile(file); // 파일 업로드 함수 호출
     }
   };
   
   const uploadFile = async (file) => {
     const formData = new FormData();
-    formData.append('file', file); // 선택된 파일 추가
+    /*formData: image 형식으로 수정*/
+    formData.append('image', file, 'barcode.png'); // 선택된 파일 추가
   
     const endpoint = "/barcodes/";
     const access_token = localStorage.getItem('access');
@@ -139,7 +141,8 @@ const Camera = () => {
       console.log("response.data: ", response.data);
       setResponseStatus(response.data.status);
       if (response.data.status === "approved") {
-        alert("바코드 전송에 성공하였습니다.");
+        //alert("바코드 전송에 성공하였습니다.");
+        handleOpenModal();
         /*duplicate: 중복된 요청, 이미 서버에 저장된 이미지인 경우*/
       } else if (response.data.status === "duplicate") {
         alert("duplicate: 이미 등록된 바코드입니다.");
@@ -153,69 +156,6 @@ const Camera = () => {
       alert("오류 발생");
     } 
   };
-  
-
-
-  // const handleFileSelect = async (e) => {
-  //   const file = e.target.files[0];
-  //   if (file) {
-  //     setSelectedFile(file); // selectedFile 상태 업데이트
-  //     console.log(file);
-  //     await uploadFile(file); // 파일 업로드 함수 호출
-  //   }
-  // };
-
-  
-  // const handleAlbumClick =()=>{
-  //   const fileInput=document.createElement('input');
-  //   fileInput.type = 'file';
-  //   fileInput.accept='image/*';//image 파일만 선택 가능하도록 설정
-  //   fileInput.onchange=handleFileSelect;
-  //   /*사진 선택 후 uploadFile 진행*/
-  //   fileInput.click();
-  // }
-
-  // const uploadFile = async () => {
-    
-  //   if(selectedFile){
-  //     const formData=new FormData();
-  //     formData.append('file',selectedFile);
-
-  //   const endpoint = "/barcodes/";
-  //   const access_token = localStorage.getItem('access');
-  
-
-  //       try {
-  //         /* post 형식으로 formData 전송 */
-  //         const response = await API.post(endpoint, formData, {
-  //           headers: {
-  //             'Authorization': `Bearer ${access_token}`,
-  //             'Content-Type': 'multipart/form-data' // formData 형식으로 파일 전달
-  //           }
-  //         });
-      
-  //         console.log("response.data: ", response.data);
-  //         setResponseStatus(response.data.status);
-      
-  //         if (response.data.status === "approved") {
-  //           alert("바코드 전송에 성공하였습니다.");
-  //           /*duplicate: 중복된 요청, 이미 서버에 저장된 이미지인 경우*/
-  //         } else if (response.data.status === "duplicate") {
-  //           alert("duplicate: 이미 등록된 바코드입니다.");
-  //         } else if (response.data.status === "invalid") {
-  //           alert("텀블러 미사용 바코드로 적립이 불가합니다.");
-  //         } else{
-  //           alert("바코드 정보를 인식할 수 없습니다.");
-  //         }
-  //       } catch (error) {
-  //         console.error('Error: ', error);
-  //         alert("오류 발생");
-  //       }
-  //   } else{
-  //     alert("file이 선택되지 않았습니다.");
-  //   }
-  
-    
   
   return (
     <>{url?(<div id="screenShot">
@@ -242,12 +182,7 @@ const Camera = () => {
         <button id="refresh" onClick={() => { setUrl(null) }}><img id="refreshBtn"src={require("../image/refreshBtn.png")}/></button>
       </div>
   
-      {/* {url && (
-        <div id="screenShot">
-          <img src={url} alt='ScreenShot'/>
-          <button id="sendPhotoBtn" onClick={sendPhotoServer}>전송하기</button>
-        </div>
-      )} */}
+
      {(responseStatus==="approved")?
      <SendPhotoModal isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} />:null}
     </>
