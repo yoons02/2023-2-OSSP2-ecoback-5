@@ -48,6 +48,8 @@ server {
         include              /etc/nginx/uwsgi_params;
         client_max_body_size 10M;
 
+        proxy_pass "https://15.164.229.6:443";
+
         proxy_buffer_size   256k;
         proxy_buffers       8 256k;
         proxy_busy_buffers_size 512k;
