@@ -2,6 +2,10 @@ server {
     listen 80;
     server_name ${DOMAIN} www.${DOMAIN};
 
+    if ($http_x_forwarded_proto = 'http') {
+        return 301 https://$host$request_uri;
+    }
+
     location /.well-known/acme-challenge/ {
         root /vol/www/;
     }
@@ -41,7 +45,7 @@ server {
         include              /etc/nginx/uwsgi_params;
         client_max_body_size 10M;
 
-        proxy_pass "https://15.164.229.6:443";
+        """proxy_pass "https://15.164.229.6:443";
 
         proxy_buffer_size   256k;
         proxy_buffers       8 256k;
@@ -51,6 +55,6 @@ server {
         proxy_set_header X-Real-IP $remote_addr;
         proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
         proxy_set_header X-Forwarded-Host $host;
-        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_set_header X-Forwarded-Proto $scheme;"""
     }
 }
