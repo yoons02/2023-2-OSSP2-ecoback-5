@@ -35,6 +35,8 @@ const MyPage=()=>{
         const day=date.getDate();
         return `${year}년 ${month}월 ${day}일`
     }
+    const DefaultImageUrl="https://cdn.icon-icons.com/icons2/1744/PNG/512/3643745-human-man-people-person-profile_113435.png"
+    
     return (
         <div className="full_container" style={{backgroundColor:"#F9F9F9",paddingBottom:"15px", minHeight:"100vh"}}>
         <div>
@@ -43,7 +45,9 @@ const MyPage=()=>{
             <div className="profileContainer">
                 <div id="username">{userInfo.name}님의 프로필</div>
                 <div className="faceImage" style={{marginTop:'5%', padding: 'auto'}}>
-                    <img id="faceImage" src={userInfo.image} alt="faceImg" />
+                    <img id="faceImage" 
+                    src={userInfo.image ? API.defaults.baseURL+userInfo.image : DefaultImageUrl} 
+                    alt="faceImg" />
                     <p style={{fontSize:"16px"}}><b>{formDate(userInfo.created_at)}부터 함께하는 중</b></p>
 
                     <Link to="/editprofilepage">
@@ -61,5 +65,6 @@ const MyPage=()=>{
         </div>
     )
 }
+
 
 export default MyPage;
