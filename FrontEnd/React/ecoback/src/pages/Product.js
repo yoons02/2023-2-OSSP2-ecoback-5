@@ -18,7 +18,7 @@ const Product = () => {
   const fetchProductData = async () => {
     const access_token = localStorage.getItem('access');
     try {
-      const response = await API.get(`market/products/${id}/`, {
+      const response = await API.get(`/market/products/${id}/`, {
         headers: {
           Authorization: `Bearer ${access_token}`,
         },

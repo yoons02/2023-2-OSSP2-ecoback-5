@@ -1,20 +1,36 @@
-import React from 'react';
 import TitleBanner from '../components/TitleBanner.js';
 import '../css/EditProfile.css';
 import API from 'api/axios';
+import React, {useState, useEffect} from 'react';
+
 const EditProfile=()=>{
-    const handleSubmit=async()=>{
+
+    const [userData, setUserData]=useState({
+        name: '',
+        content:''
+        
+    });
+    
+    const handleChange = (e) =>{
+        const {name, value} = e.target;
+        setUserData(prevState=>({
+            ...prevState,
+            [name]:value
+        }))
+    }
+
+    const handleSubmit=async(e)=>{
+        e.preventDefault();
         const endpoint="/mypage/get_object/";
         const access_token=localStorage.getItem('access');
-        const patchData={
-
-        }
         try{
-            const response=await API.patch(endpoint,patchData,{
+            const response=await API.patch(endpoint,userData,{
                 headers:{
                     'Authorization':`Bearer ${access_token}`
                 }
             });
+            console.log("response.data: ",response.data);
+            //응답 처리
 
         }catch(e){
             console.log('API 오류: ',e);
@@ -37,12 +53,11 @@ const EditProfile=()=>{
             <div className="inputBox">
                 <form id="submitForm"  onSubmit={handleSubmit}>
                     <input type="text" name="name" placeholder="이름(Name)"/><br />
-                    <input type="number" name="phone" placeholder="휴대전화(Phone number)"/><br />
-                    <input type="email" name="email" placeholder="이메일(Email address)"/><br />
-                    <select name="gender" id="gender">
+                    <input type="text" name="content" placeholder="content"/><br />
+                    {/* <select name="gender" id="gender">
                         <option>남성</option>
                         <option>여성</option>
-                    </select><br />
+                    </select><br /> */}
                     <div id="btnBox">
                     <button id="submitBtn">프로필 편집</button>
                     </div>
