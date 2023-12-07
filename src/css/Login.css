@@ -1,0 +1,92 @@
+#logo img{
+
+    width:100%
+}
+#logo{
+    font-family: "NotoSansKR";
+    font-size: 12px;
+    font-weight: 500;
+    padding-bottom: 5%;
+}
+.input-container{
+    position: relative;
+    width: 80%;
+    height: 36px;
+}
+.ip {
+  width: 100%;
+  height: 100%;
+  border: none;
+  background-image: url("../image/Frame.png");
+  background-size: 100%;
+  background-position: 10%;
+  background-repeat: no-repeat; /* 배경 이미지 반복 제거 */
+  text-indent: 5%;
+}
+.input-container label {
+  position: absolute;
+  top: -5px; /* label의 상단 위치를 조정 */
+  left: 0;
+  font-family: "NotoSansKR";
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.ask_register{
+    text-align: right;
+    font-family: "NotoSansKR";
+    font-size: 12px;
+    font-weight: 500;
+    color: #8fd36f;
+    margin-top: -3%;
+    margin-right: 8%;
+    margin-bottom: 5%;
+}
+
+
+#id_input{
+    font-family: "NotoSansKR";
+    font-size: 13px;
+    font-weight: 500;
+    
+}
+#password_input{
+    font-family: "NotoSansKR";
+    font-size: 13px;
+    font-weight: 500; 
+}
+
+.hr-sect {
+        
+        display: flex;
+        flex-basis: 100%;
+        align-items: center;
+        color: rgba(0, 0, 0, 0.35);
+        font-size: 12px;
+        margin: 8px 0px;
+      }
+.hr-sect::before,
+.hr-sect::after {
+    content: "";
+    flex-grow: 1;
+    background: rgba(0, 0, 0, 0.35);
+    height: 1px;
+    font-size: 0px;
+    line-height: 0px;
+    margin: 0px 16px;
+    }
+
+.login-button {
+ 
+  /* 필요한 추가 스타일을 설정하세요. 예: */
+  width:100%;
+  display: block;
+  margin: auto;
+  border: none;
+  background-repeat: no-repeat;
+  color: transparent;
+}
+@font-face{
+    font-family: "NotoSansKR";
+    src: url("../font/NotoSansKR.ttf") format("truetype");
+  }

@@ -29,11 +29,10 @@ server {
         alias /vol/static;
 
         # Proxy Buffer Settings
-        proxy_pass "https://15.164.229.6:443";
-
         proxy_buffer_size   256k;
         proxy_buffers       8 256k;
         proxy_busy_buffers_size 512k;
+        proxy_redirect off;
     }
 
     # uWSGI Handling
@@ -41,5 +40,17 @@ server {
         uwsgi_pass           ${APP_HOST}:${APP_PORT};
         include              /etc/nginx/uwsgi_params;
         client_max_body_size 10M;
+
+        """proxy_pass "https://15.164.229.6:443";
+
+        proxy_buffer_size   256k;
+        proxy_buffers       8 256k;
+        proxy_busy_buffers_size 512k;
+        proxy_redirect off;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Host $host;
+        proxy_set_header X-Forwarded-Proto $scheme;"""
     }
 }

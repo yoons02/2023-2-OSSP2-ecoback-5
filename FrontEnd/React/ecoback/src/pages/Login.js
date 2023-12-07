@@ -26,6 +26,7 @@ function Login() {
                 localStorage.setItem('access', response.data.access);
                 localStorage.setItem('refresh', response.data.refresh); // refresh 토큰 저장
                 setIsLoggedIn(true); // 로그인 상태 변경
+                alert("로그인에 성공했습니다");
                 navigate('/home'); // 메인 페이지로 이동
             }
           

@@ -1,0 +1,7 @@
+[
+    {"id":1, "name":"이마트24", "image":"emart24.png"},
+       {"id":2, "name":"미니스톱", "image":"ministop.png"},
+       {"id":3, "name": "CU", "image":"cu.png"},
+       {"id":4, "name": "세븐일레븐", "image":"seveneleven.png"},
+       {"id":5, "name": "GS25", "image":"GS25.png"}
+   ]

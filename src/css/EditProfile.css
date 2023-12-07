@@ -1,0 +1,46 @@
+.inputBox{
+    display:flex;
+    justify-content: center;
+}
+
+#submitForm{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    padding:5%;
+    width: 100%;
+}
+
+input{
+    width:100%;
+    aspect-ratio: 8 / 1;
+    border-radius:10px;
+    border-style:none;
+    background-color:rgb(233, 233, 233);
+}
+
+#btnBox{
+    display:flex;
+    justify-content: center;
+}
+#submitBtn{
+    border-radius: 10px;
+    border-style:none;
+    width:60%;
+    color:#FFFFFF;
+    background-color: #8FD36F;
+    aspect-ratio: 5 / 1;
+}
+
+#gender{
+    border-style:none;
+    border-radius:10px;
+    background-color:rgb(215, 215, 215);
+    text-align: center;
+    font-size:18px;
+    font-weight: bold;
+    font-family: "NotoSansKR";
+    margin: auto;
+    padding: 0 10%;
+    aspect-ratio: 3 / 1;
+}

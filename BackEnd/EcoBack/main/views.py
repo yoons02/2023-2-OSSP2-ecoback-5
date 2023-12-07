@@ -15,9 +15,8 @@ import time
 from PIL import Image
 import io
 from rest_framework.routers import DefaultRouter, Route, DynamicRoute
+from dateutil.relativedelta import relativedelta
 
-
-used_codes = []
 
 class MyProfileViewSet(viewsets.GenericViewSet, RetrieveAPIView, RetrieveUpdateAPIView):
     serializer_class = ProfileSerializer
@@ -25,6 +24,15 @@ class MyProfileViewSet(viewsets.GenericViewSet, RetrieveAPIView, RetrieveUpdateA
 
     def get_object(self):
         return get_object_or_404(Profile, user=self.request.user)
+    
+    @action(methods=['get'], detail=False, permission_classes=[IsAuthenticated])
+    def my_products(self, request):
+        user = request.user
+        my_products = MyProduct.objects.filter(user=user)  # 현재 사용자의 MyProduct 객체들을 필터링
+
+        # MyProduct 객체들의 데이터를 시리얼라이즈
+        serializer = MyProductSerializer(my_products, many=True)  # MyProductSerializer가 존재한다고 가정
+        return Response(serializer.data)
 
 
 class EventViewSet(viewsets.ModelViewSet):
@@ -59,35 +67,56 @@ class BarcodeViewSet(viewsets.GenericViewSet, CreateAPIView, ListAPIView):
 
     def create(self, request, *args, **kwargs):
         valid_string = '29'
-        new_barcodes = BarcodeSerializer(data=request.data)
-        if new_barcodes.is_valid(raise_exception=True):
-            barcode_image = new_barcodes.validated_data.get('image')
-            nparr = np.fromstring(barcode_image.read(), np.uint8)
-            frame = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
+        barcode_image = request.data.get('image')
+        nparr = np.fromstring(barcode_image.read(), np.uint8)
+        frame = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
 
-            for code in decode(frame):
-                barcode_data = code.data.decode('utf-8')
-                if valid_string not in barcode_data:
-                    return JsonResponse({'status': 'Invalid', 'code': barcode_data})
-                if barcode_data not in used_codes:
-                    used_codes.append(barcode_data)
-                    new_barcodes.save()
+        for code in decode(frame):
+            barcode_data = code.data.decode('utf-8')
+            if valid_string not in barcode_data:
+                return JsonResponse({'status': 'Invalid', 'code': barcode_data})
+
+            if not Barcode.objects.filter(barcode_number=barcode_data).exists():
+                request_data = {
+                    'writer': request.user.id,  # 현재 사용자 ID
+                    'barcode_number': barcode_data,  # 추출한 바코드 데이터
+                    'other_field': request.data.get('other_field')  # 다른 필요한 필드들
+                }
+
+                new_barcodes = BarcodeSerializer(data=request_data)
+                if new_barcodes.is_valid(raise_exception=True):
+                    new_barcodes.save()  # Barcode 객체 저장
 
                     user = request.user
                     profile = user.profile
                     profile.point += 150
                     profile.save()
-                    new_barcodes.save()
 
                     return JsonResponse({'status': 'approved', 'code': barcode_data})
-                else:
-                    return JsonResponse({'status': 'duplicate', 'code': barcode_data})
-            return JsonResponse({'status': 'not found'})
+            else:
+                return JsonResponse({'status': 'duplicate', 'code': barcode_data})
+
+        return JsonResponse({'status': 'not found'})
+        
+
 
     @action(methods=['get'], detail=False)
     def count(self, request):
         count = self.get_queryset().count()
         return JsonResponse({'count': count})
+    
+    @action(methods=['get'], detail=False)
+    def last_barcode(self, request):
+        user = request.user
+        try:
+            last_barcode = Barcode.objects.filter(writer=user).latest('create_at')
+            # 3개월을 추가합니다
+            date_with_three_months = last_barcode.create_at + relativedelta(months=3)
+            return JsonResponse({'extinction period': date_with_three_months})
+        except Barcode.DoesNotExist:
+            return JsonResponse({'extinction period': 'None'})
+
+
 
 
 class ProductCategoryViewSet(viewsets.GenericViewSet):
@@ -177,8 +206,34 @@ class ProductViewSet(viewsets.ModelViewSet):
     @action(detail=True, methods=['get'])
     def detail(self, request, *args, **kwargs):
         product = self.get_object()
-        serializer = self.get_serializer(product)
+        serializer = self.get_serializer(product) 
         return Response(serializer.data)
+    
+
+    @action(methods=['post'], detail=True, permission_classes=[IsAuthenticated])
+    def purchase(self, request, pk=None):
+        product = get_object_or_404(Product, pk=pk)
+        user = request.user
+
+        # 사용자의 포인트 확인
+        if user.profile.point < product.price:
+            return Response({'message': 'Insufficient points'})
+
+        # 상품 가격만큼 포인트 차감
+        user.profile.point -= product.price
+        user.profile.save()
+
+        # MyProduct 객체 생성 및 저장
+        my_product = MyProduct(
+            user=user,
+            name=product.name,  
+            product_code=product.product_code,  
+            product_image=product.product_image
+        )
+        my_product.save()
+
+        # 구매 성공 메시지 반환
+        return Response({'message': 'Purchase successful'})
 
     @action(methods=['post'], detail=False, permission_classes=[IsAdminUser])
     def add_product(self, request):

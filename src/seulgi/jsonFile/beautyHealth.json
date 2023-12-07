@@ -1,0 +1,11 @@
+[
+    { "id": 1, "name": "아모레퍼시픽", "image": "amore.png"},
+    { "id": 2, "name": "cj", "image": "cj.png" },
+    { "id": 3, "name": "에뛰드하우스", "image": "etude.png" },
+    { "id": 4, "name": "미샤", "image": "missa.png" },
+    { "id": 5, "name": "네이처리퍼블릭", "image": "natureRepublic.png"},
+    { "id": 6, "name": "올리브영", "image": "oliveyoung.png"},
+    { "id": 7, "name": "클리오", "image": "clio.png"},
+    { "id": 8, "name": "닥터지", "image": "doctorg.png"},
+    { "id": 9, "name": "페리페라", "image": "peripera.png"}
+  ]

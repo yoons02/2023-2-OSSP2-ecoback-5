@@ -167,7 +167,7 @@ SIMPLE_JWT = {
     'TOKEN_USER_CLASS': 'django.contrib.auth.models.User',
 }
 
-
+ 
 SITE_ID = 1
 REST_USE_JWT = True
 ACCOUNT_USER_MODEL_USERNAME_FIELD = 'username'
@@ -204,3 +204,12 @@ CORS_ALLOW_HEADERS = (
     'x-csrftoken',
     'x-requested-with',
 )
+
+# https admin
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
+
+SECURE_SSL_REDIRECT = True  
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
+CSRF_TRUSTED_ORIGINS = ['https://ecoback.r-e.kr','https://www.ecoback.r-e.kr']
