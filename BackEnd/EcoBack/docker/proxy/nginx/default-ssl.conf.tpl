@@ -35,7 +35,7 @@ server {
         proxy_buffers       8 256k;
         proxy_busy_buffers_size 512k;
         proxy_redirect off;
-        proxy_set_header X-Forwarded_Proto $scheme; 
+        proxy_set_header X-Forwarded_Proto $scheme;  
     }
 
     # uWSGI Handling
