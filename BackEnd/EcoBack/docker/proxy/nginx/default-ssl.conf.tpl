@@ -35,7 +35,7 @@ server {
         proxy_buffers       8 256k;
         proxy_busy_buffers_size 512k;
         proxy_redirect off;
-        proxy_set_header X-Forwarded_Proto $scheme; 
+        proxy_set_header X-Forwarded_Proto $scheme;  
     }
 
     # uWSGI Handling
@@ -43,5 +43,11 @@ server {
         uwsgi_pass           ${APP_HOST}:${APP_PORT};
         include              /etc/nginx/uwsgi_params;
         client_max_body_size 10M;
+
+        proxy_buffer_size   256k;
+        proxy_buffers       8 256k;
+        proxy_busy_buffers_size 512k;
+        proxy_redirect off;
+        proxy_set_header X-Forwarded_Proto $scheme;  
     }
 }
