@@ -1,13 +1,66 @@
+import React, { useState, useEffect } from 'react';
 import '../css/Store.css';
-import Store_box from "../components/store_box";
-import React from 'react';
+import API from 'api/axios';
+import { Link } from 'react-router-dom';
+import StorePointDisappear from 'components/StorePointDisappear';
+import BackbuttonBar from 'components/BackbuttonBar';
+import TitleBanner from '../components/TitleBanner.js';
+
+
 const Store = () => {
-    const storeCategory='market/categories/';
-    return(
-      <div className="full_container">
-        <Store_box  url={storeCategory} title="포인트 상점" />
-      </div>
-    );
+  const [categories, setCategories] = useState([]);
+
+  useEffect(() => {
+    fetchData();
+  }, []);
+
+  const fetchData = async () => {
+    const access_token = localStorage.getItem('access');
+    const url="market/categories/";
+    try {
+      const response = await API.get(url, {
+        headers: {
+          Authorization: `Bearer ${access_token}`,
+        },
+      });
+      setCategories(response.data);
+    } catch (error) {
+      console.error('API 오류', error);
+    }
   };
-  
-  export default Store;
+
+  return (
+    <div className="full_container">
+      <div>
+        <TitleBanner />
+      </div>
+      <hr />
+      <BackbuttonBar title="포인트 상점" />
+      <hr />
+      <div className="title_line">
+        {categories.map((category, index) => (
+          <div key={index}>
+             <Link to={`./${category.id}?categoryName=${encodeURIComponent(category.name)}`}>   
+              <div className="box_categories_m">
+                <img
+                  style={{ width: '70%' }}
+                  src={API.defaults.baseURL + category.image}
+                  alt={category.name}
+                />
+              </div>
+            </Link>
+            <div className="normal" style={{ textAlign: 'center' }}>
+             {category.name}
+            </div>
+          </div>
+        ))}
+
+      </div>
+
+      <StorePointDisappear/>
+     
+    </div>
+  );
+};
+
+export default Store;

@@ -1,6 +1,7 @@
 import {Route, Routes} from 'react-router-dom';
 import Home from '../src/pages/Home.js';
 import Store from '../src/pages/Store.js';
+import BrandDetail from '../src/pages/BrandDetail.js';
 import Store_Temp from '../src/pages/Product_temp.js';
 import ReceiptFilming from './seulgi/receiptFilming.js';
 import MyPage from './pages/mypage.js';
@@ -63,7 +64,7 @@ const App = () => {
         <Route path="/manager" element={<Manager />} />
         <Route path="/manager/category_add" element={<Category_add />} />
 
-
+        <Route path="/store/:id" element={<BrandDetail />} />
     
         <Route exact path="/event" element={<EventCopy />} />
         <Route path="/event/:id" element={<EventDetail />} />
