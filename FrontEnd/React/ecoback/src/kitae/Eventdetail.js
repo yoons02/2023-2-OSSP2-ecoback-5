@@ -49,9 +49,8 @@ const EventDetail = () => {
             작성일: {formatDate(eventDetail.created_at)}<br></br>
             수정일: {formatDate(eventDetail.updated_at)}
             </div>
-            <br></br>
             <img className="events_image" src={eventDetail.image} alt={eventDetail.writer} />
-            <p>{eventDetail.content}</p>
+            <p className="eventcontent">{eventDetail.content}</p>
           </div>
         </React.Fragment>
       )}
