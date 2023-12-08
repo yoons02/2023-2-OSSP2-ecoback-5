@@ -16,7 +16,7 @@ const BuyingPopup=({isModalOpen,setIsModalOpen, price})=> {
   const fetchData=async()=>{
     
     try{
-      const response=await API.get('mypage/get_object/',{
+      const response=await API.get('/mypage/get_object/',{
         headers:{
           Authorization: `Bearer ${access_token}`,
         },
@@ -48,7 +48,7 @@ const BuyingPopup=({isModalOpen,setIsModalOpen, price})=> {
     /*상품 구매 후 포인트 업데이트 로직*/
     const updatePoint=async(newPoint)=>{
       try{
-        const changePoint=await API.patch('mypage/get_object/',{
+        const changePoint=await API.patch('/mypage/get_object/',{
           point:newPoint
         },
         {

@@ -1,9 +1,7 @@
 .xbutton{
     display:flex;
     justify-content: right;
-}
-#xbutton{
-    width: 3vw;
+    
     border-radius:1vw;
     padding:2vw;
 }

@@ -16,7 +16,6 @@ function Badge({badge}){
     const access_token=localStorage.getItem('access');
     const endpoint='/barcodes/count/';
     const [barcodeCounts, setBarcodeCounts]=useState([]);
-
     useEffect(()=>{
         fetchData();
     },[])
@@ -41,7 +40,8 @@ function Badge({badge}){
         <div style={containerStyle}>
             <div id="hexagon">
                 {console.log("minCount: ",badge.minCount)}
-            {(badge.minCount<barcodeCounts.count)? <img id="badgeImg" src={require(`../image/${badge.img}`)} alt={badge.name} />: <img id="badgeImg" src={require('../image/badge_unlock.png')} alt={badge.name} />}
+                
+            {(badge.minCount<barcodeCounts.count)? <img id="badgeImg" src={require(`../image/${badge.img}`)} alt={badge.name} /> : <img id="badgeImg" src={require('../image/badge_unlock.png')} alt={badge.name} />}
          
             
             </div>
