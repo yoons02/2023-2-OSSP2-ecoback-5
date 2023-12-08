@@ -1,7 +1,6 @@
 .pointViewer{
     height: 80%;
     text-align:center;
-    line-height:8vw;
 }
 .btnContainer{
     background-color: aquamarine;
@@ -11,8 +10,8 @@
     align-items:center;
 }
 #sentence{
-    line-height:4vw;
-    font-size:3vw;
+
+    font-size:14px;
 }
 
 #buy{
