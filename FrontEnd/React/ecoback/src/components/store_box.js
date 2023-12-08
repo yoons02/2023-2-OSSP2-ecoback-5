@@ -40,7 +40,7 @@ const Store_box = ({ url, title }) => {
       <div className="title_line">
         {categories.map((category, index) => (
           <div key={index}>
-            <Link to={`./${category.name}`}>
+            <Link to={`./${category.id}`}>
               <div className="box_categories_m">
                 <img
                   style={{ width: '70%' }}
