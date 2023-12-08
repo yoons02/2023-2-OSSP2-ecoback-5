@@ -23,6 +23,7 @@ const Product_box = ({url, title}) => {
           Authorization: `Bearer ${access_token}`,
         },
       });
+      
       setProduct(response.data);
     }catch(e){
       console.log("API 오류: ",e);
@@ -40,9 +41,9 @@ const Product_box = ({url, title}) => {
     <div className='title_line_P'>
       {product.map((productData, index) => (
         <div key={index}>
-          <Link to={'/product1'}>
+          <Link to={`/store/product/${productData.id}`}>
             <div className='box_categories_P'>
-              <img style={{ width: '60%' }} src={API.defaults.baseURL + productData.product_image} alt={productData.name} />
+              <img style={{ width: '80%' , maxHeight:'85%'}} src={API.defaults.baseURL + productData.product_image} alt={productData.name} />
             </div>
         <div style={{ marginBottom: '15%' }}>
           <div className='normal' style={{ textAlign: 'center', fontWeight:'normal'}}>{productData.name}</div>

@@ -1,7 +1,11 @@
 import {Route, Routes} from 'react-router-dom';
 import Home from '../src/pages/Home.js';
+
 import Store from '../src/pages/Store.js';
 import BrandDetail from '../src/pages/BrandDetail.js';
+import ProductDetail from './pages/ProductDetail.js'
+import SpecificProductDetail from './pages/SpecificProductDetail.js'
+
 import Store_Temp from '../src/pages/Product_temp.js';
 import ReceiptFilming from './seulgi/receiptFilming.js';
 import MyPage from './pages/mypage.js';
@@ -25,6 +29,7 @@ import BakeryCategory from 'pages/BakeryCategory.js';
 import GiftcardCategory from 'pages/GiftcardCategory.js';
 import MovieCategory from 'pages/MovieCategory.js';
 import Product_temp from './pages/Product_temp.js'
+
 import Manager from './pages/manager/Manager.js'
 import Category_add from './pages/manager/Category_add.js'
 
@@ -41,7 +46,7 @@ const App = () => {
         <Route path="/" element={<Home />} /> 
         
         <Route path="/Home" element={<Home />} />
-        <Route path="/Store" element={<Store />} />
+        
         <Route path="/Store_temp" element={<Store_Temp />} />
         <Route path="/receiptfilming" element={<ReceiptFilming />} />
         <Route path="/mypage" element={<MyPage />}/>
@@ -64,10 +69,14 @@ const App = () => {
         <Route path="/manager" element={<Manager />} />
         <Route path="/manager/category_add" element={<Category_add />} />
 
+        <Route path="/Store" element={<Store />} />
         <Route path="/store/:id" element={<BrandDetail />} />
-    
+        <Route path="/store/brand/:id" element={<ProductDetail />} />
+        <Route path="/store/product/:id" element={<SpecificProductDetail />} />
+
+        
         <Route exact path="/event" element={<EventCopy />} />
-        <Route path="/event/:id" element={<EventDetail />} />
+        <Route path="/event/ :id" element={<EventDetail />} />
 
 
     </Routes> 

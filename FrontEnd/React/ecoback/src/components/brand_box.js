@@ -39,7 +39,7 @@ const Brand_box = ({ url, title }) => {
       <div className="title_line">
         {categories.map((category, index) => (
           <div key={index}>
-            <Link to="/product_temp">
+            <Link to={`/store/brand/${category.id}?brandName=${encodeURIComponent(category.brand_name)}`}>
               <div className="box_categories_m">
                 <img
                   style={{ width: '70%' }}

@@ -16,3 +16,4 @@ const BrandDetail = () => {
 };
 
 export default BrandDetail;
+
