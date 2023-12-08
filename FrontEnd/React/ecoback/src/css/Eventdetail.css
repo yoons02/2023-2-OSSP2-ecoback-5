@@ -3,9 +3,14 @@
     aspect-ratio: 1/0.55;
     border-radius: 20px;
     /*이부분 수정하면 매너 이미지 크기 조정가능*/
+    
 }
 
 .datebox{
-    font-size: 12px;
-    text-align: right;
+    font-size: 10px;
+    padding-left: 55%;
+   
+}
+.eventcontent{
+    padding:5%;
 }
