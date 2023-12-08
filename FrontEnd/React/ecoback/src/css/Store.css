@@ -23,7 +23,7 @@
     align-content: center;
     align-items: center;
     width: 80%;
-    height: 65%;
+    aspect-ratio: 1/1;
     top: 435px;
     left: 206px;
     border-radius: 10px;
@@ -74,7 +74,7 @@
 }
   #itemImg{
     width:70%;
-    margin:0vw 0vw 0vw 7vw;
+    margin:0;
   }
 
 .btnBox{
