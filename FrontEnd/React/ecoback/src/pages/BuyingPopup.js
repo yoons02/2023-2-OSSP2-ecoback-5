@@ -21,23 +21,26 @@ const BuyingPopup=({isModalOpen,setIsModalOpen, price})=> {
           Authorization: `Bearer ${access_token}`,
         },
       });
-      //setUserInfo(response.data);
-      setUserInfo({ id: 'HELLO', image: '', name: 'HELLO', point: 2500, created_at: '13434', content: '342', user: '23432' });
+      setUserInfo(response.data);
+      //setUserInfo({ id: 'HELLO', image: '', name: 'HELLO', point: 2500, created_at: '13434', content: '342', user: '23432' });
       console.log("user 정보: ",userInfo);
     }catch(e){
       console.log("API 오류: ",e);
     }
   }
     const modalStyle = {
-        content: {
-            alignItems:"center",
-            borderRadius: "2vw",
-            maxHeight:"60vw",
-            position:'absolute',
-            top:"25%",
-            left:"13%",
-
-        },
+      content: {
+        borderRadius: "20px",
+        aspectRatio: '1 / 1',
+        maxHeight: "40vh",
+        position: 'fixed',
+        width: '100%', // 'Width'를 'width'로 수정
+        maxWidth: '300px',
+        margin: 0,
+        top: '50%',
+        left: '50%',
+        transform: 'translate(-50%, -50%)',
+      },
         overlay:{
             backgroundColor:'rgba(0, 0, 0, 0.4)'
         }
@@ -77,12 +80,12 @@ const BuyingPopup=({isModalOpen,setIsModalOpen, price})=> {
             <hr />
             <div id="leftPoint">
             {((userInfo.point-price)>=0)? 
-            <p style={{fontSize:"5vw"}}>잔여포인트 <b style={{color:"#83D15E"}}>{userInfo.point-price}</b></p>
-             : <p style={{fontSize:"5vw", color:"red"}}><b>포인트 부족: 구매 불가</b></p>}
+            <p style={{fontSize:"23px"}}>잔여포인트 <b style={{color:"#83D15E"}}>{userInfo.point-price}</b></p>
+             : <p style={{fontSize:"23px", color:"red"}}><b>포인트 부족: 구매 불가</b></p>}
             {/* <p style={{fontSize:"5vw"}}>잔여포인트 <b style={{color:"#83D15E"}}>{(userInfo.point-price)>=0? userInfo.point-price : "포인트 부족. 구매 불가!!"}</b></p> */}
             <p id="sentence">
             상품을 구매하시겠습니까?<br/>
-            취소하기 버튼을 누르면 상품구매가 취소됩니다.</p>
+            취소하기 버튼을 누르시면 <br/>상품구매가 취소됩니다.</p>
             </div>
         </div>
         <hr />
