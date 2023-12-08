@@ -5,12 +5,13 @@ import React, {useState, useEffect} from 'react';
 import API from "api/axios"
 import {Link} from 'react-router-dom';
 
+
 const MyPage=()=>{
     const [userInfo, setUserInfo]=useState([]);
     useEffect(()=>{
         getUserData();
     },[])
-
+    
     const access_token=localStorage.getItem('access');
     const endpoint='/mypage/get_object/';
     
@@ -44,9 +45,10 @@ const MyPage=()=>{
             <hr />
             <div className="profileContainer">
                 <div id="username">{userInfo.name}님의 프로필</div>
-                <div className="faceImage" style={{marginTop:'5%', padding: 'auto'}}>
+                <div className="faceImage"  style={{marginTop:'5%', padding: 'auto'}}>
                     <img id="faceImage" 
-                    src={userInfo.image ? API.defaults.baseURL+userInfo.image : DefaultImageUrl} 
+                    style={{width:"15vw", height:"15vw", margin: "5vw"}}
+                    src={userInfo.image ? userInfo.image : DefaultImageUrl} 
                     alt="faceImg" />
                     <p style={{fontSize:"16px"}}><b>{formDate(userInfo.created_at)}부터 함께하는 중</b></p>
 

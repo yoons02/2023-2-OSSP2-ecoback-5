@@ -1,7 +1,17 @@
 import badges from '../seulgi/jsonFile/badges.json';
 import '../seulgi/mypage.css';
 import API from 'api/axios';
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useState, createContext} from 'react';
+export const BadgeCountContext=createContext();
+// export const BadgeCountProvider=({children})=>{
+//     const [badgeCount, setBadgeCount]=useState({});
+//     //badgeCount 전역 사용할 수 있도록
+//     return (
+//         <BadgeCountContext.Provider value={{badgeCount, setBadgeCount}}>
+//             {children}
+//         </BadgeCountContext.Provider>
+//     )
+//     }
 //뱃지 아이콘 생성
 function Badge({badge}){
     const containerStyle = {
@@ -36,6 +46,17 @@ function Badge({badge}){
         }
     }
     console.log("barcodeCounts: ", barcodeCounts.count);
+    
+    // useEffect(() => {
+    //     // barcodeCounts가 변경될 때마다 실행됩니다.
+    //     if (badge.minCount < barcodeCounts.count) {
+    //       // 조건이 참일 경우 badgeCount를 1 증가시킵니다.
+    //       setBadgeCount(prev => prev + 1);
+    //     }
+    //   }, [barcodeCounts, badge.minCount, setBadgeCount]); // 의존성 배열에 필요한 값들을 넣어주세요.
+    
+    
+
     return (
         <div style={containerStyle}>
             <div id="hexagon">
