@@ -16,7 +16,7 @@ const Store_box = ({category, title}) => {
     <div className='title_line'>
       {category.map((categoryData, index) => (
         <div key={index}>
-          <Link to={'./' + categoryData.name}>
+          <Link to={'./' + categoryData.id}>
             <div className='box_categories_m'>
               <img style={{ width: '70%' }} src={API.defaults.baseURL+categoryData.image} alt={categoryData.name} />
             </div>
