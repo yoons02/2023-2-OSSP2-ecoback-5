@@ -1,6 +1,6 @@
 [
- {"id":1, "name":"실천의 시작", "img":"badge_earth.png", "minCount":3},
-    {"id":2, "name":"티끌모아 태산", "img":"sand.png", "minCount":5},
+ {"id":1, "name":"실천의 시작", "img":"badge_earth.png", "minCount":1},
+    {"id":2, "name":"티끌모아 태산", "img":"sand.png", "minCount":3},
     {"id":3, "name": "단골 손님", "img":"badge_calender.png", "minCount":7},
     {"id":4, "name": "커피중독", "img":"coffee.png", "minCount":10},
     {"id":5, "name": "텀블러 홀릭", "img":"badge_tumbler.png", "minCount":13},

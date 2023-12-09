@@ -16,6 +16,10 @@ function Badge({badge}){
     };
     const {badgeCnt, setBadgeCnt}=useContext(BadgeCountContext);
     const [barcodeCounts, setBarcodeCounts] = useState({ count: 0 });
+    //setBadgeCnt(0);
+    useEffect(()=>{
+        setBadgeCnt(0);
+    },[])
     useEffect(() => {
         if (badge.minCount < barcodeCounts.count) {
             setBadgeCnt(prevCnt => prevCnt + 1);
