@@ -1,17 +1,17 @@
+// Product.jsx
 import React, { useState, useEffect } from 'react';
 import '../css/Product.css';
-import css from '../css/Product.css';
 import TitleBanner from '../components/TitleBanner';
-import DolceLatte from '../image/dolcelatte.png';
 import Check from '../image/check.png';
 import BuyingPopup from './BuyingPopup';
-import BackbuttonBar from 'components/BackbuttonBar';
+import BackbuttonBar from '../components/BackbuttonBar';
 import API from 'api/axios';
 import { useLocation } from 'react-router-dom';
+
 const Product = () => {
   const [product, setProduct] = useState([]);
   const location = useLocation();
-  const id = location.pathname.split('/').pop(); 
+  const id = location.pathname.split('/').pop();
 
   useEffect(() => {
     fetchProductData();
@@ -36,36 +36,34 @@ const Product = () => {
 
   return (
     <div className="full_container">
-      <div  style={{ minHeight: '84vh' }}>
-      <div>
+      <div style={{ minHeight: '84vh' }}>
         <TitleBanner />
-      </div>
-      <hr />
-      <BackbuttonBar title="개별 상품 페이지" />
-      <hr />
-      <div className="productBox">
-        <div className="Item">
-          <img id="itemImg" src={product.product_image} alt={product.name} />
-        </div>
-        <div style={{ fontSize: '25px' }}>
-          <b>{product.name}</b>
-        </div>
-        <div className="priceTag">
-          <div id="oneline">
-            <div id="resell">리셀 상품</div>
-            <img src={Check} alt="check" id="check" />
+        <hr />
+        <BackbuttonBar title="개별 상품 페이지" />
+        <hr />
+        <div className="productBox">
+          <div className="Item">
+            <img id="itemImg" src={product.product_image} alt={product.name} />
           </div>
-          <div id="class" style={{ fontSize: '30px' }}>
-            <b>{product.price} 원</b>
+          <div style={{ fontSize: '25px' }}>
+            <b>{product.name}</b>
+          </div>
+          <div className="priceTag">
+            <div id="oneline">
+              <div id="resell">리셀 상품</div>
+              <img src={Check} alt="check" id="check" />
+            </div>
+            <div id="class" style={{ fontSize: '30px' }}>
+              <b>{product.price} 원</b>
+            </div>
           </div>
         </div>
-      </div>
       </div>
       <div className="btnBox">
-        <button id="buyBtn" onClick={() => handleOpenModal()}>
+        <button id="buyBtn" onClick={handleOpenModal}>
           <b style={{ fontSize: '15px' }}>구매하기</b>
         </button>
-        <BuyingPopup isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} price={product.price} />
+        <BuyingPopup productId={id} isModalOpen={isModalOpen} setIsModalOpen={setIsModalOpen} price={product.price} />
       </div>
     </div>
   );

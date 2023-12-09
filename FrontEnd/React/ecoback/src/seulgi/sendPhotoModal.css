@@ -1,9 +1,8 @@
 .xbutton{
     display:flex;
     justify-content: right;
-    
-    border-radius:1vw;
-    padding:2vw;
+    border-radius:1%;
+    padding:2%;
 }
 
 .middle{
@@ -11,7 +10,7 @@
     flex-direction:column;
     justify-content:center;
     align-items:center;
-    margin:7vw 0vw 0vw 0vw;
+    margin:7% 0 0 0;
     text-align:center;
 }
 .full_container {
