@@ -19,13 +19,10 @@
 }
 
 .faceImage{
-    font-family: "NotoSansKR";
+    font-family:  "NotoSansKR";
     text-align:center;
 }
 
-#faceImage{
-    width:40%;
-}
 
 #editProfile{
     font-family: "NotoSansKR";
@@ -109,4 +106,10 @@
     margin: 10px;
     font-family: "Pattaya";
     font-size: 35px;
+  }
+
+  .faceImage #faceImage{
+    width:40%;
+    height:40%;
+    margin:5%;
   }
