@@ -21,12 +21,12 @@ import MyProduct from '../src/pages/MyProduct.js';
 
 import Manager from './pages/manager/Manager.js'
 import Category_add from './pages/manager/Category_add.js'
-
+import {BadgeCountProvider} from './seulgi/BadgeCountContext.js'
 const App = () => {
   return(
     /*브랜드별 개별 상품페이지 API 보니까 현재 id 2, 5번에 대한 data만
     들어있길래 일단 id:2번 data로 개별 상품 페이지 임시적으로 연결해놨습니다.*/
-    
+    <BadgeCountProvider>
     <Routes>
 
       {/* 시작 및 로그인 관련*/}
@@ -62,6 +62,7 @@ const App = () => {
 
 
     </Routes> 
+    </BadgeCountProvider>
     
   );
 };

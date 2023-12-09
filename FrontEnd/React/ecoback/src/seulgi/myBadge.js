@@ -1,17 +1,9 @@
 import badges from '../seulgi/jsonFile/badges.json';
 import '../seulgi/mypage.css';
 import API from 'api/axios';
-import React, {useEffect, useState, createContext} from 'react';
-export const BadgeCountContext=createContext();
-// export const BadgeCountProvider=({children})=>{
-//     const [badgeCount, setBadgeCount]=useState({});
-//     //badgeCount 전역 사용할 수 있도록
-//     return (
-//         <BadgeCountContext.Provider value={{badgeCount, setBadgeCount}}>
-//             {children}
-//         </BadgeCountContext.Provider>
-//     )
-//     }
+import React, {useEffect, useState,  useContext} from 'react';
+import {BadgeCountContext} from '../seulgi/BadgeCountContext';
+
 //뱃지 아이콘 생성
 function Badge({badge}){
     const containerStyle = {
@@ -22,10 +14,18 @@ function Badge({badge}){
         alignItems:'center',
 
     };
+    const {badgeCnt, setBadgeCnt}=useContext(BadgeCountContext);
+    const [barcodeCounts, setBarcodeCounts] = useState({ count: 0 });
+    useEffect(() => {
+        if (badge.minCount < barcodeCounts.count) {
+            setBadgeCnt(prevCnt => prevCnt + 1);
+        }
+    }, [barcodeCounts.count]);
+
 
     const access_token=localStorage.getItem('access');
     const endpoint='/barcodes/count/';
-    const [barcodeCounts, setBarcodeCounts]=useState([]);
+    
     useEffect(()=>{
         fetchData();
     },[])
@@ -37,7 +37,7 @@ function Badge({badge}){
                     Authorization: `Bearer ${access_token}`,
                 }
             })
-            setBarcodeCounts(response.data);
+            setBarcodeCounts({ count: response.data.count });
             console.log(response.data);
             
 

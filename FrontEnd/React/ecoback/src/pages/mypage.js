@@ -1,13 +1,15 @@
 import BadgeGrid from '../seulgi/myBadge.js';
 import '../seulgi/mypage.css'
 import TitleBanner from '../components/TitleBanner.js';
-import React, {useState, useEffect} from 'react';
 import API from "api/axios"
 import {Link} from 'react-router-dom';
+import React, { useState, useEffect, useContext } from 'react';
+import { BadgeCountContext } from '../seulgi/BadgeCountContext';
 
 
 const MyPage=()=>{
     const [userInfo, setUserInfo]=useState([]);
+    const {badgeCnt}=useContext(BadgeCountContext);
     useEffect(()=>{
         getUserData();
     },[])
@@ -60,7 +62,7 @@ const MyPage=()=>{
             <hr />
             <div className="badgeCollection">
                 <div id='badgeText'>내가 모은 배지</div>
-                <div id="badgeCount">6/12</div>
+                <div id="badgeCount">{badgeCnt}/12</div>
                 <BadgeGrid />
             </div>
         </div>
