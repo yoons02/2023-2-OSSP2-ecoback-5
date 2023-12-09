@@ -17,7 +17,7 @@ import Start from './pages/index.js';
 
 import EditProfile from './pages/EditProfile.js';
 import Register from './pages/Register.js';
-
+import MyProduct from '../src/pages/MyProduct.js';
 
 import Manager from './pages/manager/Manager.js'
 import Category_add from './pages/manager/Category_add.js'
@@ -44,7 +44,7 @@ const App = () => {
         <Route path="/mypage" element={<MyPage />}/>
         <Route path="/event" element={<EventCopy />}/>
         <Route path='/editprofilepage' element={<EditProfile />} />
-
+        <Route path='/myproduct' element={<MyProduct />} />
        
         {/* 관리자 관련 */}
         <Route path="/manager" element={<Manager />} />
