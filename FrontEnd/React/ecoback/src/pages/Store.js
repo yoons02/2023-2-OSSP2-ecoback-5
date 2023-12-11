@@ -6,7 +6,11 @@ import StorePointDisappear from 'components/StorePointDisappear';
 import BackbuttonBar from 'components/BackbuttonBar';
 import TitleBanner from '../components/TitleBanner.js';
 
-
+let screenWidth = window.innerWidth;
+if (screenWidth > 420) {
+  screenWidth = 420;
+}
+const fontSize = `${(screenWidth)/25}px`;
 const Store = () => {
   const [categories, setCategories] = useState([]);
 
@@ -43,13 +47,13 @@ const Store = () => {
              <Link to={`./${category.id}?categoryName=${encodeURIComponent(category.name)}`}>   
               <div className="box_categories_m">
                 <img
-                  style={{ width: '70%' }}
+                  style={{margin:'0', width: '75%' , objectFit: 'cover'}}
                   src={API.defaults.baseURL + category.image}
                   alt={category.name}
                 />
               </div>
             </Link>
-            <div className="normal" style={{ textAlign: 'center' }}>
+            <div className="normal" style={{ fontSize: `${fontSize}`, textAlign: 'center' }}>
              {category.name}
             </div>
           </div>

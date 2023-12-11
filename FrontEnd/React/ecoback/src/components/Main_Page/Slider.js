@@ -42,7 +42,10 @@ const ImageSlider = () => {
       {events.map((event, index) => (
         <Link key={index} to={`/event/${event.id}`}>
           {/* Assuming event.imagePath contains the correct path to the image */}
-          <img className="events_image"  src={event.image} alt={event.title} />
+          <img className="events_image"  src={event.image} alt={event.title} 
+          
+          />
+        
         </Link>
       ))}
     </Slider>
