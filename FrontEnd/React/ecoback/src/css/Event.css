@@ -12,6 +12,7 @@
     aspect-ratio: 1/0.55;
     border-radius: 20px;
     /*이부분 수정하면 매너 이미지 크기 조정가능*/
+    border: 2px solid rgba(128, 128, 128, 0.2); 
 }
 
 @font-face{
