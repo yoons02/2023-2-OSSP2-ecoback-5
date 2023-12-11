@@ -35,22 +35,24 @@ const Product = () => {
   const handleOpenModal = () => setIsModalOpen(true);
 
   return (
-    <div className="full_container">
-      <div style={{ minHeight: '84vh' }}>
+    <div className="full_container" style={{minHeight:'100vh'}}>
+      <div style={{ flex:'1'}}>
         <TitleBanner />
         <hr />
         <BackbuttonBar title="개별 상품 페이지" />
         <hr />
         <div className="productBox">
           <div className="Item">
-            <img id="itemImg" src={product.product_image} alt={product.name} />
+            <img 
+            style={{position: 'absolute', margin:'0', width: '80%', maxHeight:'80%' , objectFit: 'cover'}}
+            id="itemImg" src={product.product_image} alt={product.name} />
           </div>
           <div style={{ fontSize: '25px' }}>
             <b>{product.name}</b>
           </div>
           <div className="priceTag">
             <div id="oneline">
-              <div id="resell">리셀 상품</div>
+              <div id="resell">가격</div>
               <img src={Check} alt="check" id="check" />
             </div>
             <div id="class" style={{ fontSize: '30px' }}>
@@ -59,6 +61,7 @@ const Product = () => {
           </div>
         </div>
       </div>
+      <br/><br/><br/><br/>
       <div className="btnBox">
         <button id="buyBtn" onClick={handleOpenModal}>
           <b style={{ fontSize: '15px' }}>구매하기</b>

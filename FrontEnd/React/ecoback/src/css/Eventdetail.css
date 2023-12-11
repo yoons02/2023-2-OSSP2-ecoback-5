@@ -8,8 +8,8 @@
 
 .datebox{
     font-size: 10px;
-    padding-left: 55%;
-   
+    text-align: right;
+   margin-right: 3%;
 }
 .eventcontent{
     padding:5%;

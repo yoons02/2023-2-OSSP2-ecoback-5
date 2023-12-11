@@ -31,9 +31,25 @@ const EventDetail = () => {
   }, [eventId]);
 
   const formatDate = (dateString) => {
-    const options = { year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric', second: 'numeric' };
-    return new Date(dateString).toLocaleDateString('ko-KR', options);
+    const options = {
+      year: 'numeric',
+      month: '2-digit', // Ensure two digits for month
+      day: '2-digit',   // Ensure two digits for day
+      hour: '2-digit',
+      minute: '2-digit',
+      second: '2-digit',
+    };
+  
+    const formattedDate = new Date(dateString).toLocaleDateString('ko-KR', options);
+  
+    return formattedDate;
   };
+  
+  // Example usage
+  const date = '2023-01-05T12:30:45'; // Replace with your actual date string
+  const formattedDate = formatDate(date);
+  console.log(formattedDate);
+  
 
   return (
     <div className="full_container">
