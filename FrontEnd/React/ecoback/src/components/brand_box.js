@@ -52,7 +52,7 @@ const Brand_box = ({ url, title }) => {
                 />
               </div>
             </Link>
-            <div className="normal" style={{ fontSize: `${fontSize}`, textAlign: 'center' }}>
+            <div className="normal_nb" style={{ fontSize: `${fontSize}`, textAlign: 'center' }}>
              {category.brand_name}
             </div>
           </div>
