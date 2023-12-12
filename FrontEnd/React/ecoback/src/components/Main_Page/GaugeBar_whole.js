@@ -2,7 +2,11 @@ import GaugeBar from "./GaugeBar";
 import '../../css/Home.css';
 import React, { useState, useEffect } from "react";
 import API from "api/axios";
-
+let screenWidth = window.innerWidth;
+if (screenWidth > 420) {
+  screenWidth = 420;
+}
+const fontSize = `${(screenWidth)/25}`;
 const GaugeBar_whole = () => {
      const [datas, setCount] = useState([]);
 
@@ -27,7 +31,7 @@ const GaugeBar_whole = () => {
     const value=datas.count;
   return (
     <div>
-      <div className="normal" style={{ padding: '15px 10px' }}>
+      <div className="normal" style={{ fontSize: `${fontSize}px`, padding: '15px 10px' }}>
         오늘 절약한 일회용품
       </div>
       
@@ -49,7 +53,7 @@ const GaugeBar_whole = () => {
           <hr className="hr" />
         </div>
         <div className="center-hr">
-          <div className="normal">일회용 컵 {value}개 절약 중</div>
+          <div className="normal" style={{ fontSize: `${fontSize/1.1}px`}}>일회용 컵 {value}개 절약 중</div>
         </div>
       </div>
     </div>

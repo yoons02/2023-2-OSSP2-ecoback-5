@@ -10,7 +10,7 @@ let screenWidth = window.innerWidth;
 if (screenWidth > 420) {
   screenWidth = 420;
 }
-const fontSize = `${(screenWidth)/25}px`;
+const fontSize = `${(screenWidth)/26}px`;
 const Store = () => {
   const [categories, setCategories] = useState([]);
 
@@ -53,7 +53,7 @@ const Store = () => {
                 />
               </div>
             </Link>
-            <div className="normal" style={{ fontSize: `${fontSize}`, textAlign: 'center' }}>
+            <div className="normal_nb" style={{ fontSize: `${fontSize}`, textAlign: 'center' }}>
              {category.name}
             </div>
           </div>

@@ -5,7 +5,11 @@ import Point_Mark from "../components/Main_Page/Point_Mark";
 import '../css/Home.css';
 import { Link } from 'react-router-dom';
 import TitleBanner from "../components/TitleBanner.js";
-
+let screenWidth = window.innerWidth;
+if (screenWidth > 420) {
+  screenWidth = 420;
+}
+const fontSize = `${(screenWidth)/28}px`;
 const Home = () => {
   return (
     <div className="full_container">
@@ -17,7 +21,7 @@ const Home = () => {
 
       {/*이동 버튼 부분*/}
 
-      <div id="boxline" className="normal">
+      <div id="boxline" className="normal" style={{ fontSize: `${fontSize}`}}>
       <Link to="/receiptfilming">
         <div className="box">
             <img
@@ -26,7 +30,7 @@ const Home = () => {
               style={{ width: '28%', height: 'auto' }}
             />
 
-          <div>영수증 촬영</div>
+          <div >영수증 촬영</div>
         </div>
       </Link>
       <Link to="/store">

@@ -39,7 +39,7 @@ const StorePointDisappear = () => {
 
   return (
     <div className="full_container">
-      <div className="normal" style={{ textAlign: 'center', fontSize: '90%', margin: '10%' }}>
+      <div className="normal" style={{fontWeight: '500', textAlign: 'center', fontSize: '90%', margin: '10%' }}>
         {formatDate(categories['extinction period'])}
       </div>
     </div>
