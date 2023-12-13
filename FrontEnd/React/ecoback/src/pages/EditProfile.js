@@ -120,11 +120,17 @@ const EditProfile=()=>{
       };
     return (
        <div>
-        <div className="full_container" style={{backgroundColor:"#F9F9F9",paddingBottom:"15px", minHeight:"100vh"}}>
+        <div className="full_container" style={{backgroundColor:"#FFFFFF",paddingBottom:"15px", minHeight:"100vh"}}>
         <TitleBanner />
         <hr />
         <div className="profileContainer">
                 <div id="username">{userInfo.name}님의 프로필</div>
+                <div class="profileContent">
+                    <div style={{textAlign:"center", margin:"3% 0% 0% 0%"}}>한 줄 소개</div>
+                    <hr id="contentHR" />
+                    <div style={{textAlign:"center", fontWeight:"bold"}}>{userInfo.content}</div>
+
+                </div>
                 <div className="faceImage" style={{marginTop:'5%', padding: 'auto'}}>
                 <img id="faceImage" 
                     src={userInfo.image ? userInfo.image : DefaultImageUrl} 
@@ -136,12 +142,10 @@ const EditProfile=()=>{
             <hr />
             <div className="inputBox">
                 <form id="submitForm"  onSubmit={handleSubmit}>
-                    <input type="text" name="name" placeholder="이름(Name)" onChange={handleChange}/><br />
-                    <input type="text" name="content" placeholder="content" onChange={handleChange}/><br />
-                    {/* <select name="gender" id="gender">
-                        <option>남성</option>
-                        <option>여성</option>
-                    </select><br /> */}
+                    <label for="name">이름</label>
+                    <input type="text" name="name" placeholder="  이름을 입력해주세요" onChange={handleChange}/><br />
+                    <label for="name">한 줄 소개</label>
+                    <input type="text" name="content" placeholder="  한 줄로 자신을 표현하세요!" onChange={handleChange}/><br />
                     <div id="btnBox">
                     <button id="submitBtn" onClick={handleSubmit}>프로필 편집</button>
                     </div>
