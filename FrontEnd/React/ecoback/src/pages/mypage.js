@@ -42,6 +42,7 @@ const MyPage=()=>{
     
     return (
         <div className="full_container" style={{backgroundColor:"#FFFFFF",paddingBottom:"15px", minHeight:"100vh"}}>
+
         <div>
             <TitleBanner />
             <hr />

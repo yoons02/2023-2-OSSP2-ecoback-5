@@ -7,6 +7,11 @@ import { Link } from 'react-router-dom';
 import TitleBanner from "../components/TitleBanner.js";
 
 const Home = () => {
+  let screenWidth = window.innerWidth;
+  if (screenWidth > 420) {
+    screenWidth = 420;
+  }
+  const fontSize = `${(screenWidth)/2}px`;
   return (
     <div className="full_container">
       <TitleBanner />
@@ -26,7 +31,7 @@ const Home = () => {
               style={{ width: '28%', height: 'auto' }}
             />
 
-          <div>영수증 촬영</div>
+          <div style={{ fontSize: `25px`}}>영수증 촬영</div>
         </div>
       </Link>
       <Link to="/store">

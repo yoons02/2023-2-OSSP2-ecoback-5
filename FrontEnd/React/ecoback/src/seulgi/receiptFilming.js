@@ -7,7 +7,7 @@ const WebcamComponent = () => <Webcam />;
 const ReceiptFilming=()=>{
     return (
     <div className="full_container">
-        <div class="filmingPage" style={{backgroundColor:"#F9F9F9"}}>
+        <div class="filmingPage" >
             <TitleBanner />
             <hr />
             <BackbuttonBar title="영수증 촬영"/>
