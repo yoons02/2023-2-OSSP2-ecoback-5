@@ -93,17 +93,17 @@ function Login() {
           <Link to="/register" ><p class="ask_register">계정이 없으신가요? 가입하기 &nbsp;&nbsp;</p></Link>
           <center>
 
-            <button className="css.login-button" type="submit" style={{width:"auto"}}>
-              <img class="css.imagebutton"  id="loginbutton" src={loginbutton} alt="loginbutton"/>
+            <button className="loginbutton" type="submit" style={{width:"auto"}}>
+              <img class="imagebutton"  id="loginbutton" src={loginbutton} alt="loginbutton"/>
             </button>
               
           </center>
           
         </form>
-        <center>
+        {/* <center>
             <div class="hr-sect">또는</div>
             <GoogleLoginButton />
-        </center>
+        </center> */}
     </html>
   );
 }
