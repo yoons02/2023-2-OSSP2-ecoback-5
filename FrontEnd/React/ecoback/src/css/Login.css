@@ -76,7 +76,7 @@
     margin: 0px 16px;
     }
 
-.login-button {
+.loginbutton {
  
   /* 필요한 추가 스타일을 설정하세요. 예: */
   width:100%;
@@ -85,6 +85,9 @@
   border: none;
   background-repeat: no-repeat;
   color: transparent;
+}
+.imagebutton{
+  width:95%;
 }
 @font-face{
     font-family: "NotoSansKR";
