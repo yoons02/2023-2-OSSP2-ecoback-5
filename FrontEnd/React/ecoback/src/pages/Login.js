@@ -100,10 +100,10 @@ function Login() {
           </center>
           
         </form>
-        {/* <center>
+        <center>
             <div class="hr-sect">또는</div>
             <GoogleLoginButton />
-        </center> */}
+        </center>
     </html>
   );
 }
