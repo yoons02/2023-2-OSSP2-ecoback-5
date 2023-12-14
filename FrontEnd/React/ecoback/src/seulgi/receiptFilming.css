@@ -30,7 +30,7 @@
 .container{
     width: 100%;
     display:flex;
-    justify-content: space-evenly;
+    justify-content: left;
     align-items:center;
     background-color: #F9F9F9;
 }
@@ -49,7 +49,7 @@
 
 #turtleBtn{
     border-style:none;
-    width:100%;
+    width:90%;
     background:none;
     margin:10%;
     flex:1;
@@ -75,18 +75,17 @@
 
 #screenShot{
     display:flex;
-    flex-direction:column;
+    flex-direction:row;
 }
 
-#sendPhotoBtn{
+#sendPhotoBtn #refresh{
     margin:auto;
     border-radius:5vw;
     background-color:rgb(99, 200, 119);
-    width: 100%;
-    height:100%;
+    width: 50%;
 }
 
 /*카메라 세로로 보이게*/
 .webcam{
-    height:100%;
+    min-height:100%;
 }

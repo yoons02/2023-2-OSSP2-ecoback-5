@@ -21,6 +21,10 @@ const BuyingPopup = ({ productId, isModalOpen, setIsModalOpen, price }) => {
           Authorization: `Bearer ${access_token}`,
         },
       });
+      // setUserInfo({
+      //   ...response.data,
+      //   point: 50000 // 구매모달 띄우기용
+      // });
       setUserInfo(response.data);
       console.log("user 정보: ", response.data);
     } catch (e) {
@@ -90,13 +94,19 @@ const BuyingPopup = ({ productId, isModalOpen, setIsModalOpen, price }) => {
       <PaymentSuccessModal isModalOpen={paymentSuccessModalOpen} setIsModalOpen={setPaymentSuccessModalOpen} />
       <Modal style={modalStyle} isOpen={isModalOpen}>
         <div className="pointViewer">
-          <b>{userInfo.name}</b>님의 가용 포인트 <b>{userInfo.point}</b><br />
-          차감포인트 <b style={{ color: "red" }}>{price}</b><br />
-          <hr />
           <div id="leftPoint">
             {((userInfo.point - price) >= 0) ?
-              <p style={{ fontSize: "23px" }}>잔여포인트 <b style={{ color: "#83D15E" }}>{userInfo.point - price}</b></p>
-              : <p style={{ fontSize: "23px", color: "red" }}><b>포인트 부족: 구매 불가</b></p>}
+            <div>
+              <p style={{ fontSize: "17px" }}>내 포인트 <b>{userInfo.point}</b></p>
+              <p style={{ fontSize: "17px" }}>상품 가격 <b>{price}</b></p>
+              <p style={{ fontSize: "17px" }}>잔여포인트 <b>{userInfo.point - price}</b></p>
+            </div> 
+              : <div>
+                <p style={{ fontSize: "23px", color: "red" }}><b>포인트 부족: 구매 불가</b></p>
+                <p style={{ fontSize: "17px" }}>내 포인트 <b>{userInfo.point}</b></p>
+                <p style={{ fontSize: "17px" }}>부족한 포인트 <b>{price-userInfo.point}</b></p>
+                </div>}
+            <hr />
             <p id="sentence">
               상품을 구매하시겠습니까?<br />
               취소하기 버튼을 누르시면 <br />상품구매가 취소됩니다.</p>

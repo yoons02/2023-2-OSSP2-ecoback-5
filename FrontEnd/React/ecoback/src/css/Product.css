@@ -65,4 +65,12 @@ body{
     box-sizing:border-box;
 }
 
+.pricatag{
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+}
 
+#productname{
+    text-align:center;
+}
