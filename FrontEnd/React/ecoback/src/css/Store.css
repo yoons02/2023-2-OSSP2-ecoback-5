@@ -4,7 +4,7 @@
   justify-content: center;
   align-content: center;
   align-items: center;
-  width: 80%;
+  width: 88%;
   top: 435px;
   left: 206px;
   border-radius: 10px;
@@ -41,9 +41,10 @@
     
 }
   .title_line {
-    width: 100%;
+    width: 98%;
     position: relative;
     display:grid;
+    
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr 1fr;
     justify-content:center;
