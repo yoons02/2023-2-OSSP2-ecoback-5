@@ -20,8 +20,10 @@ const Camera = () => {
     setCameraMode(prevMode=>(prevMode==="environment"?"user":"environment"));
   }
   const videoConstraints = {
-    width: { ideal: window.innerWidth },
-    height:{ideal:window.innerHeight},
+    // width: { ideal: window.innerWidth },
+    // height:{ideal:window.innerHeight},
+    width: { ideal: 480 },
+  height: { ideal: 640 },
     facingMode: cameraMode,
     /*전면카메라(PC용): user, 후카메라(모바일용): environment*/
   };
