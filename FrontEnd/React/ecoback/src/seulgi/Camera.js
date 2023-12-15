@@ -12,14 +12,20 @@ import SendPhotoModal from './sendPhotoModal';
 import API from 'api/axios';
 import { IoEllipseSharp } from 'react-icons/io5';
 
-const videoConstraints = {
-  width: { ideal: window.innerWidth },
-  height:{ideal:window.innerHeight},
-  facingMode: "user",
-  /*전면카메라(PC용): user, 후카메라(모바일용): environment*/
-};
+
 
 const Camera = () => {
+  const [cameraMode, setCameraMode]=useState("environment");
+  const toggleCamera=()=>{
+    setCameraMode(prevMode=>(prevMode==="environment"?"user":"environment"));
+  }
+  const videoConstraints = {
+    width: { ideal: window.innerWidth },
+    height:{ideal:window.innerHeight},
+    facingMode: cameraMode,
+    /*전면카메라(PC용): user, 후카메라(모바일용): environment*/
+  };
+
   const [isModalOpen, setIsModalOpen]=useState(false);
   const handleOpenModal=()=>setIsModalOpen(true);
   const webcamRef = useRef(null);
@@ -162,11 +168,13 @@ const Camera = () => {
     <div id="screenShot">
       {console.log("URL:",url)}
     <img src={url} alt='ScreenShot'/>
-    <button id="sendPhotoBtn" onClick={sendPhotoServer}>전송하기</button>
-    <button id="refresh" onClick={() => setUrl(null)}>재촬영하기</button>
+      <button id="sendPhotoBtn" onClick={sendPhotoServer}>전송하기</button>
+    <button id="sendPhotoBtn" onClick={() => setUrl(null)}>재촬영하기</button>
+      
   </div>
 
     ):(
+      <div>
       <Webcam
         class="webcam"
         ref={webcamRef}
@@ -177,13 +185,17 @@ const Camera = () => {
         mirrored={false}
         heigth="100%"
       />
-    )}
-    
       <div className="container">
         <button id="album"><img id="album" onClick={handleAlbumClick} src={require("../image/photoAlbum.png")} alt="photoAlbum" /></button>
         <button id="turtleBtn" onClick={capturePhoto}><img id="turtleBtn" src={require("../image/turtleBtn.png")} alt="captureBtn" /></button>
-        <button id="refresh" onClick={() => { setUrl(null) }}><img id="refreshBtn"src={require("../image/refreshBtn.png")}/></button>
-      </div>
+        {/* <button id="refresh" onClick={() => { setUrl(null) }}><img id="refreshBtn"src={require("../image/refreshBtn.png")}/></button> */}
+        <button id="refresh" onClick={toggleCamera}><img id="refreshBtn"src={require("../image/refreshBtn.png")}/></button>
+        {/* <button id="sendPhotoBtn" onClick={sendPhotoServer}>전송하기</button>
+    <button id="sendPhotoBtnesh" onClick={() => setUrl(null)}>재촬영하기</button> */}
+      </div></div>
+    )}
+    
+      
   
 
      {(responseStatus==="approved")?

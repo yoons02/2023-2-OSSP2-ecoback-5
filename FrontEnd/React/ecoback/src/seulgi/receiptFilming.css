@@ -75,14 +75,14 @@
 
 #screenShot{
     display:flex;
-    flex-direction:row;
+    flex-direction:column;
 }
 
-#sendPhotoBtn #refresh{
-    margin:auto;
+#sendPhotoBtn{
+    margin:2% 2% 2% 4%;
     border-radius:5vw;
     background-color:rgb(99, 200, 119);
-    width: 50%;
+    width: 90%;
 }
 
 /*카메라 세로로 보이게*/
