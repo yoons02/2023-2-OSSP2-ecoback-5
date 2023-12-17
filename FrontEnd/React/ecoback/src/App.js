@@ -18,7 +18,7 @@ import Start from './pages/index.js';
 import EditProfile from './pages/EditProfile.js';
 import Register from './pages/Register.js';
 import MyProduct from '../src/pages/MyProduct.js';
-
+import MyProductDetail from '../src/pages/MyProductDetail.js';
 import Manager from './pages/manager/Manager.js'
 import Category_add from './pages/manager/Category_add.js'
 import {BadgeCountProvider} from './seulgi/BadgeCountContext.js'
@@ -46,7 +46,8 @@ const App = () => {
         <Route path="/mypage" element={<MyPage />}/>
         <Route path='/editprofilepage' element={<EditProfile />} />
         <Route path='/myproduct' element={<MyProduct />} />
-       
+        <Route path="/myproduct/:id" element={<MyProductDetail />} />
+
       
         {/* Store 관련 */}
         <Route path="/Store" element={<Store />} />

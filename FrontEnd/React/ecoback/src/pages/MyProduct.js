@@ -44,7 +44,7 @@ const Store = () => {
              <Link to={`./${category.id}`}>   
               <div className="box_categories_m">
                 <img
-                  style={{ width: '70%', maxHeight:'80%'}}
+                  style={{ width: '70%', maxHeight:'80%', objectFit: 'cover'}}
                   src={API.defaults.baseURL + category.product_image}
                   alt={category.name}
                 />
