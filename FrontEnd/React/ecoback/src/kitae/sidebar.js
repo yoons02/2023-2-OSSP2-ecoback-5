@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import {Navigation} from 'react-minimal-side-navigation';
 import 'react-minimal-side-navigation/lib/ReactMinimalSideNavigation.css';
-import Icon from "awesome-react-icons";
 import { useNavigate } from 'react-router-dom';
 import closebutton from '../image/close1.png';
 
@@ -10,6 +9,7 @@ import { FaCircleUser } from "react-icons/fa6";
 import { MdAddAPhoto } from "react-icons/md";
 import { FaShoppingBag } from "react-icons/fa";
 import { IoLogOut } from "react-icons/io5";
+import { SlPresent } from "react-icons/sl";
 
 import { FaBars } from "react-icons/fa";
 
@@ -105,6 +105,13 @@ const Sidebar=() => {
                 itemId: '/Store',
             
                 elemBefore: () => <FaShoppingBag />
+              },
+              {
+                className:'sidebaritem',
+                title: '내 교환권',
+                itemId: '/myproduct',
+            
+                elemBefore: () => <SlPresent />
               },
               {
                 className:'sidebaritem',
