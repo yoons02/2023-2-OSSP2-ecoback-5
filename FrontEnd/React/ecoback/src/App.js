@@ -37,19 +37,17 @@ const App = () => {
         <Route path="/" element={<Home />} /> 
         
         {/* Main 화면 관련*/}
-        <Route path="/Home" element={<Home />} />
+
+          <Route path="/Home" element={<Home />} />
+
         
        {/* 마이페이지 관련*/}
         <Route path="/receiptfilming" element={<ReceiptFilming />} />
         <Route path="/mypage" element={<MyPage />}/>
-        <Route path="/event" element={<EventCopy />}/>
         <Route path='/editprofilepage' element={<EditProfile />} />
         <Route path='/myproduct' element={<MyProduct />} />
        
-        {/* 관리자 관련 */}
-        <Route path="/manager" element={<Manager />} />
-          <Route path="/manager/category_add" element={<Category_add />} />
-
+      
         {/* Store 관련 */}
         <Route path="/Store" element={<Store />} />
           <Route path="/store/:id" element={<BrandDetail />} />

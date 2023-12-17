@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import '../css/Store.css';
 import API from 'api/axios';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import BackbuttonBar from 'components/BackbuttonBar';
 import TitleBanner from '../components/TitleBanner.js';
 import StorePointDisappear from 'components/StorePointDisappear';
@@ -11,6 +11,7 @@ if (screenWidth > 420) {
 }
 const fontSize = `${(screenWidth)/25}px`;
 const Brand_box = ({ url, title }) => {
+  const navigate = useNavigate();
   const [categories, setCategories] = useState([]);
 
   useEffect(() => {
@@ -29,6 +30,7 @@ const Brand_box = ({ url, title }) => {
       setCategories(response.data);
     } catch (error) {
       console.error('API 오류', error);
+      navigate('/');
     }
   };
 

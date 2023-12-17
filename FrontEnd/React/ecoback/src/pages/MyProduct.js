@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import '../css/Store.css';
 import API from 'api/axios';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import StorePointDisappear from 'components/StorePointDisappear';
 import BackbuttonBar from 'components/BackbuttonBar';
 import TitleBanner from '../components/TitleBanner.js';
@@ -9,7 +9,7 @@ import TitleBanner from '../components/TitleBanner.js';
 
 const Store = () => {
   const [categories, setCategories] = useState([]);
-
+  const navigate = useNavigate();
   useEffect(() => {
     fetchData();
   }, []);
@@ -26,6 +26,7 @@ const Store = () => {
       setCategories(response.data);
     } catch (error) {
       console.error('API 오류', error);
+      navigate('/');
     }
   };
 

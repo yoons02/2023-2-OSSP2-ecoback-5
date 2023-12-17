@@ -27,6 +27,7 @@ const EditProfile=()=>{
 
         }catch(e){
             console.log("get-API 오류: ",e);
+            navigate('/');
         }
     }
 

@@ -2,7 +2,7 @@ import BadgeGrid from '../seulgi/myBadge.js';
 import '../seulgi/mypage.css'
 import TitleBanner from '../components/TitleBanner.js';
 import API from "api/axios"
-import {Link} from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import React, { useState, useEffect, useContext } from 'react';
 import { BadgeCountContext } from '../seulgi/BadgeCountContext';
 
@@ -16,7 +16,7 @@ const MyPage=()=>{
     
     const access_token=localStorage.getItem('access');
     const endpoint='/mypage/get_object/';
-    
+    const navigate = useNavigate();
     const getUserData=async()=>{
         try{
             const getUserInfo=await API.get(endpoint, {
@@ -29,6 +29,7 @@ const MyPage=()=>{
 
         }catch(e){
             console.log("get-API 오류: ",e);
+            navigate('/');
         }
     }
     const formDate=(dateString)=>{
