@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import BackbuttonBar from 'components/BackbuttonBar';
 import TitleBanner from '../components/TitleBanner';
 import '../css/Event.css';
 import API from "api/axios";
 const EventCopy = () => {
   const [events, setEvents] = useState([]);
-
+  const navigate = useNavigate();
   useEffect(()=>{
     fetchData();
   },[]);
@@ -24,6 +24,7 @@ const EventCopy = () => {
       setEvents(response.data);
     }catch(e){
       console.error("API 오류: ",e);
+      navigate('/');
     }
   }
 

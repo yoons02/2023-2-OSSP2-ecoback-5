@@ -3,6 +3,7 @@ import { useLocation } from 'react-router-dom';
 import BackbuttonBar from 'components/BackbuttonBar';
 import TitleBanner from '../components/TitleBanner';
 import API from "api/axios";
+import { Link, useNavigate } from 'react-router-dom';
 
 import '../css/Eventdetail.css';
 
@@ -10,7 +11,7 @@ const EventDetail = () => {
   const location = useLocation();
   const eventId = location.pathname.split('/').pop(); // URL에서 이벤트 ID가 있다고 가정합니다.
   const [eventDetail, setEventDetail] = useState(null);
-
+  const navigate = useNavigate();
   useEffect(() => {
     const fetchData = async () => {
       const endpoint = `/events/${eventId}/`;
@@ -24,6 +25,7 @@ const EventDetail = () => {
         setEventDetail(response.data);
       } catch (e) {
         console.error("API 오류: ", e);
+        navigate('/');
       }
     };
 

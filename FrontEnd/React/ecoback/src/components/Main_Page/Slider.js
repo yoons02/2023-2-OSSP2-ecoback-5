@@ -2,11 +2,12 @@ import React, { useState, useEffect } from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import API from "api/axios";
 
 const ImageSlider = () => {
   const [events, setEvents] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     fetchData();
@@ -24,6 +25,7 @@ const ImageSlider = () => {
       setEvents(response.data);
     }catch(e){
       console.error("API 오류: ",e);
+      navigate('/');
     }
   }
 

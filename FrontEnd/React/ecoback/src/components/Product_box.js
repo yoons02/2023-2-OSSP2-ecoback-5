@@ -1,12 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import '../css/Store.css';
 import API from 'api/axios';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import BackbuttonBar from 'components/BackbuttonBar';
 import TitleBanner from "./TitleBanner.js";
 
 const Product_box = ({ url, title }) => {
   const [product, setProduct] = useState([]);
+  const navigate = useNavigate();
+
   let screenWidth = window.innerWidth;
   if (screenWidth > 420) {
     screenWidth = 420;
@@ -34,6 +36,7 @@ const Product_box = ({ url, title }) => {
       }
     } catch (e) {
       console.log("API 오류: ", e);
+      navigate('/');
     }
   };
 

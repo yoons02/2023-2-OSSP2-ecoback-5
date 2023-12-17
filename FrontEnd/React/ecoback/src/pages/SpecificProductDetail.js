@@ -7,12 +7,13 @@ import BackbuttonBar from '../components/BackbuttonBar';
 import API from 'api/axios';
 import { useLocation } from 'react-router-dom';
 import StorePointDisappear from '../components/StorePointDisappear';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Product = () => {
   const [product, setProduct] = useState([]);
   const location = useLocation();
   const id = location.pathname.split('/').pop();
-
+  const navigate = useNavigate();
   useEffect(() => {
     fetchProductData();
   }, []);
@@ -28,6 +29,7 @@ const Product = () => {
       setProduct(response.data);
     } catch (e) {
       console.log('API 오류: ', e);
+      navigate('/');
     }
   };
 
