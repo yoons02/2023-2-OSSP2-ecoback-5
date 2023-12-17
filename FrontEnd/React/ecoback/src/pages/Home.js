@@ -9,7 +9,7 @@ let screenWidth = window.innerWidth;
 if (screenWidth > 420) {
   screenWidth = 420;
 }
-const fontSize = `${(screenWidth)/28}px`;
+const fontSize = `${(screenWidth)/30}px`;
 const Home = () => {
   return (
     <div className="full_container">
