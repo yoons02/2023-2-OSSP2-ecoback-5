@@ -48,7 +48,6 @@ img{
 }
 .banner{
   width: 100%;
-  height: 52vw;
   left: 0px;
   top: 150px;
   margin: 0;
@@ -56,7 +55,7 @@ img{
 .normal{
   font-family: "NotoSansKR";
   font-size: 13px;
-  font-weight: 700;
+  font-weight: 550;
   line-height: 22px;
   letter-spacing: 0em;
   text-align: left;
