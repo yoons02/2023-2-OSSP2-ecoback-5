@@ -21,6 +21,30 @@ body{
     justify-content: center;
 }
 
+.barcode {
+    position: relative;
+    width: 60%;
+    margin-top: 5%;
+    margin-bottom: 10%;
+    background-color: #E2DFDF;
+    border-radius: 10px;
+    box-shadow: 5px 5px 3px #666;
+    aspect-ratio: 3 / 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.barcode_image {
+    position: relative;
+    width: 100%;
+    border-radius: 20px;
+    aspect-ratio: 3 / 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+}
+
 .Item img {
     max-width: 100%;
     max-height: 100%;
