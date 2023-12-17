@@ -33,7 +33,7 @@ const EventCopy = () => {
         <TitleBanner />     
         <hr></hr>
         <BackbuttonBar title="이벤트"/> 
-        <div style={{ display: 'flex', flexDirection: 'column', overflowY: 'scroll' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', overflowY: 'scroll', overflowX: 'hidden'  }}>
           {events.map((event, index) => (
           <Link key={index} to={{ pathname: `/event/${event.id}`, state: { eventName: event.name } }}>
 
