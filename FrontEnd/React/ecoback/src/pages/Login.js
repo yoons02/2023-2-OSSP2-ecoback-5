@@ -63,7 +63,7 @@ function Login() {
             <div id="logo">
                 <img src={logo} alt="logo" />
                 <br/>
-                플라스틱으로 힘들어 하고 있는 바다거북이를 지켜주세요!
+                일회용컵으로 힘들어 하고 있는 바다거북이를 지켜주세요!
                 <br/>
                 <br/>
             </div>
