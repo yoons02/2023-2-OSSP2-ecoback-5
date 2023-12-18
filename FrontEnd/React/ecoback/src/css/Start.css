@@ -8,6 +8,14 @@
     width: 80%; /* 원하는 너비로 설정 */
 
 }
+
+#logo{
+    font-family: "NotoSansKR";
+    font-size: 12px;
+    font-weight: 500;
+    padding-bottom: 5%;
+}
+
 #logintostart {
     padding-top: 10%;
     width: 80%; /* 원하는 너비로 설정 */
